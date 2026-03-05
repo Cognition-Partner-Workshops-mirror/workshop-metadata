@@ -2,7 +2,7 @@
 
 ## Challenge
 
-Migrate a COBOL batch program to Java 17+ with parity tests to verify functional equivalence.
+Migrate a small COBOL batch program that reads fixed-width input records, applies business rules, and produces a report file to Java 17+ while preserving behaviour with parity tests.
 
 ## Repository
 
@@ -13,6 +13,13 @@ Migrate a COBOL batch program to Java 17+ with parity tests to verify functional
 ## Task
 
 Select a COBOL batch program from the CardDemo application and migrate it to Java 17+. Write parity tests that verify the Java implementation produces identical outputs for identical inputs.
+
+## Target Outcomes
+
+- Java source code + tests with Maven build
+- Parity tests: Java output matches COBOL output for provided fixtures
+- `MIGRATION_NOTES.md` describing field mappings and decisions
+- Clear separation: parsing, business rules, and output formatting
 
 ## Suggested Starting Points
 
@@ -49,7 +56,7 @@ Advanced — COBOL is unfamiliar to most participants; the migration requires de
 
 ## Estimated Time
 
-90 minutes
+60 minutes
 
 ## Notes
 

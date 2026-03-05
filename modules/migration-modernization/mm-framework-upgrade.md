@@ -18,6 +18,14 @@ Upgrade a project's framework, language version, or design library to a current 
 - **Repository:** [ts-angular-realworld-example-app](https://github.com/Cognition-Partner-Workshops/ts-angular-realworld-example-app) or [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops/app_petclinic-angular)
 - **Task:** Upgrade Angular to the latest major version.
 
+## Target Outcomes (for Java/Spring Boot upgrade + microservice extraction)
+
+- Application builds and tests on Java 17+
+- Framework upgraded to Spring Boot 3.x
+- One extracted microservice with a stable API contract (OpenAPI)
+- Strangler integration: monolith routes calls to the new service
+- Docker Compose to run locally
+
 ## Sample Prompt (Option 1)
 
 > Upgrade uc-framework-upgrade-monolith-to-microservices from Java 11 + Spring Boot 2.6.3 to Java 17 + Spring Boot 3.2. Handle the javax to jakarta namespace migration, update Gradle build configuration, fix any deprecations, and ensure all tests pass. Open a PR with the changes.

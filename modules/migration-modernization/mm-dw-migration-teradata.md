@@ -80,7 +80,7 @@ Intermediate to Advanced — requires some familiarity with data warehouse conce
 
 ## Estimated Time
 
-90 minutes
+60 minutes
 
 ## Notes
 

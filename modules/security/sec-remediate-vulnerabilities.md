@@ -15,6 +15,14 @@ Use a SAST tool to identify and remediate the most critical preexisting vulnerab
 
 Use a SAST tool to remediate the most critical preexisting vulnerabilities in a repository. If the project does not already have a configuration for SAST, you define what tool to use.
 
+## Target Outcomes
+
+- SBOM generated (CycloneDX or SPDX) with dependency vulnerability scanning
+- High/critical vulnerabilities patched or upgraded
+- Secure coding checks added: format/lint + static analysis (SAST)
+- CI gating: builds fail on policy violations
+- `SECURITY_REMEDIATION.md` with before/after evidence
+
 ## Sample Prompt
 
 > Run a security scan on [repo] using [Trivy/Snyk/SonarQube/npm audit]. Identify the top 5 most critical vulnerabilities (CVSS >= 7.0). For each vulnerability, implement the recommended fix. Verify the build passes and open a PR with all remediations documented.
