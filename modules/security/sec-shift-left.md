@@ -8,7 +8,7 @@ Define or enhance the CI process to improve security posture. Automate Devin's a
 
 - **Repository:** Any repo in the org (participant's choice)
 - **Recommended:**
-  - [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance) — No CI currently (workflows removed)
+  - [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance) — No CI currently (workflows removed), but has OWASP Dependency-Check and SonarQube Gradle plugins pre-configured for local scanning (see [B2](sec-remediate-vulnerabilities.md))
   - [app_timesheet-client](https://github.com/Cognition-Partner-Workshops/app_timesheet-client) — Has existing security-scan.yml and sonar-devin-fix.yml workflows
 
 ## Task
