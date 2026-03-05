@@ -2,44 +2,79 @@
 
 ## Challenge
 
-Use a SAST tool to identify and remediate the most critical preexisting vulnerabilities in a repository.
+Use local SAST tools to identify and remediate the most critical preexisting vulnerabilities in a repository. Both dependency-level CVEs and code-level security issues are in scope.
 
 ## Options
 
 - **Repository:** Any repo in the org (participant's choice)
 - **Recommended:**
-  - [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance) — Spring Boot 2.6.3 with known CVEs
+  - [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance) — Spring Boot 2.6.3 with known CVEs, **pre-configured with OWASP Dependency-Check and SonarQube Gradle plugins**
   - [app_timesheet-client](https://github.com/Cognition-Partner-Workshops/app_timesheet-client) — Node.js with Trivy scanning already configured
 
 ## Task
 
-Use a SAST tool to remediate the most critical preexisting vulnerabilities in a repository. If the project does not already have a configuration for SAST, you define what tool to use.
+Run local SAST tools to scan a repository for vulnerabilities, then remediate the most critical findings. The `uc-cve-remediation-regulatory-compliance` repo has two tools pre-configured — both run entirely on the participant's machine with no cloud or SaaS costs.
+
+### Step-by-step (using uc-cve-remediation-regulatory-compliance)
+
+1. **Scan dependencies for known CVEs** — Run OWASP Dependency-Check to identify vulnerable dependencies:
+   ```bash
+   ./gradlew dependencyCheckAnalyze
+   ```
+   Review the HTML report at `build/reports/dependency-check-report.html`. The build fails if any dependency has a CVSS score >= 7.0.
+
+2. **Scan source code for security issues** — Start the local SonarQube Community Edition and run a code-level analysis:
+   ```bash
+   docker compose -f docker-compose.sonarqube.yml up -d
+   # Wait ~60 seconds, then open http://localhost:9000 (login: admin / admin)
+   # Create a project token: My Account > Security > Generate Tokens
+   ./gradlew sonar -Dsonar.token=<YOUR_TOKEN>
+   ```
+   Review findings in the SonarQube dashboard at http://localhost:9000 under the `uc-cve-remediation` project.
+
+3. **Remediate findings** — Upgrade vulnerable dependencies, fix code-level issues flagged by SonarQube (e.g., hardcoded secrets, injection risks, insecure defaults).
+
+4. **Re-scan to verify** — Re-run both tools after remediation to confirm HIGH/CRITICAL findings are resolved and no new issues were introduced.
+
+5. **Document results** — Create `SECURITY_REMEDIATION.md` with before/after evidence. Open a PR.
+
+### Pre-configured SAST Tools (both local — no cloud costs)
+
+| Tool | What It Scans | Gradle Command | Report Location |
+|------|--------------|----------------|-----------------|
+| [OWASP Dependency-Check](https://owasp.org/www-project-dependency-check/) | Dependencies against the NVD for known CVEs | `./gradlew dependencyCheckAnalyze` | `build/reports/dependency-check-report.html` |
+| [SonarQube Community Edition](https://www.sonarsource.com/open-source-editions/sonarqube-community-edition/) | Source code for vulnerabilities, code smells, bugs | `./gradlew sonar -Dsonar.token=<TOKEN>` | http://localhost:9000 dashboard |
+
+> **Note:** SonarQube Community Edition runs locally via Docker (`docker-compose.sonarqube.yml` is included in the repo). OWASP Dependency-Check downloads the NVD database locally on first run. Neither tool requires a paid license or cloud account.
 
 ## Target Outcomes
 
-- SBOM generated (CycloneDX or SPDX) with dependency vulnerability scanning
+- OWASP Dependency-Check report generated (before and after remediation)
+- SonarQube analysis completed with security hotspots reviewed
 - High/critical vulnerabilities patched or upgraded
 - Secure coding checks added: format/lint + static analysis (SAST)
-- CI gating: builds fail on policy violations
 - `SECURITY_REMEDIATION.md` with before/after evidence
+- PR with all remediations documented
 
 ## Sample Prompt
 
-> Run a security scan on [repo] using [Trivy/Snyk/SonarQube/npm audit]. Identify the top 5 most critical vulnerabilities (CVSS >= 7.0). For each vulnerability, implement the recommended fix. Verify the build passes and open a PR with all remediations documented.
+> Run `./gradlew dependencyCheckAnalyze` on the uc-cve-remediation-regulatory-compliance repo to identify dependency CVEs. Then start SonarQube locally with `docker compose -f docker-compose.sonarqube.yml up -d` and run `./gradlew sonar` to find code-level security issues. Remediate the top 5 most critical findings (CVSS >= 7.0). Re-run both scans to verify the fixes. Create a `SECURITY_REMEDIATION.md` documenting the before/after results and open a PR.
 
 ## What Participants Will Learn
 
-- How Devin selects and configures SAST tools
+- How Devin runs and interprets local SAST tools (OWASP Dependency-Check, SonarQube)
 - How Devin interprets CVE details (CVSS scores, affected versions, fix versions)
 - The difference between dependency vulnerabilities and code-level vulnerabilities
 - How to evaluate whether Devin's fixes are correct and complete
+- The scan → fix → re-scan verification pattern
 
 ## Devin Features Exercised
 
-- Tool installation and configuration
-- Security analysis and interpretation
-- Code remediation
-- PR creation with detailed descriptions
+- Local tool execution (Gradle plugins, Docker Compose)
+- SAST report interpretation
+- Security analysis and code remediation
+- Build verification
+- PR creation with security evidence
 
 ## Difficulty
 
