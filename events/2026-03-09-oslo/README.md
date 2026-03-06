@@ -50,13 +50,43 @@ See the [full challenge details](../../modules/migration-modernization/mm-cobol-
 ### Lab 2 — Framework Upgrade & Refactor: Monolith → Microservices (60 min)
 - **Module:** [mm-framework-upgrade](../../modules/migration-modernization/mm-framework-upgrade.md) + [mm-containerization](../../modules/migration-modernization/mm-containerization.md)
 - **Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
-- **Objective:** Start with an older Java monolith (Java 11 + Spring Boot 2.6.3). Upgrade the runtime and extract one bounded context into a microservice, while keeping the system working
-- **Target Outcomes:**
-  - Application builds and tests on Java 17+
-  - Framework upgraded to Spring Boot 3.x
-  - One extracted microservice with a stable API contract (OpenAPI)
-  - Strangler integration: monolith routes calls to the new service
-  - Docker Compose to run locally
+- **Objective:** Take an older Java monolith (Java 11 + Spring Boot 2.6.3) and modernize it — you choose whether to focus on the upgrade, the microservice extraction, or both
+
+#### Step 1: Get Started Fast (copy-paste this prompt into Devin)
+
+> Upgrade uc-framework-upgrade-monolith-to-microservices from Java 11 + Spring Boot 2.6.3 to Java 17 + Spring Boot 3.2. Handle the javax to jakarta namespace migration, update Gradle build configuration, fix any deprecations, and ensure all tests pass. Open a PR with the changes.
+
+#### Step 2: Level Up with AskDevin
+
+While Devin works on step 1, open **AskDevin** and explore:
+- *"What are the domain boundaries in uc-framework-upgrade-monolith-to-microservices? Which bounded context would be easiest to extract as a microservice?"*
+- *"What's the best order to tackle the javax to jakarta migration, the Gradle plugin updates, and the deprecated API removals?"*
+- Use the refined understanding to start a **second session** — try extracting a microservice, or upgrade with a different strategy
+
+#### Step 3: Explore with DeepWiki
+
+Open the repo's **DeepWiki** page to browse the architecture, domain model, and dependency graph. Use what you learn to try something different:
+- Extract a different bounded context (Articles, Users, or Comments) as a containerized microservice
+- Have Devin produce an architecture decision record (ADR) for how the monolith should be decomposed
+- Run parallel sessions — one upgrading the framework, one extracting a service
+- Try the Angular upgrade on a different repo alongside the Spring Boot upgrade
+
+#### Step 4: Review the PR and Give Feedback
+
+Once Devin opens a PR from step 1, practice the feedback loop:
+- **Review the diff** — does the upgrade look complete? Are there files Devin missed?
+- **Leave a comment on the PR** asking Devin to fix something (e.g., *"This still uses javax.servlet — please update to jakarta.servlet"* or *"Can you also add a Dockerfile?"*)
+- **Watch Devin respond** to your PR comment and push a fix — this is how real teams work with Devin
+- Try leaving both general comments and inline code comments to see how Devin handles each
+
+See the full challenge details for [framework upgrade](../../modules/migration-modernization/mm-framework-upgrade.md) and [containerization](../../modules/migration-modernization/mm-containerization.md) for more ideas.
+
+- **Target Outcomes (any of these count):**
+  - Application builds and tests on Java 17+ / Spring Boot 3.x
+  - One extracted microservice with its own Dockerfile and REST API
+  - Docker Compose to run the full stack locally
+  - Architecture decision record or migration report
+  - PR with review comments and Devin's responses
 
 ### Lab 3 — CVE Remediations & Regulatory Code Standards (60 min)
 - **Module:** [sec-upgrade-dependencies](../../modules/security/sec-upgrade-dependencies.md) + [sec-remediate-vulnerabilities](../../modules/security/sec-remediate-vulnerabilities.md) + [sec-shift-left](../../modules/security/sec-shift-left.md)
