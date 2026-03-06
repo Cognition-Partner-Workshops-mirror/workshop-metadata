@@ -39,6 +39,14 @@ Open the repo's **DeepWiki** page to browse the auto-generated architecture diag
 - Ask Devin to reverse-engineer business rules or generate a data dictionary
 - Run parallel sessions migrating the same program to two different targets
 
+#### Step 4: Review the PR and Give Feedback
+
+Once Devin opens a PR from step 1, practice the feedback loop:
+- **Review the diff** — does the Java code faithfully represent the COBOL business logic?
+- **Leave a comment on the PR** asking Devin to fix something (e.g., *"The packed decimal conversion doesn't handle negative values"* or *"Can you also generate a data dictionary for the copybooks?"*)
+- **Watch Devin respond** to your PR comment and push a fix — this is how real teams work with Devin
+- **Advanced: Try PR Review** — Open [this example PR review](https://partner-workshops.devinenterprise.com/review/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java/pull/1) to see Devin's **PR Review** feature in action — it provides an AI-powered summary and analysis of the changes. This is the most advanced way to review Devin's work.
+
 See the [full challenge details](../../modules/migration-modernization/mm-cobol-to-java.md) for more ideas — there is no single right answer.
 
 - **Target Outcomes (any of these count):**
@@ -46,6 +54,7 @@ See the [full challenge details](../../modules/migration-modernization/mm-cobol-
   - Parity tests: modern output matches COBOL output for provided fixtures
   - `MIGRATION_NOTES.md` describing field mappings and decisions
   - Technical documentation, data dictionary, or migration plan for the repo
+  - PR with review comments and Devin's responses
 
 ### Lab 2 — Framework Upgrade & Refactor: Monolith → Microservices (60 min)
 - **Module:** [mm-framework-upgrade](../../modules/migration-modernization/mm-framework-upgrade.md#option-1-javaspring-boot-upgrade) + [mm-containerization](../../modules/migration-modernization/mm-containerization.md#task)
@@ -92,6 +101,7 @@ See the full challenge details for [framework upgrade options](../../modules/mig
 - **Module:** [sec-upgrade-dependencies](../../modules/security/sec-upgrade-dependencies.md#option-2-javagradle-dependencies) + [sec-remediate-vulnerabilities](../../modules/security/sec-remediate-vulnerabilities.md#step-by-step-using-uc-cve-remediation-regulatory-compliance) + [sec-shift-left](../../modules/security/sec-shift-left.md)
 - **Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
 - **Objective:** A Spring Boot 2.6.3 service has accumulated vulnerable dependencies (Spring4Shell, SnakeYAML RCE, SQLite JDBC RCE, and more). Scan, remediate, and add automated compliance checks
+- **Known CVEs:** See the [full CVE findings report](../../modules/security/sec-remediate-vulnerabilities.md#known-cves-in-uc-cve-remediation-regulatory-compliance) for a breakdown of all 18+ known vulnerabilities by severity (5 Critical, 8 High, 5 Medium)
 
 #### Step 1: Get Started Fast (copy-paste this prompt into Devin)
 
