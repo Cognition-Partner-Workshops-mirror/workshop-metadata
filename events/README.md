@@ -18,6 +18,10 @@ events/
 │   └── README.md              ← Copy this to start a new event
 ├── 2026-03-09-oslo/
 │   └── README.md              ← Example: Oslo workshop
+├── workshop-variant-1/
+│   └── README.md              ← Mortgage Lender use cases (demo + hands-on)
+├── workshop-variant-2/
+│   └── README.md              ← QE + Security Vulnerability Remediation
 └── YYYY-MM-DD-city-org/
     └── README.md              ← Your new event
 ```

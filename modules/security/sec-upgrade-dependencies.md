@@ -13,6 +13,7 @@ Upgrade outdated and vulnerable dependencies in a project.
 ### Option 2: Java/Gradle Dependencies
 - **Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
 - **Task:** Upgrade Spring Boot from 2.6.3 to the latest stable 2.7.x or 3.x, updating all transitive dependencies. Verify the build still passes.
+- **Tip:** This repo has OWASP Dependency-Check pre-configured. Run `./gradlew dependencyCheckAnalyze` before and after upgrading to see which CVEs are resolved. For full SAST coverage, see [B2 — Remediate Vulnerabilities](sec-remediate-vulnerabilities.md).
 
 ## Sample Prompt
 
