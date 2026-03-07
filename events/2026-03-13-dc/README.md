@@ -1,10 +1,12 @@
-# Workshop Variant 1: Mortgage Lender Use Cases
+# Workshop: Hands-on Devin Workshop — Washington, DC
 
 ## Event Details
 
 | | |
 |---|---|
-| **Variant Name** | Workshop Variant 1 |
+| **Date** | 2026-03-13 |
+| **Location** | Washington, DC |
+| **Host Organization** | *(customer)* |
 | **Focus** | Mortgage lending technology modernization |
 | **Duration** | ~4 hours (1 hour demo + 3 hours hands-on) |
 | **Facilitator** | Brian Smitches, brian.smitches@cognition.ai |
