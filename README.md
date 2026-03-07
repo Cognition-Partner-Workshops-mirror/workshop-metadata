@@ -83,8 +83,10 @@ workshop-metadata/
 │   │   └── README.md                      ← blank event template
 │   ├── 2026-03-09-oslo/
 │   │   └── README.md                      ← Oslo workshop (example event)
-│   └── workshop-variant-1/
-│       └── README.md                      ← Mortgage lender use cases (4 UCs)
+│   ├── 2026-03-09-san-francisco/
+│   │   └── README.md                      ← SF workshop: Framework Upgrade + CVE Remediation
+│   ├── 2026-03-13-dc/
+│   │   └── README.md                      ← DC event (4 UCs)
 └── shared/
     ├── repo-naming-convention.md
     ├── runtime-resources.md

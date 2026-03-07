@@ -17,9 +17,11 @@ events/
 ├── _template/
 │   └── README.md              ← Copy this to start a new event
 ├── 2026-03-09-oslo/
-│   └── README.md              ← Example: Oslo workshop
-├── workshop-variant-1/
-│   └── README.md              ← Mortgage Lender use cases (demo + hands-on)
+│   └── README.md              ← Oslo workshop
+├── 2026-03-09-san-francisco/
+│   └── README.md              ← SF workshop: Framework Upgrade + CVE Remediation
+├── 2026-03-13-dc/
+│   └── README.md              ← DC event (demo + hands-on)
 ├── workshop-variant-2/
 │   └── README.md              ← QE + Security Vulnerability Remediation
 └── YYYY-MM-DD-city-org/
