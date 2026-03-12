@@ -1,10 +1,10 @@
-# COBOL Modernization Workshop Arc
+# COBOL Modernization Workshop
 
 ## Event Details
 
 | | |
 |---|---|
-| **Variant Name** | COBOL Modernization Arc |
+| **Variant Name** | COBOL Modernization Workshop |
 | **Focus** | End-to-end COBOL mainframe modernization — from system understanding through migration execution |
 | **Duration** | ~4 hours (4 labs × 60 min + breaks) |
 | **Facilitator** | *(facilitator name and email)* |

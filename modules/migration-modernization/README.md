@@ -45,6 +45,6 @@ Challenges focused on language migrations, framework upgrades, architectural ref
 - MM9 is designed for repetitive upgrade scenarios across multiple services (parallel sessions)
 - MM10 combines MM1, MM2/MM3, and MM8 into one end-to-end modernization narrative
 - MM11 is an **enterprise demo module** — one-shot tech debt remediation with long-term reasoning and provable deliverables
-- MM12, MM13, MM14 form a **COBOL modernization arc**: understand → plan → safeguard, leading into MM1 (execute)
+- MM12, MM13, MM14 form a **COBOL modernization workshop**: understand → plan → safeguard, leading into MM1 (execute)
 - See the [Enterprise Demo Track](../../events/enterprise-demo-track/README.md) for a lab sequence using SEC6 + SEC7 + MM11
-- See the [COBOL Modernization Arc](../../events/cobol-modernization-arc/README.md) for a lab sequence using MM12 + MM13 + MM14 + MM1
+- See the [COBOL Modernization Workshop](../../events/cobol-modernization-workshop/README.md) for a lab sequence using MM12 + MM13 + MM14 + MM1

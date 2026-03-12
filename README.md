@@ -102,7 +102,7 @@ workshop-metadata/
 │   │   └── README.md                      ← SF workshop: Framework Upgrade + CVE Remediation
 │   ├── 2026-03-13-dc/
 │   │   └── README.md                      ← DC event (4 UCs)
-│   ├── cobol-modernization-arc/
+│   ├── cobol-modernization-workshop/
 │   │   └── README.md                      ← COBOL Modernization: Understand → Plan → Safeguard → Execute
 │   ├── enterprise-demo-track/
 │   │   └── README.md                      ← Enterprise demo: SAST + Orchestration + One-Shot

@@ -22,7 +22,7 @@ events/
 │   └── README.md              ← SF workshop: Framework Upgrade + CVE Remediation
 ├── 2026-03-13-dc/
 │   └── README.md              ← DC event (demo + hands-on)
-├── cobol-modernization-arc/
+├── cobol-modernization-workshop/
 │   └── README.md              ← COBOL Modernization: Understand → Plan → Safeguard → Execute
 ├── workshop-variant-2/
 │   └── README.md              ← QE + Security Vulnerability Remediation
