@@ -57,15 +57,15 @@ Four labs that build on each other in a progressive arc:
 - **Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
 - **Objective:** Produce a complete system inventory, data dictionary, dependency map, and hotspot report for a COBOL mainframe application
 
-#### What to Demo
+#### What to Try
 
-1. **Start with DeepWiki:** Open the repo's DeepWiki page and show how Devin auto-generates architecture documentation for COBOL — a language most modern developers cannot read
+1. **Start with DeepWiki:** Open the repo's DeepWiki page and explore how Devin auto-generates architecture documentation for COBOL — a language most modern developers cannot read
 2. **Run the inventory:** Have Devin catalog all 30+ programs, copybooks, JCL jobs, and sub-applications with classifications
-3. **Extract the data dictionary:** Show Devin parsing copybook PIC clauses into a business-friendly data dictionary
-4. **Map dependencies:** Show the call graph and data lineage — which programs call which, which jobs read/write which files
-5. **Identify hotspots:** Show the prioritized list of modules by complexity, risk, and business impact
+3. **Extract the data dictionary:** Try Devin parsing copybook PIC clauses into a business-friendly data dictionary
+4. **Map dependencies:** Explore the call graph and data lineage — which programs call which, which jobs read/write which files
+5. **Identify hotspots:** Review the prioritized list of modules by complexity, risk, and business impact
 
-#### Key Talking Points
+#### Key Takeaways
 
 - **"Time-to-understanding drops from months to hours"** — dependency maps and data lineage that would take weeks of SME interviews are produced in one session
 - **"Queryable knowledge surface"** — DeepWiki + the generated artifacts let anyone ask questions about the legacy system without reading COBOL
@@ -88,15 +88,15 @@ Four labs that build on each other in a progressive arc:
 - **Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
 - **Objective:** Produce a modernization blueprint with strategy options, domain decomposition, phased cutover plan, and risk register
 
-#### What to Demo
+#### What to Try
 
-1. **Show the context:** Reference the inventory and dependency map from Lab 1 (or have Devin build context from the codebase directly)
-2. **Strategy analysis:** Devin evaluates strangler, replatform, refactor, and rewrite options for each functional area — with trade-off reasoning, not just a blanket recommendation
-3. **Domain decomposition:** Devin identifies bounded contexts (account management, transaction processing, customer management, reporting, security) and maps them to candidate services
-4. **Cutover plan:** Show the phased sequence with dependencies, rollback strategies, and acceptance criteria
+1. **Set the context:** Reference the inventory and dependency map from Lab 1 (or have Devin build context from the codebase directly)
+2. **Strategy analysis:** Have Devin evaluate strangler, replatform, refactor, and rewrite options for each functional area — with trade-off reasoning, not just a blanket recommendation
+3. **Domain decomposition:** Have Devin identify bounded contexts (account management, transaction processing, customer management, reporting, security) and map them to candidate services
+4. **Cutover plan:** Review the phased sequence with dependencies, rollback strategies, and acceptance criteria
 5. **Risk register:** Walk through the top risks — tribal knowledge gaps, environment limitations, data coupling
 
-#### Key Talking Points
+#### Key Takeaways
 
 - **"Options, not just 'rewrite it'"** — Devin evaluates multiple strategies per subsystem; different domains may warrant different approaches
 - **"Domain decomposition from code, not whiteboards"** — the bounded contexts emerge from analyzing actual program dependencies and shared copybooks, not abstract architecture diagrams
@@ -119,15 +119,15 @@ Four labs that build on each other in a progressive arc:
 - **Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
 - **Objective:** Design and implement a test harness that validates migration correctness — golden files, differential testing, batch reconciliation, and contract tests
 
-#### What to Demo
+#### What to Try
 
-1. **Test strategy:** Devin produces a comprehensive test plan covering four testing dimensions (golden-file, differential, reconciliation, contract)
-2. **Golden-file capture:** Devin parses the ASCII data files using copybook layouts and produces structured JSON golden references
-3. **Test framework:** Show the generated parser utilities, comparison functions, and reconciliation checks — real, runnable code
+1. **Test strategy:** Have Devin produce a comprehensive test plan covering four testing dimensions (golden-file, differential, reconciliation, contract)
+2. **Golden-file capture:** Have Devin parse the ASCII data files using copybook layouts and produce structured JSON golden references
+3. **Test framework:** Inspect the generated parser utilities, comparison functions, and reconciliation checks — real, runnable code
 4. **Reconciliation checks:** Walk through specific checks per batch job: record counts, field totals, cross-reference integrity
 5. **Connect to Lab 4:** Explain how this harness will validate the Java migration in the next lab
 
-#### Key Talking Points
+#### Key Takeaways
 
 - **"Test before you migrate"** — building the safety net first is the single most important risk mitigation in legacy modernization
 - **"Golden files capture behavior without understanding every rule"** — you don't need to reverse-engineer every business rule to verify that the new system produces the same output
@@ -150,15 +150,15 @@ Four labs that build on each other in a progressive arc:
 - **Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
 - **Objective:** Translate selected COBOL programs to Java 17+ with parity tests that validate against the golden files and reconciliation checks from Lab 3
 
-#### What to Demo
+#### What to Try
 
 1. **Select a target:** Use the hotspot report from Lab 1 and the blueprint from Lab 2 to choose which program to migrate first
-2. **Translate:** Devin rewrites the COBOL program as Java 17+ with modern idioms
+2. **Translate:** Have Devin rewrite the COBOL program as Java 17+ with modern idioms
 3. **Validate:** Run the parity tests from Lab 3's test harness against the Java output
-4. **Document:** Devin produces migration notes covering translation decisions
-5. **Show the full loop:** Inventory (Lab 1) → Blueprint (Lab 2) → Test Harness (Lab 3) → Migration (Lab 4) → Validation (Lab 3 harness)
+4. **Document:** Have Devin produce migration notes covering translation decisions
+5. **Trace the full loop:** Inventory (Lab 1) → Blueprint (Lab 2) → Test Harness (Lab 3) → Migration (Lab 4) → Validation (Lab 3 harness)
 
-#### Key Talking Points
+#### Key Takeaways
 
 - **"Informed migration, not blind translation"** — by Lab 4, participants have a complete understanding of the system, a strategy, and a test harness before writing a single line of Java
 - **"The test harness catches what code review misses"** — field-level comparison detects subtle differences (decimal precision, trailing spaces, date formats) that human reviewers would miss
@@ -176,14 +176,14 @@ Four labs that build on each other in a progressive arc:
 
 ## Accelerated Variant
 
-For shorter workshops (2 hours), use [MM10 — Legacy Modernization Combined](../../modules/migration-modernization/MM10.md) which compresses the migration execution into a multi-phase demo alongside framework upgrade and data source migration. Pair with a 30-minute abbreviated version of Lab 1 (system understanding only) for context.
+For shorter workshops (2 hours), use [MM10 — Legacy Modernization Combined](../../modules/migration-modernization/MM10.md) which compresses the migration execution into a multi-phase hands-on alongside framework upgrade and data source migration. Pair with a 30-minute abbreviated version of Lab 1 (system understanding only) for context.
 
 | Duration | Recommended Format |
 |----------|-------------------|
 | 4+ hours | Full arc: Lab 1 → Lab 2 → Lab 3 → Lab 4 |
 | 3 hours | Labs 1, 3, 4 (skip planning, focus on understand → test → migrate) |
-| 2 hours | Abbreviated Lab 1 (30 min) + MM10 combined demo (60 min) + discussion |
-| 1 hour | Demo only: show pre-built artifacts from each lab phase |
+| 2 hours | Abbreviated Lab 1 (30 min) + MM10 combined hands-on (60 min) + discussion |
+| 1 hour | Walkthrough only: show pre-built artifacts from each lab phase |
 
 ---
 
@@ -219,7 +219,7 @@ Participants who finish early or want to go deeper may attempt:
 
 - **Audience:** Enterprise modernization teams with COBOL estates
 - **Narrative arc:** Understand (Lab 1) → Plan (Lab 2) → Safeguard (Lab 3) → Execute (Lab 4)
-- **Enterprise value props demonstrated:**
+- **Enterprise value props shown hands-on:**
   - Lab 1: Devin compresses months of discovery into hours — dependency maps, data dictionaries, and hotspot analysis without SME interviews
   - Lab 2: Devin produces decision-ready modernization blueprints with multiple strategy options, not just "rewrite everything"
   - Lab 3: Devin builds the migration safety net (tests, reconciliation) before any code changes — reducing migration risk
