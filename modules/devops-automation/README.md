@@ -14,6 +14,8 @@ Challenges focused on CI/CD, observability, PR review, failure resolution, relea
 | [DA6](DA6.md) | Incident Response & Triage | Intermediate | 45 min |
 | [DA7](DA7.md) | Configuration Management & Feature Flags | Intermediate | 45 min |
 | [DA8](DA8.md) | Platform-Conformant Microservice Decomposition | Advanced | 75 min |
+| [DA9](DA9.md) | Pod Remediation After Credential Rotation | Advanced | 60 min |
+| [DA10](DA10.md) | Volume Anomaly Detection | Intermediate to Advanced | 60 min |
 
 ## Repositories
 
@@ -26,6 +28,8 @@ Challenges focused on CI/CD, observability, PR review, failure resolution, relea
 | app_dotnet-angular-microservices | [DA8](DA8.md#app_dotnet-angular-microservices) (landing repo) |
 | platform-engineering-shared-services | [DA8](DA8.md#platform-engineering-shared-services) (context) |
 | app_dotnet-angular-monolith-iac | [DA8](DA8.md#app_dotnet-angular-monolith-iac) (context) |
+| uc-pod-remediation-credential-rotation | [DA9](DA9.md#uc-pod-remediation-credential-rotation) |
+| uc-volume-anomaly-detection | [DA10](DA10.md#uc-volume-anomaly-detection) |
 
 ## When to Use This Category
 
