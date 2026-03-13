@@ -1,0 +1,65 @@
+# Workshop: Framework Upgrades
+
+## Overview
+
+| | |
+|---|---|
+| **Focus** | Angular and Spring Boot version upgrades across multiple repositories at scale |
+| **Duration** | 1-2 hours |
+| **Audience** | Development teams, tech leads, enterprise platform teams |
+| **Key Modules** | [MM2](../../modules/migration-modernization/MM2.md), [MM9](../../modules/migration-modernization/MM9.md) |
+
+## Workshop Narrative
+
+Framework upgrades are one of the most common and repetitive tasks in enterprise software. This workshop demonstrates how Devin handles the same upgrade pattern applied consistently across different services — and how parallel sessions show enterprise scale.
+
+## Labs
+
+### Lab 1 — Spring Boot + Angular Parallel Upgrades
+
+- **Modules:** [MM2 — Framework Upgrade](../../modules/migration-modernization/MM2.md) + [MM9 — Repetitive Framework Upgrades](../../modules/migration-modernization/MM9.md)
+- **Repositories:**
+  - [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices) — Spring Boot 2.6.3 → 3.x
+  - [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops/app_petclinic-angular) — Angular version upgrade
+  - [ts-angular-realworld-example-app](https://github.com/Cognition-Partner-Workshops/ts-angular-realworld-example-app) — Angular version upgrade (parallel comparison)
+- **Objective:** Run parallel Devin sessions upgrading Angular and Spring Boot across multiple repos
+- **Duration:** 60 min
+
+#### Step 1: Get Started Fast (copy-paste this prompt into Devin)
+
+Run as **parallel sessions**:
+
+**Session A — Spring Boot:**
+> Upgrade uc-framework-upgrade-monolith-to-microservices from Java 11 + Spring Boot 2.6.3 to Java 17 + Spring Boot 3.2. Handle the javax to jakarta namespace migration, update Gradle build configuration, fix any deprecations, and ensure all tests pass. Document every breaking change. Open a PR.
+
+**Session B — Angular:**
+> Upgrade app_petclinic-angular to the latest Angular version. Handle breaking changes from the Angular update guide, update all dependencies, fix deprecated APIs, and ensure the app builds. Document every breaking change. Open a PR.
+
+#### Step 2: Level Up with AskDevin
+
+- *"What are the biggest risks when upgrading from Spring Boot 2 to 3?"*
+- *"What Angular version is app_petclinic-angular currently on? What breaking changes are expected?"*
+- *"Compare the upgrade paths for both Angular repos — are the same breaking changes expected?"*
+
+#### Step 3: Explore with DeepWiki
+
+Open each repo's DeepWiki page to understand the codebase before the upgrade. Focus on build configuration, dependency graphs, and deprecated patterns.
+
+#### Step 4: Review the PR and Give Feedback
+
+- Compare upgrade PRs side-by-side across repos
+- Ask Devin to generate a shared upgrade checklist or repeatable runbook
+
+**Target Outcomes:** Upgraded builds with passing tests, upgrade documentation, repeatable runbook
+
+## Repos Required
+
+- [ ] uc-framework-upgrade-monolith-to-microservices
+- [ ] app_petclinic-angular
+- [ ] ts-angular-realworld-example-app (optional, for parallel comparison)
+
+## Key Takeaways
+
+- **"Same prompt, multiple repos"** — the same upgrade task applied consistently across repos demonstrates enterprise scale
+- **"Parallel sessions save calendar time"** — upgrades that would take weeks sequentially can run simultaneously
+- **"Consistency across upgrades"** — Devin applies the same patterns and catches the same breaking changes

@@ -4,12 +4,13 @@ Central index for the **Cognition-Partner-Workshops** GitHub org. This repo cont
 
 - **Repo Catalog** — inventory of all repositories with cross-references to challenges they support
 - **Modular Challenges** — self-contained workshop tasks organized by use case category
-- **Event Templates** — composable event definitions that pull challenges into a workshop agenda
+- **Workshops** — reusable workshop templates that compose challenges into structured lab sequences
+- **Events** — specific workshop instances with date, location, audience, and facilitator overrides
 - **Shared Resources** — naming conventions, facilitator guides, runtime resource docs
 
 ## Information Architecture
 
-This repo uses a **bridge approach** to support two discovery routes:
+This repo uses a **layered approach** with three discovery routes:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -17,17 +18,21 @@ This repo uses a **bridge approach** to support two discovery routes:
 │                                                              │
 │   "I need to build a 4-hour workshop on security + migration"│
 │                                                              │
-│   Route 1: Browse by Use Case                                │
+│   Route 1: Browse by Workshop                                │
+│   workshops/ → pick a workshop template → customize for event│
+│                                                              │
+│   Route 2: Browse by Use Case                                │
 │   modules/ → pick category → pick challenges → see repos     │
 │                                                              │
-│   Route 2: Browse by Repo                                    │
+│   Route 3: Browse by Repo                                    │
 │   catalog/repos.md → see what challenges each repo supports  │
 │                                                              │
-│   Compose: events/ → assemble selected challenges into agenda│
+│   Compose: events/ → instantiate a workshop for a specific   │
+│            date, location, and audience                       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
-**Challenges are the reusable atoms.** Repos are the materials they reference. An event is a composition of challenges.
+**Modules are the reusable atoms.** Workshops compose modules into structured lab sequences. Events instantiate workshops for specific audiences. Repos are the materials they all reference.
 
 ## Directory Structure
 
@@ -93,24 +98,28 @@ workshop-metadata/
 │   │   └── DA8.md                          ← Platform-Conformant Microservice Decomposition
 │   └── devin-features/
 │       └── README.md                      ← Devin-specific activities checklist
-├── events/
-│   ├── README.md                          ← how to compose an event
+├── workshops/                             ← reusable workshop templates
+│   ├── README.md                          ← workshop vs. event explanation + catalog
+│   ├── legacy-modernization/              ← COBOL/legacy → modern tech stack
+│   ├── framework-upgrades/                ← Angular + Spring Boot upgrades at scale
+│   ├── data-source-migration/             ← Legacy data warehouse → modern schema
+│   ├── security-compliance/               ← CVE remediation, SAST, shift-left
+│   ├── platform-microservice-decomposition/ ← Monolith → platform-conformant microservices
+│   ├── agentic-ai/                        ← Multi-agent systems, document processing
+│   ├── feature-development/               ← New features on existing applications
+│   └── quality-engineering/               ← Testing, documentation, code review
+├── events/                                ← specific workshop instances
+│   ├── README.md                          ← how to create an event from a workshop
 │   ├── _template/
 │   │   └── README.md                      ← blank event template
-│   ├── 2026-03-09-oslo/
-│   │   └── README.md                      ← Oslo workshop (example event)
-│   ├── 2026-03-09-san-francisco/
-│   │   └── README.md                      ← SF workshop: Framework Upgrade + CVE Remediation
-│   ├── 2026-03-13-dc/
-│   │   └── README.md                      ← DC event (4 UCs)
-│   ├── cobol-modernization-workshop/
-│   │   └── README.md                      ← COBOL Modernization: Understand → Plan → Safeguard → Execute
-│   ├── enterprise-demo-track/
-│   │   └── README.md                      ← Enterprise demo: SAST + Orchestration + One-Shot
-│   ├── platform-microservice-decomposition/
-│   │   └── README.md                      ← Platform-Conformant Microservice Decomposition (DA8)
-│   └── workshop-variant-2/
-│       └── README.md                      ← QE + Security Vulnerability Remediation
+│   ├── 2026-03-09-oslo/                   ← Oslo workshop
+│   ├── 2026-03-09-san-francisco/          ← SF workshop
+│   ├── 2026-03-13-dc/                     ← DC workshop (4 customer UCs)
+│   ├── dc-2/                              ← DC session 2 (agentic AI)
+│   ├── cobol-modernization-workshop/      ← Based on workshops/legacy-modernization
+│   ├── enterprise-demo-track/             ← Based on workshops/security-compliance
+│   ├── platform-microservice-decomposition/ ← Based on workshops/platform-microservice-decomposition
+│   └── workshop-variant-2/                ← Based on workshops/quality-engineering + security-compliance
 └── shared/
     ├── repo-naming-convention.md
     ├── runtime-resources.md
@@ -119,10 +128,11 @@ workshop-metadata/
 
 ## Quick Start for Facilitators
 
-1. **Pick challenges** from `modules/` that match your audience and time budget
-2. **Check repo requirements** in `catalog/repos.md` to see what needs to be set up
-3. **Copy `events/_template/`** and fill in your event details, referencing challenge IDs
-4. **Review `shared/facilitator-guide.md`** for runtime setup and logistics
+1. **Browse workshops** in `workshops/` to find a pre-built workshop that matches your audience
+2. **Or pick challenges** from `modules/` to build a custom workshop from scratch
+3. **Check repo requirements** in `catalog/repos.md` to see what needs to be set up
+4. **Copy `events/_template/`** and fill in your event details, referencing the workshop(s)
+5. **Review `shared/facilitator-guide.md`** for runtime setup and logistics
 
 ## Contributing
 
