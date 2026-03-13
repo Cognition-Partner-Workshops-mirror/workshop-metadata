@@ -1,12 +1,19 @@
-# Event Composition
+# Events
 
-This directory contains event-specific workshop configurations. Each event is a composition of challenges from `modules/` assembled into a time-boxed agenda.
+This directory contains event-specific workshop instances. Each event links to one or more reusable workshops from `workshops/`, adds event-specific details (date, location, audience), and can override any workshop content for that specific instance.
+
+## Workshop vs. Event
+
+- **Workshops** (`workshops/`) are reusable reference templates — they define the labs, modules, repos, and structure.
+- **Events** (`events/`) are specific instances — they reference workshops and add facilitator details, audience context, and overrides.
+
+See [`workshops/README.md`](../workshops/README.md) for available workshop templates.
 
 ## How to Create a New Event
 
-1. Copy `_template/` to a new directory named `YYYY-MM-DD-location-org/`
-2. Edit the `README.md` to fill in event details
-3. Select challenges from `modules/` and list them in the agenda
+1. Copy `_template/` to a new directory named `YYYY-MM-DD-city/`
+2. Reference the workshop(s) this event is based on (from `workshops/`)
+3. Edit the `README.md` to fill in event details and any overrides
 4. Specify which repos need to be set up on Devin's machine
 5. Note any runtime resources that need to be provisioned
 
@@ -23,12 +30,16 @@ events/
 ├── 2026-03-13-dc/
 │   └── README.md              ← DC event (demo + hands-on)
 ├── cobol-modernization-workshop/
-│   └── README.md              ← COBOL Modernization: Understand → Plan → Safeguard → Execute
+│   └── README.md              ← Based on workshops/legacy-modernization
+├── dc-2/
+│   └── README.md              ← Based on workshops/agentic-ai
+├── enterprise-demo-track/
+│   └── README.md              ← Based on workshops/security-compliance
 ├── workshop-variant-2/
-│   └── README.md              ← QE + Security Vulnerability Remediation
+│   └── README.md              ← Based on workshops/quality-engineering + workshops/security-compliance
 ├── platform-microservice-decomposition/
-│   └── README.md              ← Platform-Conformant Microservice Decomposition (DA8)
-└── YYYY-MM-DD-city-org/
+│   └── README.md              ← Based on workshops/platform-microservice-decomposition
+└── YYYY-MM-DD-city/
     └── README.md              ← Your new event
 ```
 

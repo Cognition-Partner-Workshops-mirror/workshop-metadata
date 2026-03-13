@@ -1,0 +1,59 @@
+# Workshop: Data Source Migration
+
+## Overview
+
+| | |
+|---|---|
+| **Focus** | Rewriting a legacy data source to a modern schema and reconnecting the application with comprehensive testing |
+| **Duration** | 1-2 hours |
+| **Audience** | Database engineers, backend developers, data migration teams |
+| **Key Modules** | [MM8](../modules/migration-modernization/MM8.md) |
+
+## Workshop Narrative
+
+Data source migration is not just schema work — the application must be rewired and the entire pipeline validated. This workshop covers both parts: (1) rewriting the legacy data source to a modern schema, and (2) updating the application to use the new data source, with testing at every step.
+
+## Labs
+
+### Lab 1 — Data Source Rewrite + App Reconnection + Testing
+
+- **Module:** [MM8 — Data Source Migration](../modules/migration-modernization/MM8.md)
+- **Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops/uc-data-source-migration-legacy-to-modern)
+- **Objective:** Transform a legacy data warehouse (all-VARCHAR, denormalized) to a modern normalized schema, rewire the app, and validate with comprehensive tests
+- **Duration:** 60 min
+
+#### Step 1: Get Started Fast (copy-paste this prompt into Devin)
+
+> Review the legacy CDW schema in uc-data-source-migration-legacy-to-modern. This loan management app reads from denormalized tables where all columns are VARCHAR.
+>
+> Part 1 — Rewrite the data source: Create modern JPA entities matching data/modern-schema/modern_tables.sql with proper types (LocalDate, BigDecimal, Long, enums). Write a migration service that transforms legacy data per data/mappings/column_mappings.md. Add data reconciliation tests that verify record counts and field values.
+>
+> Part 2 — Reconnect the app: Update LoanService.java to use modern repositories. Add golden-file validation tests that capture API responses before and assert they match after.
+>
+> Create a `TESTING_REPORT.md` documenting what tests were added and what they validate. Open a PR.
+
+#### Step 2: Level Up with AskDevin
+
+- *"What are the riskiest data type conversions — VARCHAR dates to LocalDate, amounts to BigDecimal? What edge cases could cause data loss?"*
+- *"How should we validate that no records were lost or corrupted? What reconciliation checks should we run?"*
+- *"What's the best way to implement a dual-read feature flag for safe rollout?"*
+
+#### Step 3: Explore with DeepWiki
+
+Open the repo's DeepWiki page to understand the domain model and API contracts. Try adding dual-read feature flags, data reconciliation dashboards, or complete data lineage maps.
+
+#### Step 4: Review the PR and Give Feedback
+
+Focus on the testing story: data transformation correctness, reconciliation tests, golden-file validation, and app reconnection completeness.
+
+**Target Outcomes:** Modern JPA entities, data migration service, rewired service layer, golden-file validation, reconciliation tests, testing report
+
+## Repos Required
+
+- [ ] uc-data-source-migration-legacy-to-modern
+
+## Key Takeaways
+
+- **"Rewrite + reconnect + test"** — data source migration requires schema work, app rewiring, and pipeline validation
+- **"Testing proves the migration didn't break anything"** — golden-file validation, reconciliation checks, and type-conversion tests
+- **"Feature flags enable safe rollout"** — dual-read mode lets you switch between data sources at runtime
