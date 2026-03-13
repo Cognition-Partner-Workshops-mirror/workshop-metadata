@@ -7,7 +7,7 @@
 | **Focus** | Building new features on existing applications — requirements through implementation and testing |
 | **Duration** | 1-2 hours |
 | **Audience** | Full-stack developers, product engineers, development teams |
-| **Key Modules** | [FD1](../modules/feature-development/FD1.md), [FD2](../modules/feature-development/FD2.md), [FD6](../modules/feature-development/FD6.md), [FD7](../modules/feature-development/FD7.md), [FD8](../modules/feature-development/FD8.md) |
+| **Key Modules** | [FD1](../../modules/feature-development/FD1.md), [FD2](../../modules/feature-development/FD2.md), [FD6](../../modules/feature-development/FD6.md), [FD7](../../modules/feature-development/FD7.md), [FD8](../../modules/feature-development/FD8.md) |
 
 ## Workshop Narrative
 
@@ -17,7 +17,7 @@ Feature development is the most common daily activity for development teams. Thi
 
 ### Lab 1 — Full-Stack CRUD Feature
 
-- **Module:** [FD6 — New Feature Development](../modules/feature-development/FD6.md)
+- **Module:** [FD6 — New Feature Development](../../modules/feature-development/FD6.md)
 - **Repositories:**
   - [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet) — React + Node.js full-stack application
   - [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops/uc-data-source-migration-legacy-to-modern) — Spring Boot loan service (alternative)

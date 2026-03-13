@@ -7,7 +7,7 @@
 | **Focus** | CVE remediation, vulnerability scanning, SAST, shift-left security practices |
 | **Duration** | 1-2 hours |
 | **Audience** | Security engineers, DevSecOps teams, compliance-focused developers |
-| **Key Modules** | [SEC1](../modules/security/SEC1.md), [SEC2](../modules/security/SEC2.md), [SEC3](../modules/security/SEC3.md), [SEC4](../modules/security/SEC4.md), [SEC5](../modules/security/SEC5.md), [SEC6](../modules/security/SEC6.md), [SEC7](../modules/security/SEC7.md) |
+| **Key Modules** | [SEC1](../../modules/security/SEC1.md), [SEC2](../../modules/security/SEC2.md), [SEC3](../../modules/security/SEC3.md), [SEC4](../../modules/security/SEC4.md), [SEC5](../../modules/security/SEC5.md), [SEC6](../../modules/security/SEC6.md), [SEC7](../../modules/security/SEC7.md) |
 
 ## Workshop Narrative
 
@@ -17,7 +17,7 @@ Security remediation is often a backlog item that never gets prioritized. This w
 
 ### Lab 1 — CVE Remediation & Dependency Upgrades
 
-- **Modules:** [SEC1 — Upgrade Dependencies](../modules/security/SEC1.md) + [SEC2 — Remediate Vulnerabilities](../modules/security/SEC2.md)
+- **Modules:** [SEC1 — Upgrade Dependencies](../../modules/security/SEC1.md) + [SEC2 — Remediate Vulnerabilities](../../modules/security/SEC2.md)
 - **Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
 - **Objective:** Scan a Spring Boot app for dependency CVEs, remediate the critical findings, and verify the fixes
 - **Duration:** 60 min
@@ -46,7 +46,7 @@ Open the repo's DeepWiki page. Try adding SBOM generation, GitHub Actions securi
 
 ### Lab 2 — Shift-Left Security & SAST
 
-- **Modules:** [SEC3 — Shift Left Security](../modules/security/SEC3.md) + [SEC6 — Event-Driven SAST Remediation](../modules/security/SEC6.md)
+- **Modules:** [SEC3 — Shift Left Security](../../modules/security/SEC3.md) + [SEC6 — Event-Driven SAST Remediation](../../modules/security/SEC6.md)
 - **Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
 - **Objective:** Add automated security scanning to the CI pipeline and remediate SAST findings
 - **Duration:** 45 min

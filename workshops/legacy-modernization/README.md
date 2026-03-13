@@ -7,7 +7,7 @@
 | **Focus** | Modernizing legacy applications (COBOL, mainframe) to modern tech stacks with comprehensive testing |
 | **Duration** | 2-4 hours (configurable — see Duration Variants below) |
 | **Audience** | Enterprise architects, modernization teams, application portfolio managers |
-| **Key Modules** | [MM1](../modules/migration-modernization/MM1.md), [MM10](../modules/migration-modernization/MM10.md), [MM12](../modules/migration-modernization/MM12.md), [MM13](../modules/migration-modernization/MM13.md), [MM14](../modules/migration-modernization/MM14.md) |
+| **Key Modules** | [MM1](../../modules/migration-modernization/MM1.md), [MM10](../../modules/migration-modernization/MM10.md), [MM12](../../modules/migration-modernization/MM12.md), [MM13](../../modules/migration-modernization/MM13.md), [MM14](../../modules/migration-modernization/MM14.md) |
 
 ## Workshop Narrative
 
@@ -24,7 +24,7 @@ Each phase's output feeds the next, mirroring how real enterprise modernization 
 
 ### Lab 1 — System Understanding & Reverse Engineering
 
-- **Module:** [MM12 — COBOL System Understanding](../modules/migration-modernization/MM12.md)
+- **Module:** [MM12 — COBOL System Understanding](../../modules/migration-modernization/MM12.md)
 - **Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
 - **Objective:** Produce a complete system inventory, data dictionary, dependency map, and hotspot report
 - **Duration:** 60 min
@@ -53,7 +53,7 @@ Open the repo's DeepWiki page to see how Devin auto-generates architecture docum
 
 ### Lab 2 — Migration Planning & Domain Decomposition
 
-- **Module:** [MM13 — COBOL Migration Planning](../modules/migration-modernization/MM13.md)
+- **Module:** [MM13 — COBOL Migration Planning](../../modules/migration-modernization/MM13.md)
 - **Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
 - **Objective:** Produce a modernization blueprint with strategy options, domain decomposition, phased cutover plan, and risk register
 - **Duration:** 60 min
@@ -82,7 +82,7 @@ Open the repo's DeepWiki page to understand domain structure and coupling patter
 
 ### Lab 3 — Migration Test Harness & Validation Strategy
 
-- **Module:** [MM14 — Migration Test Harness](../modules/migration-modernization/MM14.md)
+- **Module:** [MM14 — Migration Test Harness](../../modules/migration-modernization/MM14.md)
 - **Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
 - **Objective:** Design and implement a test harness — golden files, differential testing, batch reconciliation, and contract tests
 - **Duration:** 60 min
@@ -111,7 +111,7 @@ Open the repo's DeepWiki page to understand data file layouts and batch processi
 
 ### Lab 4 — Code Migration: COBOL → Java
 
-- **Module:** [MM1 — COBOL to Java](../modules/migration-modernization/MM1.md)
+- **Module:** [MM1 — COBOL to Java](../../modules/migration-modernization/MM1.md)
 - **Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
 - **Objective:** Translate selected COBOL programs to Java 17+ with parity tests validating against golden files
 - **Duration:** 60 min

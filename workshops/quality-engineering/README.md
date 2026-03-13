@@ -7,7 +7,7 @@
 | **Focus** | Testing, documentation, code review automation, and quality assurance |
 | **Duration** | 2-4 hours |
 | **Audience** | QA engineers, test leads, development teams focused on quality |
-| **Key Modules** | [QE1](../modules/quality-engineering/QE1.md) through [QE9](../modules/quality-engineering/QE9.md) |
+| **Key Modules** | [QE1](../../modules/quality-engineering/QE1.md) through [QE9](../../modules/quality-engineering/QE9.md) |
 
 ## Workshop Narrative
 
@@ -17,7 +17,7 @@ Quality engineering encompasses everything from unit testing to E2E testing, fro
 
 ### Lab 1 — Unit & Integration Testing
 
-- **Modules:** [QE2 — Unit Testing](../modules/quality-engineering/QE2.md) + [QE3 — End-to-End Testing](../modules/quality-engineering/QE3.md)
+- **Modules:** [QE2 — Unit Testing](../../modules/quality-engineering/QE2.md) + [QE3 — End-to-End Testing](../../modules/quality-engineering/QE3.md)
 - **Repository:** Any application repo
 - **Objective:** Generate comprehensive unit tests and integration tests for an existing codebase
 - **Duration:** 60 min
@@ -46,7 +46,7 @@ Open the repo's DeepWiki page. Try generating property-based tests, mutation tes
 
 ### Lab 2 — Code Review & Documentation
 
-- **Modules:** [QE5 — Code Review Automation](../modules/quality-engineering/QE5.md) + [QE4 — Inline Documentation](../modules/quality-engineering/QE4.md)
+- **Modules:** [QE5 — Code Review Automation](../../modules/quality-engineering/QE5.md) + [QE4 — Inline Documentation](../../modules/quality-engineering/QE4.md)
 - **Repository:** Any application repo
 - **Objective:** Automate code review and generate documentation for an existing codebase
 - **Duration:** 45 min

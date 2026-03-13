@@ -7,7 +7,7 @@
 | **Focus** | Monolith-to-microservices decomposition with IaC conformance on Kubernetes |
 | **Duration** | 1.5-2 hours |
 | **Audience** | DevOps, platform engineering, solution architects |
-| **Key Modules** | [DA8](../modules/devops-automation/DA8.md) |
+| **Key Modules** | [DA8](../../modules/devops-automation/DA8.md) |
 
 ## Workshop Narrative
 
@@ -17,7 +17,7 @@ Decomposing a monolith is not just about extracting code — the new service mus
 
 ### Lab 1 — Decompose a Bounded Context into a Platform-Conformant Microservice
 
-- **Module:** [DA8 — Platform-Conformant Microservice Decomposition](../modules/devops-automation/DA8.md)
+- **Module:** [DA8 — Platform-Conformant Microservice Decomposition](../../modules/devops-automation/DA8.md)
 - **Repositories:**
   - [app_dotnet-angular-monolith](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith) — .NET 8 + Angular 17 monolith (source)
   - [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith-iac) — Helm chart, Dockerfile, ArgoCD patterns (context)

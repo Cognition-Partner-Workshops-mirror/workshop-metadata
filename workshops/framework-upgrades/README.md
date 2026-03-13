@@ -7,7 +7,7 @@
 | **Focus** | Angular and Spring Boot version upgrades across multiple repositories at scale |
 | **Duration** | 1-2 hours |
 | **Audience** | Development teams, tech leads, enterprise platform teams |
-| **Key Modules** | [MM2](../modules/migration-modernization/MM2.md), [MM9](../modules/migration-modernization/MM9.md) |
+| **Key Modules** | [MM2](../../modules/migration-modernization/MM2.md), [MM9](../../modules/migration-modernization/MM9.md) |
 
 ## Workshop Narrative
 
@@ -17,7 +17,7 @@ Framework upgrades are one of the most common and repetitive tasks in enterprise
 
 ### Lab 1 — Spring Boot + Angular Parallel Upgrades
 
-- **Modules:** [MM2 — Framework Upgrade](../modules/migration-modernization/MM2.md) + [MM9 — Repetitive Framework Upgrades](../modules/migration-modernization/MM9.md)
+- **Modules:** [MM2 — Framework Upgrade](../../modules/migration-modernization/MM2.md) + [MM9 — Repetitive Framework Upgrades](../../modules/migration-modernization/MM9.md)
 - **Repositories:**
   - [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices) — Spring Boot 2.6.3 → 3.x
   - [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops/app_petclinic-angular) — Angular version upgrade
