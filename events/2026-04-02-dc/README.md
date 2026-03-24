@@ -15,7 +15,7 @@
 This event features 4 structured labs showcasing Pricing BTO agentic AI use cases — automated remediation, document review automation, BDD test generation, and volume anomaly detection:
 
 ### Lab 1 — Automated Remediation of Pod Failures After Password Rotations (60 min)
-- **Module:** [Pod Remediation After Credential Rotation](../../modules/devops-automation/pod-remediation-credential-rotation.md)
+- **Module:** [Pod Remediation After Credential Rotation](../../modules/observability-sre/pod-remediation-credential-rotation.md)
 - **Repository:** [uc-pod-remediation-credential-rotation](https://github.com/Cognition-Partner-Workshops/uc-pod-remediation-credential-rotation)
 - **Objective:** Explore a multi-agent Python system (4 agents: rotation monitor, failure detector, approval workflow, remediation orchestrator) that automates detection, approval, and remediation of pod failures caused by credential rotations — wire the agents into an end-to-end pipeline and add simulation mode
 
@@ -62,7 +62,7 @@ Once Devin opens a PR from step 1, practice the feedback loop:
 - **Watch Devin respond** to your PR comment and push a fix — this is how real teams work with Devin
 - Try leaving both general comments and inline code comments to see how Devin handles each
 
-See the full challenge details for [Pod Remediation After Credential Rotation](../../modules/devops-automation/pod-remediation-credential-rotation.md) for more ideas.
+See the full challenge details for [Pod Remediation After Credential Rotation](../../modules/observability-sre/pod-remediation-credential-rotation.md) for more ideas.
 
 - **Key Takeaways:**
   - Multi-agent orchestration with human-in-the-loop approval gates
@@ -78,7 +78,7 @@ See the full challenge details for [Pod Remediation After Credential Rotation](.
   - PR with review comments and Devin's responses
 
 ### Lab 2 — Automating Document Review in PFDC Using Fred AI (45 min)
-- **Module:** [Document Review Automation](../../modules/quality-engineering/document-review-automation.md)
+- **Module:** [Document Review Automation](../../modules/technical-documentation/document-review-automation.md)
 - **Repository:** [uc-document-review-automation](https://github.com/Cognition-Partner-Workshops/uc-document-review-automation)
 - **Objective:** Work with a multi-agent document review system (4 agents: extraction, comparison, decision, audit) — build an end-to-end review pipeline and add a new comparator strategy
 
@@ -122,7 +122,7 @@ Once Devin opens a PR from step 1, practice the feedback loop:
 - **Leave a comment on the PR** asking Devin to fix something (e.g., *"Add a batch processing CLI that reads a directory of documents and outputs a comparison report"* or *"The DateComparator should handle two-digit years"*)
 - **Watch Devin respond** to your PR comment and push a fix — this is how real teams work with Devin
 
-See the full challenge details for [Document Review Automation](../../modules/quality-engineering/document-review-automation.md) for more ideas.
+See the full challenge details for [Document Review Automation](../../modules/technical-documentation/document-review-automation.md) for more ideas.
 
 - **Key Takeaways:**
   - Multi-step agentic reasoning across unstructured documents
@@ -138,7 +138,7 @@ See the full challenge details for [Document Review Automation](../../modules/qu
   - PR with review comments and Devin's responses
 
 ### Lab 3 — BDD Test Case Generation for REST APIs (60 min)
-- **Module:** [BDD Test Generation](../../modules/quality-engineering/bdd-test-generation.md)
+- **Module:** [BDD Test Generation](../../modules/testing-qa/bdd-test-generation.md)
 - **Repository:** [uc-bdd-test-generation-rest-api](https://github.com/Cognition-Partner-Workshops/uc-bdd-test-generation-rest-api)
 - **Objective:** Generate BDD test cases from a REST API and produce executable Cucumber tests — explore the existing framework, then extend it with new feature files, a new API resource, and data-driven tests
 
@@ -178,7 +178,7 @@ Once Devin opens a PR from step 1, practice the feedback loop:
 - **Leave a comment on the PR** asking Devin to fix something (e.g., *"Add data-driven scenarios using Cucumber Scenario Outlines with Examples tables"* or *"The step definitions should use more descriptive method names"*)
 - **Watch Devin respond** to your PR comment and push a fix — this is how real teams work with Devin
 
-See the full challenge details for [BDD Test Generation](../../modules/quality-engineering/bdd-test-generation.md) for more ideas.
+See the full challenge details for [BDD Test Generation](../../modules/testing-qa/bdd-test-generation.md) for more ideas.
 
 - **Key Takeaways:**
   - BDD bridges the gap between business requirements and executable tests
@@ -194,7 +194,7 @@ See the full challenge details for [BDD Test Generation](../../modules/quality-e
   - PR with review comments and Devin's responses
 
 ### Lab 4 — Volume-Based Anomaly Detection for Early Issue Identification (60 min)
-- **Module:** [Volume Anomaly Detection](../../modules/devops-automation/volume-anomaly-detection.md)
+- **Module:** [Volume Anomaly Detection](../../modules/observability-sre/volume-anomaly-detection.md)
 - **Repository:** [uc-volume-anomaly-detection](https://github.com/Cognition-Partner-Workshops/uc-volume-anomaly-detection)
 - **Objective:** Work with a multi-agent anomaly detection framework (4 agents: anomaly detection, service health, recommendation engine, incident insight) — build an end-to-end detection pipeline and add a new detector
 
@@ -239,7 +239,7 @@ Once Devin opens a PR from step 1, practice the feedback loop:
 - **Leave a comment on the PR** asking Devin to fix something (e.g., *"Add a CLI entrypoint that processes the sample CSV data and prints detected anomalies"* or *"The baseline calculation should handle missing data points gracefully"*)
 - **Watch Devin respond** to your PR comment and push a fix — this is how real teams work with Devin
 
-See the full challenge details for [Volume Anomaly Detection](../../modules/devops-automation/volume-anomaly-detection.md) for more ideas.
+See the full challenge details for [Volume Anomaly Detection](../../modules/observability-sre/volume-anomaly-detection.md) for more ideas.
 
 - **Key Takeaways:**
   - Multi-algorithm anomaly detection (statistical Z-score + seasonal decomposition)
