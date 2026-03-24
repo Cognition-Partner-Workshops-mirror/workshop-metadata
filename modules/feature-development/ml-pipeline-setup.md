@@ -1,0 +1,102 @@
+# ML Pipeline Setup
+
+## Repositories
+
+- [app_timesheet](#app_timesheet)
+- [uc-data-source-migration-legacy-to-modern](#uc-data-source-migration-legacy-to-modern)
+
+---
+
+## Challenge
+
+Add a machine learning component to an existing application — build training and inference pipelines with proper versioning and reproducibility, such as time prediction in the timesheet app or data quality scoring in the data migration pipeline.
+
+## Target Outcomes
+
+- ML pipeline with training, evaluation, and inference stages
+- Model versioning and experiment tracking setup
+- Reproducible training configuration (requirements, data splits, hyperparameters)
+- Integration with the existing application (REST endpoint or CLI entry point)
+- PR with ML pipeline code and documentation
+
+## What Participants Will Learn
+
+- How Devin scaffolds ML pipelines that integrate with existing application architectures
+- How Devin handles ML-specific dependency management and environment setup
+- How Devin structures training, evaluation, and inference as separable pipeline stages
+- The importance of specifying data sources and model requirements in prompts
+
+## Devin Features Exercised
+
+- ML framework knowledge and pipeline architecture
+- Dependency management and environment configuration
+- Codebase analysis for integration points
+- PR creation with technical documentation
+
+## Difficulty
+
+Advanced
+
+## Estimated Time
+
+75 minutes
+
+## Notes
+
+- Participants should review the existing codebase first using Ask Devin to understand data schemas and integration points
+- Good follow-up: pair with the Model Evaluation & Testing module for a complete ML workflow
+- Encourage participants to iterate on the prompt — specifying model type, input features, and target variable produces better results
+
+---
+
+## <a id="app_timesheet"></a>app_timesheet
+
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+
+React + Node.js/Express timesheet application with historical work entry data suitable for building a task duration prediction model.
+
+### Step 1: Paste into Devin
+
+> Add a machine learning pipeline to app_timesheet that predicts task duration based on historical timesheet data. Create a Python-based training pipeline under `ml/` that: (1) extracts features from the existing work entries (client, project type, description keywords, day of week), (2) trains a regression model to predict hours spent, (3) serializes the trained model, and (4) exposes a REST endpoint at GET /api/predict-duration that accepts task metadata and returns an estimated duration. Include a requirements.txt, a training script with configurable hyperparameters, and a README documenting the pipeline. Open a PR.
+
+### Step 2: Research with Ask Devin
+
+- *"What data fields are available in the app_timesheet work entries table? Which fields would be useful features for predicting task duration?"*
+- *"What is the backend architecture of app_timesheet? How should a Python ML service integrate with the existing Node.js/Express server?"*
+
+### Step 3 (Optional): Read the DeepWiki
+
+Open the repo's DeepWiki page to understand the data model and API structure. Identify which historical data fields are most relevant for training a duration prediction model.
+
+### Step 4 (Optional): Review & Give Feedback
+
+- **Review the diff** — does the pipeline include proper train/test splitting and feature engineering?
+- **Leave a comment** asking Devin to add input validation on the prediction endpoint and handle edge cases (e.g., missing features)
+- **Watch Devin respond** and push a follow-up commit
+
+---
+
+## <a id="uc-data-source-migration-legacy-to-modern"></a>uc-data-source-migration-legacy-to-modern
+
+**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops/uc-data-source-migration-legacy-to-modern)
+
+Spring Boot loan service with legacy and modern schemas — ideal for building a data quality scoring model that validates migrated records.
+
+### Step 1: Paste into Devin
+
+> Add a data quality scoring pipeline to uc-data-source-migration-legacy-to-modern. Create a Python-based ML pipeline under `ml/` that: (1) reads loan and borrower records from the H2 database or exported CSV, (2) engineers features for data quality (completeness, format consistency, value range checks, cross-field validation), (3) trains an anomaly detection model to flag potentially corrupted or incorrectly migrated records, and (4) outputs a scored report of records ranked by quality risk. Include a training script, requirements.txt, sample output report, and a README explaining the scoring methodology. Open a PR.
+
+### Step 2: Research with Ask Devin
+
+- *"What are the key differences between the legacy CDW schema and the modern schema in uc-data-source-migration-legacy-to-modern? What data quality issues are most common during migration?"*
+- *"What transformations happen in the LoanService translation layer? Which transformations are most likely to introduce data quality issues?"*
+
+### Step 3 (Optional): Read the DeepWiki
+
+Open the repo's DeepWiki page to understand the legacy-to-modern field mappings in `data/mappings/column_mappings.md`. These transformations define where data quality issues are most likely to occur.
+
+### Step 4 (Optional): Review & Give Feedback
+
+- **Review the diff** — does the quality scoring model account for the specific transformation rules (date parsing, amount parsing, status code expansion)?
+- **Leave a comment** asking Devin to add a threshold configuration so users can tune sensitivity of the anomaly detection
+- **Watch Devin respond** and push a follow-up commit
