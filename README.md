@@ -1,6 +1,6 @@
 # Workshop Metadata
 
-Central index for the **Cognition-Partner-Workshops** GitHub org. This repo contains:
+Central index for the **Cognition-Partner-Workshops-mirror** GitHub org. This repo contains:
 
 - **Repo Catalog** — inventory of all repositories with cross-references to challenges they support
 - **Modular Challenges** — self-contained workshop tasks organized by SDLC domain
@@ -148,30 +148,20 @@ workshop-metadata/
 │   │   └── oracle-forms-to-java.md
 │   └── devin-features/
 │       └── README.md                      ← Devin-specific activities checklist
-├── workshops/                             ← reusable workshop templates
+├── workshops/                             ← retained specialized workshop templates
 │   ├── README.md
 │   ├── legacy-modernization/
 │   ├── framework-upgrades/
 │   ├── data-source-migration/
 │   ├── security-compliance/
-│   ├── platform-microservice-decomposition/
-│   ├── dotnet-cloud-native-modernization/
-│   ├── agentic-ai/
-│   ├── feature-development/
-│   └── quality-engineering/
-├── events/                                ← specific workshop instances
+│   └── platform-microservice-decomposition/
+├── events/                                ← active event instances
 │   ├── README.md
-│   ├── _template/
-│   ├── 2026-03-09-oslo/
-│   ├── 2026-03-09-san-francisco/
-│   ├── 2026-04-dc/
-│   ├── 2026-03-17-zurich/
-│   ├── 2026-03-25-remote-workshop/
-│   ├── dc-2/
+│   ├── 2026-05-07-workshop/
 │   ├── cobol-modernization-workshop/
 │   ├── enterprise-demo-track/
-│   ├── platform-microservice-decomposition/
-│   └── workshop-variant-2/
+│   ├── oracle-forms-modernization-workshop/
+│   └── platform-microservice-decomposition/
 └── shared/
     ├── repo-naming-convention.md
     ├── runtime-resources.md
@@ -200,10 +190,10 @@ Browse all modules: [modules/README.md](modules/README.md)
 
 ## Quick Start for Facilitators
 
-1. **Browse workshops** in `workshops/` to find a pre-built workshop that matches your audience
-2. **Or pick modules** from `modules/` to build a custom workshop — see [modules/README.md](modules/README.md) for the full index
-3. **Check repo requirements** in `catalog/repos.md` to see what needs to be set up
-4. **Copy `events/_template/`** and fill in your event details, referencing the workshop(s)
+1. **Start with the active events** in `events/` — use `2026-05-07-workshop/` for mixed Spring Boot / microservices / ETL audiences
+2. **Pick a specialized alternative** from `events/` or `workshops/` when the audience is aligned around security, platform decomposition, COBOL, or Oracle Forms modernization
+3. **Use modules** from `modules/` to extend or customize the retained events — see [modules/README.md](modules/README.md) for the full index
+4. **Check repo requirements** in `catalog/repos.md` to see what needs to be set up
 5. **Review `shared/facilitator-guide.md`** for runtime setup and logistics
 
 ## Contributing

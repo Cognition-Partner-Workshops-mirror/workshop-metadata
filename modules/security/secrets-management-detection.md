@@ -46,7 +46,7 @@ Intermediate
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Node.js application — scan for hardcoded API keys, database credentials, and JWT secrets in the codebase.
 
@@ -72,7 +72,7 @@ Open the repo's DeepWiki page to understand the configuration and authentication
 
 ## <a id="uc-cve-remediation-regulatory-compliance"></a>uc-cve-remediation-regulatory-compliance
 
-**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 
 Spring Boot application — scan for hardcoded database credentials, Spring Security secrets, and application properties with sensitive values.
 
@@ -98,7 +98,7 @@ Open the repo's DeepWiki page to understand the application configuration and da
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot monolith — scan for secrets in application config, JWT signing keys, and database credentials.
 

@@ -5,7 +5,7 @@ Guide for setting up and running a Hands-on Devin Workshop.
 ## Pre-Event Checklist (1 week before)
 
 ### Repos and Code
-- [ ] Verify all required repos exist in `Cognition-Partner-Workshops` org
+- [ ] Verify all required repos exist in `Cognition-Partner-Workshops-mirror` org
 - [ ] Verify repos are set up on Devin's machine (check Devin admin panel)
 - [ ] Clone repos locally to verify they're not broken
 - [ ] Check for any new CVEs in repos used for security challenges (update descriptions if needed)

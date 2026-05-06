@@ -56,7 +56,7 @@ Intermediate
 
 ## <a id="app_petclinic-angular"></a>app_petclinic-angular
 
-**Repository:** [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops/app_petclinic-angular)
+**Repository:** [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops-mirror/app_petclinic-angular)
 
 Angular frontend for the Spring PetClinic application.
 
@@ -83,7 +83,7 @@ Open the repo's DeepWiki page to understand the component hierarchy and module s
 
 ## <a id="ts-angular-realworld-example-app"></a>ts-angular-realworld-example-app
 
-**Repository:** [ts-angular-realworld-example-app](https://github.com/Cognition-Partner-Workshops/ts-angular-realworld-example-app)
+**Repository:** [ts-angular-realworld-example-app](https://github.com/Cognition-Partner-Workshops-mirror/ts-angular-realworld-example-app)
 
 Angular RealWorld example application.
 
@@ -109,7 +109,7 @@ Open the repo's DeepWiki page to understand the application architecture. Focus 
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot 2.6.3 / Java 11 monolith. Upgrade to Java 17+ and Spring Boot 3.x — handling javax to jakarta namespace migration, Gradle plugin updates, and deprecated API removal.
 

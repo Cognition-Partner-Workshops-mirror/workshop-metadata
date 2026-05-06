@@ -46,7 +46,7 @@ Intermediate
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Node.js/Express with SQLite — add or modify database migrations to support new features or schema improvements.
 
@@ -72,7 +72,7 @@ Open the repo's DeepWiki page to understand the current database schema and ORM 
 
 ## <a id="uc-data-source-migration-legacy-to-modern"></a>uc-data-source-migration-legacy-to-modern
 
-**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops/uc-data-source-migration-legacy-to-modern)
+**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops-mirror/uc-data-source-migration-legacy-to-modern)
 
 Spring Boot with JPA and H2 — add Flyway migrations for schema evolution.
 
@@ -98,7 +98,7 @@ Open the repo's DeepWiki page to understand the current schema setup and JPA ent
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot with Flyway and MyBatis — add new migrations for schema changes.
 

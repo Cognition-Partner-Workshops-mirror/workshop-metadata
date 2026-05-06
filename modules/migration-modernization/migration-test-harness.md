@@ -58,7 +58,7 @@ Intermediate to Advanced
 
 ## <a id="uc-legacy-modernization-cobol-to-java"></a>uc-legacy-modernization-cobol-to-java
 
-**Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
+**Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops-mirror/uc-legacy-modernization-cobol-to-java)
 
 AWS Mainframe Modernization CardDemo (Apache 2.0). Contains ASCII data files (account, customer, card, transaction data), copybooks defining field layouts, and batch JCL jobs whose outputs need validation.
 

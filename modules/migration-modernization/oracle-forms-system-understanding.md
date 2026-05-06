@@ -57,7 +57,7 @@ Intermediate
 
 ## <a id="ts-plsql-oracle-forms-legacy-codebase"></a>ts-plsql-oracle-forms-legacy-codebase
 
-**Repository:** [ts-plsql-oracle-forms-legacy-codebase](https://github.com/Cognition-Partner-Workshops/ts-plsql-oracle-forms-legacy-codebase)
+**Repository:** [ts-plsql-oracle-forms-legacy-codebase](https://github.com/Cognition-Partner-Workshops-mirror/ts-plsql-oracle-forms-legacy-codebase)
 
 Oracle Forms 11g/12c HRMS legacy application. Contains Forms XML exports, PLL libraries, menu modules, PL/SQL packages (specs + bodies), database triggers, schema DDL (tables, views, sequences), and seed data. Realistic enterprise patterns with intentional technical debt.
 

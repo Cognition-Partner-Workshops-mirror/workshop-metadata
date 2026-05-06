@@ -51,7 +51,7 @@ Beginner to Intermediate
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Node.js/Express + React application — review PRs for JavaScript/TypeScript best practices.
 
@@ -77,7 +77,7 @@ Open the repo's DeepWiki page to understand the codebase conventions. A good rev
 
 ## <a id="ts-java-spring-boot-realworld-example-app"></a>ts-java-spring-boot-realworld-example-app
 
-**Repository:** [ts-java-spring-boot-realworld-example-app](https://github.com/Cognition-Partner-Workshops/ts-java-spring-boot-realworld-example-app)
+**Repository:** [ts-java-spring-boot-realworld-example-app](https://github.com/Cognition-Partner-Workshops-mirror/ts-java-spring-boot-realworld-example-app)
 
 Spring Boot Java application — review PRs for Java best practices and Spring patterns.
 
@@ -103,7 +103,7 @@ Open the repo's DeepWiki page to understand the existing code patterns. Flag any
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot monolith with GraphQL + REST — review PRs for architectural consistency.
 

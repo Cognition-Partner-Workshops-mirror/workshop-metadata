@@ -56,7 +56,7 @@ Intermediate
 
 ## <a id="uc-legacy-modernization-cobol-to-java"></a>uc-legacy-modernization-cobol-to-java
 
-**Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
+**Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops-mirror/uc-legacy-modernization-cobol-to-java)
 
 AWS Mainframe Modernization CardDemo (Apache 2.0). Contains 30+ COBOL programs, copybooks, JCL, BMS screen maps, DB2 DDL, VSAM definitions, IMS DBDs/PSBs, ASCII + EBCDIC data files, and multiple sub-applications.
 

@@ -73,13 +73,13 @@ Intermediate to Advanced
 
 ## <a id="ts-plsql-oracle-forms-legacy-codebase"></a>ts-plsql-oracle-forms-legacy-codebase
 
-**Repository:** [ts-plsql-oracle-forms-legacy-codebase](https://github.com/Cognition-Partner-Workshops/ts-plsql-oracle-forms-legacy-codebase)
+**Repository:** [ts-plsql-oracle-forms-legacy-codebase](https://github.com/Cognition-Partner-Workshops-mirror/ts-plsql-oracle-forms-legacy-codebase)
 
 Oracle Forms 11g/12c HRMS legacy application — the source system being migrated.
 
 ## <a id="uc-legacy-modernization-oracle-forms-to-java"></a>uc-legacy-modernization-oracle-forms-to-java
 
-**Repository:** [uc-legacy-modernization-oracle-forms-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-oracle-forms-to-java)
+**Repository:** [uc-legacy-modernization-oracle-forms-to-java](https://github.com/Cognition-Partner-Workshops-mirror/uc-legacy-modernization-oracle-forms-to-java)
 
 Migration use-case repo with target Spring Boot project structure, test harness, and reference architecture.
 

@@ -54,7 +54,7 @@ The application must be running (locally or hosted). See [runtime-resources.md](
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Backend on port 3001, frontend on port 5173. Login with any email (no password required).
 
@@ -80,7 +80,7 @@ Open the repo's DeepWiki page to understand the data flow and identify component
 
 ## <a id="calcom"></a>cal.com
 
-**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops/cal.com)
+**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops-mirror/cal.com)
 
 Complex scheduling application. `yarn dev` starts on port 3000. See [runtime-resources.md](../../shared/runtime-resources.md) for sample credentials.
 

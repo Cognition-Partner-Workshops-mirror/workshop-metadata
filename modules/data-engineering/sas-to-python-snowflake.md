@@ -44,7 +44,7 @@ Intermediate to Advanced
 
 ## <a id="ts-sas-legacy-codebase"></a>ts-sas-legacy-codebase
 
-**Repository:** [ts-sas-legacy-codebase](https://github.com/Cognition-Partner-Workshops/ts-sas-legacy-codebase)
+**Repository:** [ts-sas-legacy-codebase](https://github.com/Cognition-Partner-Workshops-mirror/ts-sas-legacy-codebase)
 
 Legacy SAS codebase with 90+ macros covering data export, transformation, deduplication, and formatting operations. The Macro/ directory contains production-style SAS macros that represent typical enterprise analytics workflows.
 
@@ -72,7 +72,7 @@ Open the DeepWiki page for ts-sas-legacy-codebase to understand the macro librar
 
 ## <a id="uc-data-migration-sas-to-snowflake"></a>uc-data-migration-sas-to-snowflake
 
-**Repository:** [uc-data-migration-sas-to-snowflake](https://github.com/Cognition-Partner-Workshops/uc-data-migration-sas-to-snowflake)
+**Repository:** [uc-data-migration-sas-to-snowflake](https://github.com/Cognition-Partner-Workshops-mirror/uc-data-migration-sas-to-snowflake)
 
 SAS-to-Snowflake migration toolkit with sample banking datasets (CUST_ACCOUNTS, DAILY_BALANCE, MONTHLY_AMB) in both SAS7BDAT and CSV formats, SAS lineage metadata, validation configurations, and a Streamlit migration app. Includes two migration scenarios with before/after data snapshots.
 

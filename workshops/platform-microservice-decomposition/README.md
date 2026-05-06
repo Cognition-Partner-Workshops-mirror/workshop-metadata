@@ -19,10 +19,10 @@ Decomposing a monolith is not just about extracting code — the new service mus
 
 - **Module:** [Platform-Conformant Microservice Decomposition](../../modules/cloud-infrastructure/platform-conformant-microservice-decomposition.md)
 - **Repositories:**
-  - [app_dotnet-angular-monolith](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith) — .NET 8 + Angular 17 monolith (source)
-  - [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith-iac) — Helm chart, Dockerfile, ArgoCD patterns (context)
-  - [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops/platform-engineering-shared-services) — EKS cluster, namespaces, monitoring (context)
-  - [app_dotnet-angular-microservices](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-microservices) — landing repo for decomposed services
+  - [app_dotnet-angular-monolith](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-monolith) — .NET 8 + Angular 17 monolith (source)
+  - [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-monolith-iac) — Helm chart, Dockerfile, ArgoCD patterns (context)
+  - [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops-mirror/platform-engineering-shared-services) — EKS cluster, namespaces, monitoring (context)
+  - [app_dotnet-angular-microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-microservices) — landing repo for decomposed services
 - **Objective:** Extract the Inventory module into a standalone microservice conformant with an existing platform engineering standard
 - **Duration:** 75 min
 

@@ -55,7 +55,7 @@ Runtime helpful but not required — the bug can be found by code analysis alone
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 **Bug:** Clients do not persist when you log out and log back in with a different email. Clients are intended to be shared by all users of the application.
 

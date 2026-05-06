@@ -60,7 +60,7 @@ Intermediate
 
 ## <a id="app_dotnet_angular_containerized_decomposition_monolith"></a>app_dotnet_angular_containerized_decomposition_monolith
 
-**Repository:** [app_dotnet_angular_containerized_decomposition_monolith](https://github.com/Cognition-Partner-Workshops/app_dotnet_angular_containerized_decomposition_monolith)
+**Repository:** [app_dotnet_angular_containerized_decomposition_monolith](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet_angular_containerized_decomposition_monolith)
 
 The monolith should have been refactored in MM15 to call the Order service via HTTP. The integration tests validate this HTTP boundary.
 
@@ -109,6 +109,6 @@ Review both repos to understand the HTTP contract:
 
 ## <a id="app_dotnet_angular_containerized_decomposition_microservices"></a>app_dotnet_angular_containerized_decomposition_microservices
 
-**Repository:** [app_dotnet_angular_containerized_decomposition_microservices](https://github.com/Cognition-Partner-Workshops/app_dotnet_angular_containerized_decomposition_microservices)
+**Repository:** [app_dotnet_angular_containerized_decomposition_microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet_angular_containerized_decomposition_microservices)
 
 The extracted Order service with REST endpoints. Integration tests validate the contract from the monolith's perspective.

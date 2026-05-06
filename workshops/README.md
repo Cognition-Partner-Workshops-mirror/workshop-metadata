@@ -1,52 +1,24 @@
 # Workshops
 
-Reusable workshop definitions that can be instantiated as events. Each workshop is a self-contained reference describing the labs, modules, repos, and structure needed to run a specific type of hands-on session.
+This directory is intentionally curated to the workshop templates that support the current `Cognition-Partner-Workshops-mirror` event lineup.
 
-## Workshop vs. Event
+## Current Structure
 
-| | Workshop | Event |
-|---|---|---|
-| **Purpose** | Reusable reference template | Specific instance with date, location, audience |
-| **Location** | `workshops/` | `events/` |
-| **Contains** | Labs, modules, repos, structure, timing | Links to a workshop + facilitator overrides, audience context, event-specific customizations |
-| **Example** | `workshops/legacy-modernization/` | `events/2026-04-dc/` |
+- The flagship mixed-audience event lives in [`events/2026-05-07-workshop/`](../events/2026-05-07-workshop/).
+- `workshops/` now holds the reusable specialized templates that teams can run as alternatives to the flagship event.
 
-## How It Works
+## Available Workshop Templates
 
-1. **Workshops define the content.** Each workshop has a set of labs with the 4-step format (Get Started Fast, Level Up with AskDevin, Explore with DeepWiki, Review PR and Give Feedback), required repos, timing guidelines, and target outcomes.
+| Workshop | Focus | Best For | Related Event |
+|----------|-------|----------|---------------|
+| [Framework Upgrades](framework-upgrades/) | Spring Boot and Angular upgrades at scale | Java teams modernizing monoliths | Used as source material in the 2026-05-07 event |
+| [Data Source Migration](data-source-migration/) | Legacy data model and ETL modernization | ETL, data migration, analytics engineering teams | Used as source material in the 2026-05-07 event |
+| [Security & Compliance](security-compliance/) | CVE remediation, SAST, shift-left security | AppSec and DevSecOps teams | [enterprise-demo-track](../events/enterprise-demo-track/) |
+| [Platform Microservice Decomposition](platform-microservice-decomposition/) | Monolith decomposition with platform/IaC conformance | Platform engineering and microservices teams | [platform-microservice-decomposition](../events/platform-microservice-decomposition/) |
+| [Legacy Modernization](legacy-modernization/) | COBOL and Oracle Forms modernization patterns | Enterprise modernization programs | [cobol-modernization-workshop](../events/cobol-modernization-workshop/), [oracle-forms-modernization-workshop](../events/oracle-forms-modernization-workshop/) |
 
-2. **Events instantiate workshops.** An event links to one or more workshops, adds event-specific details (date, location, audience context), and can override any workshop content for that specific instance.
+## Selection Guidance
 
-3. **Modules are the atoms.** Both workshops and events reference modules from `modules/` — the individual challenge definitions that contain the detailed instructions.
-
-## Available Workshops
-
-| Workshop | Focus | Duration | Labs | Key Modules |
-|----------|-------|----------|------|-------------|
-| [Legacy Modernization](legacy-modernization/) | COBOL/legacy → modern tech stack with testing | 2-4 hours | 1-4 | MM1, MM10, MM12-MM14 |
-| [Framework Upgrades](framework-upgrades/) | Angular + Spring Boot version upgrades at scale | 1-2 hours | 1-2 | MM2, MM9 |
-| [Data Source Migration](data-source-migration/) | Legacy data warehouse → modern schema + app reconnection | 1-2 hours | 1-2 | MM8 |
-| [Security & Compliance](security-compliance/) | CVE remediation, SAST, shift-left security | 1-2 hours | 1-3 | SEC1-SEC7 |
-| [Platform Microservice Decomposition](platform-microservice-decomposition/) | Monolith → platform-conformant microservices with IaC | 1.5-2 hours | 1 | DA8 |
-| [Agentic AI](agentic-ai/) | Multi-agent systems, document processing, anomaly detection | 2-4 hours | 2-4 | DA9, DA10, QE8, QE9 |
-| [Application Development & Maintenance](application-development-maintenance/) | Feature development, bug fixing, and code maintenance — full app lifecycle | 4-6 hours | 9 (3 tracks × 3 labs) | Application Development, Architecture Design, Security modules |
-| [Digital Engineering](digital-engineering/) | CI/CD, cloud infrastructure, observability, and platform engineering | 4-6 hours | 9 (3 tracks × 3 labs) | DevOps-CICD, Cloud Infrastructure, Observability-SRE modules |
-| [Feature Development](feature-development/) | New features on existing applications | 1-2 hours | 1-2 | Application Development modules |
-| [Quality Engineering & Assurance](quality-engineering/) | Test automation, E2E testing, continuous quality, and code review | 4-6 hours | 9 (3 tracks × 3 labs) | Testing & QA, DevOps-CICD, Technical Documentation modules |
-| [General](general/) | Security, modernization, and feature development — 3-track broad tour | 4-6 hours | 9 (3 tracks × 3 labs) | Security, Migration-Modernization, Application Development, Testing & QA modules |
-
-## Creating a New Workshop
-
-1. Create a new directory under `workshops/` with a descriptive slug (e.g., `workshops/cloud-native-transformation/`)
-2. Add a `README.md` following the structure of any existing workshop
-3. Define labs using the 4-step format
-4. List required modules and repos
-5. Add timing guidelines for different duration variants
-
-## Creating an Event from a Workshop
-
-1. Copy `events/_template/` to a new directory named `YYYY-MM-DD-city/`
-2. Reference the workshop(s) this event is based on
-3. Add event-specific details (date, location, audience context)
-4. Override any workshop content as needed for this specific audience
-5. List which repos need to be set up on Devin's machine
+- Start with **2026-05-07** if the audience is mixed across Spring Boot, microservices, and data/ETL roles.
+- Choose a **specialized workshop** when the audience is already aligned around one modernization theme.
+- Prefer the event guides in `events/` when you need a ready-to-run agenda and audience framing.

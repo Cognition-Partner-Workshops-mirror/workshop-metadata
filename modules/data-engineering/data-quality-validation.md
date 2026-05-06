@@ -43,7 +43,7 @@ Intermediate
 
 ## <a id="uc-data-source-migration-legacy-to-modern"></a>uc-data-source-migration-legacy-to-modern
 
-**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops/uc-data-source-migration-legacy-to-modern)
+**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops-mirror/uc-data-source-migration-legacy-to-modern)
 
 Spring Boot 3.2 / Java 17 loan management service with legacy CDW tables (all-VARCHAR, cryptic column names, denormalized). Includes column mappings in `data/mappings/column_mappings.md`, modern target schema DDL, and 5 legacy seed data records per table.
 

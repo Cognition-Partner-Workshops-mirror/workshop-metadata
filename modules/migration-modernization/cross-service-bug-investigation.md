@@ -92,7 +92,7 @@ Intermediate
 
 ## <a id="app_dotnet_angular_containerized_decomposition_microservices"></a>app_dotnet_angular_containerized_decomposition_microservices
 
-**Repository:** [app_dotnet_angular_containerized_decomposition_microservices](https://github.com/Cognition-Partner-Workshops/app_dotnet_angular_containerized_decomposition_microservices)
+**Repository:** [app_dotnet_angular_containerized_decomposition_microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet_angular_containerized_decomposition_microservices)
 
 The Notification service on `main` has a fully implemented order confirmation email renderer with the planted currency formatting bug. Key files:
 

@@ -26,7 +26,7 @@ Each phase's output feeds the next, mirroring how real enterprise modernization 
 
 **Key Modules:** [COBOL System Understanding](../../modules/migration-modernization/cobol-system-understanding.md), [COBOL Migration Planning](../../modules/migration-modernization/cobol-migration-planning.md), [Migration Test Harness](../../modules/migration-modernization/migration-test-harness.md), [COBOL to Java](../../modules/migration-modernization/cobol-to-java.md)
 
-**Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java) — AWS CardDemo COBOL mainframe credit card management application
+**Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops-mirror/uc-legacy-modernization-cobol-to-java) — AWS CardDemo COBOL mainframe credit card management application
 
 **Full event guide:** [COBOL Modernization Workshop](../../events/cobol-modernization-workshop/README.md)
 
@@ -143,8 +143,8 @@ Open the repo's DeepWiki page. Try migrating different programs, targeting diffe
 **Key Modules:** [Oracle Forms System Understanding](../../modules/migration-modernization/oracle-forms-system-understanding.md), [Oracle Forms Migration Planning](../../modules/migration-modernization/oracle-forms-migration-planning.md), [Migration Test Harness](../../modules/migration-modernization/migration-test-harness.md), [Oracle Forms to Java](../../modules/migration-modernization/oracle-forms-to-java.md)
 
 **Repositories:**
-- [ts-plsql-oracle-forms-legacy-codebase](https://github.com/Cognition-Partner-Workshops/ts-plsql-oracle-forms-legacy-codebase) — Oracle Forms 11g/12c HRMS legacy application (source system)
-- [uc-legacy-modernization-oracle-forms-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-oracle-forms-to-java) — Migration artifacts, target Spring Boot structure, test harness
+- [ts-plsql-oracle-forms-legacy-codebase](https://github.com/Cognition-Partner-Workshops-mirror/ts-plsql-oracle-forms-legacy-codebase) — Oracle Forms 11g/12c HRMS legacy application (source system)
+- [uc-legacy-modernization-oracle-forms-to-java](https://github.com/Cognition-Partner-Workshops-mirror/uc-legacy-modernization-oracle-forms-to-java) — Migration artifacts, target Spring Boot structure, test harness
 
 **Full event guide:** [Oracle Forms Modernization Workshop](../../events/oracle-forms-modernization-workshop/README.md)
 
@@ -205,7 +205,7 @@ Open both repos' DeepWiki pages. Compare the legacy architecture with the target
 ### Lab B3 — Migration Test Harness & Validation (60 min)
 
 - **Module:** [Migration Test Harness](../../modules/migration-modernization/migration-test-harness.md)
-- **Repository:** [uc-legacy-modernization-oracle-forms-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-oracle-forms-to-java)
+- **Repository:** [uc-legacy-modernization-oracle-forms-to-java](https://github.com/Cognition-Partner-Workshops-mirror/uc-legacy-modernization-oracle-forms-to-java)
 - **Objective:** Extend the test harness with additional business scenarios, comparison utilities, and reconciliation checks
 
 #### Step 1: Paste into Devin (copy-paste this prompt into Devin)

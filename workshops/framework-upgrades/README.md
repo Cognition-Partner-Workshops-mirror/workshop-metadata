@@ -19,9 +19,9 @@ Framework upgrades are one of the most common and repetitive tasks in enterprise
 
 - **Modules:** [Framework Upgrade](../../modules/migration-modernization/framework-upgrade.md) + [Repetitive Framework Upgrades](../../modules/migration-modernization/repetitive-framework-upgrades.md)
 - **Repositories:**
-  - [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices) — Spring Boot 2.6.3 → 3.x
-  - [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops/app_petclinic-angular) — Angular version upgrade
-  - [ts-angular-realworld-example-app](https://github.com/Cognition-Partner-Workshops/ts-angular-realworld-example-app) — Angular version upgrade (parallel comparison)
+  - [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices) — Spring Boot 2.6.3 → 3.x
+  - [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops-mirror/app_petclinic-angular) — Angular version upgrade
+  - [ts-angular-realworld-example-app](https://github.com/Cognition-Partner-Workshops-mirror/ts-angular-realworld-example-app) — Angular version upgrade (parallel comparison)
 - **Objective:** Run parallel Devin sessions upgrading Angular and Spring Boot across multiple repos
 - **Duration:** 60 min
 

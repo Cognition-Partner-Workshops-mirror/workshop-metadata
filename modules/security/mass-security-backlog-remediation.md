@@ -82,7 +82,7 @@ Advanced
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Node.js/Express application. The child agent for this repo will focus on npm dependency vulnerabilities, ESLint security rules, and secrets detection.
 
@@ -116,7 +116,7 @@ Open the repo's DeepWiki page to understand the dependency tree and which packag
 
 ## <a id="uc-cve-remediation-regulatory-compliance"></a>uc-cve-remediation-regulatory-compliance
 
-**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 
 Spring Boot 2.6.3 / Gradle application with 18+ known CVEs. The child agent for this repo will focus on dependency upgrades (Spring Boot, SnakeYAML, SQLite JDBC) and Gradle configuration changes.
 

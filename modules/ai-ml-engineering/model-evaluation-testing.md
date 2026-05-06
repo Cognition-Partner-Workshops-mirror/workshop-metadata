@@ -51,7 +51,7 @@ Advanced
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 React + Node.js/Express timesheet application — build an evaluation harness for a task duration prediction model using historical work entry data.
 
@@ -78,7 +78,7 @@ Open the repo's DeepWiki page to understand the data model and identify which se
 
 ## <a id="uc-data-source-migration-legacy-to-modern"></a>uc-data-source-migration-legacy-to-modern
 
-**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops/uc-data-source-migration-legacy-to-modern)
+**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops-mirror/uc-data-source-migration-legacy-to-modern)
 
 Spring Boot loan service — build an evaluation harness for a data quality scoring model that validates migration accuracy.
 

@@ -63,7 +63,7 @@ The following repos must be added to the Devin machine via Settings > Repositori
 - `app_dotnet-angular-monolith-iac` — the existing IaC patterns (Helm chart, Dockerfile, ArgoCD manifests)
 - `app_dotnet-angular-microservices` — landing repo where decomposed services and service-level IaC are pushed
 
-All four repos are in the [Cognition-Partner-Workshops](https://github.com/Cognition-Partner-Workshops) GitHub org.
+All four repos are in the [Cognition-Partner-Workshops-mirror](https://github.com/Cognition-Partner-Workshops-mirror) GitHub org.
 
 ## Branch Convention
 
@@ -83,13 +83,13 @@ Include the branch name in your Devin session prompt so that PRs target the corr
 
 ## <a id="app_dotnet-angular-monolith"></a>app_dotnet-angular-monolith
 
-**Repository:** [app_dotnet-angular-monolith](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith)
+**Repository:** [app_dotnet-angular-monolith](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-monolith)
 
 .NET 8 + Angular 17 monolith (OrderManager) with four tightly coupled modules: Orders, Products, Customers, and Inventory. All modules share a single SQLite database via Entity Framework Core. The Inventory module manages stock levels, warehouse locations, and low-stock alerts.
 
 **Context Repositories:**
-- [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops/platform-engineering-shared-services) — Terraform modules for EKS, Helm values for ArgoCD/Prometheus/Grafana, namespace provisioning with resource quotas and network policies
-- [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith-iac) — Helm chart, multi-stage Dockerfile, ArgoCD application manifests, CI/CD pipeline for the monolith
+- [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops-mirror/platform-engineering-shared-services) — Terraform modules for EKS, Helm values for ArgoCD/Prometheus/Grafana, namespace provisioning with resource quotas and network policies
+- [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-monolith-iac) — Helm chart, multi-stage Dockerfile, ArgoCD application manifests, CI/CD pipeline for the monolith
 
 ### Step 1: Paste into Devin
 
@@ -152,7 +152,7 @@ If time permits, extend the session with these follow-up prompts:
 
 ## <a id="app_dotnet-angular-microservices"></a>app_dotnet-angular-microservices
 
-**Repository:** [app_dotnet-angular-microservices](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-microservices)
+**Repository:** [app_dotnet-angular-microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-microservices)
 
 This is the **landing repository** for all decomposed microservices and their service-level IaC. Each service lives in its own directory with source code, Dockerfile, Helm chart, ArgoCD manifests, and CI/CD pipeline.
 
@@ -183,7 +183,7 @@ Each participant pushes to their own `workshop-<participant>` branch.
 
 ## <a id="platform-engineering-shared-services"></a>platform-engineering-shared-services
 
-**Repository:** [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops/platform-engineering-shared-services)
+**Repository:** [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops-mirror/platform-engineering-shared-services)
 
 This is a **context repository** — it is not modified during the challenge. It defines the platform standard that the extracted microservice must conform to.
 
@@ -197,7 +197,7 @@ This is a **context repository** — it is not modified during the challenge. It
 
 ## <a id="app_dotnet-angular-monolith-iac"></a>app_dotnet-angular-monolith-iac
 
-**Repository:** [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith-iac)
+**Repository:** [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-monolith-iac)
 
 This is a **context repository** — it provides the IaC patterns that the new service's infrastructure should follow.
 

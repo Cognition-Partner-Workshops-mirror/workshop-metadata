@@ -56,7 +56,7 @@ Intermediate to Advanced
 
 ## <a id="uc-legacy-modernization-cobol-to-java"></a>uc-legacy-modernization-cobol-to-java
 
-**Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops/uc-legacy-modernization-cobol-to-java)
+**Repository:** [uc-legacy-modernization-cobol-to-java](https://github.com/Cognition-Partner-Workshops-mirror/uc-legacy-modernization-cobol-to-java)
 
 AWS Mainframe Modernization CardDemo (Apache 2.0). A credit card management system with account processing, transaction handling, customer management, statement generation, and user security — natural domain boundaries for decomposition analysis.
 

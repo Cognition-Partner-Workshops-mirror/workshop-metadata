@@ -44,7 +44,7 @@ Intermediate to Advanced
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Node.js/Express timesheet application that handles user data including names, emails, and authentication credentials — a realistic target for PII analysis.
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand the authentication flow, database sc
 
 ## <a id="Online-Banking-System-using-Java"></a>Online-Banking-System-using-Java
 
-**Repository:** [Online-Banking-System-using-Java](https://github.com/Cognition-Partner-Workshops/Online-Banking-System-using-Java)
+**Repository:** [Online-Banking-System-using-Java](https://github.com/Cognition-Partner-Workshops-mirror/Online-Banking-System-using-Java)
 
 Java banking application handling sensitive customer financial and personal data — a high-stakes PII environment where compliance gaps have real regulatory impact.
 

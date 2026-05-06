@@ -69,7 +69,7 @@ Advanced
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot 2.6.3 / Java 11 / Gradle monolith. The tech debt: outdated framework, legacy namespace (javax.*), no containerization, missing CI, outdated dependencies.
 
@@ -116,7 +116,7 @@ Open the repo's DeepWiki page to understand the full architecture. Identify:
 
 ## <a id="uc-cve-remediation-regulatory-compliance"></a>uc-cve-remediation-regulatory-compliance
 
-**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 
 Same Spring Boot 2.6.3 codebase but with an emphasis on remediating the 18+ known CVEs as tech debt. The one-shot prompt here focuses on security tech debt specifically.
 

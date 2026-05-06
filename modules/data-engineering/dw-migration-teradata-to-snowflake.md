@@ -72,7 +72,7 @@ Intermediate to Advanced
 
 ## <a id="uc-dw-migration-teradata-to-snowflake"></a>uc-dw-migration-teradata-to-snowflake
 
-**Repository:** [uc-dw-migration-teradata-to-snowflake](https://github.com/Cognition-Partner-Workshops/uc-dw-migration-teradata-to-snowflake)
+**Repository:** [uc-dw-migration-teradata-to-snowflake](https://github.com/Cognition-Partner-Workshops-mirror/uc-dw-migration-teradata-to-snowflake)
 
 Teradata-based retail banking analytics data warehouse. 7 DDL tables (5 dimensions + 2 fact tables), 3 views, 3 stored procedures, 3 macros, 2 BTEQ scripts, seed data, and validation queries.
 

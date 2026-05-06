@@ -48,7 +48,7 @@ Intermediate
 
 ## <a id="app_petclinic-angular"></a>app_petclinic-angular
 
-**Repository:** [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops/app_petclinic-angular)
+**Repository:** [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops-mirror/app_petclinic-angular)
 
 Angular frontend using Karma + Jasmine for unit tests and Protractor for E2E tests — both deprecated. Migrate to modern Angular testing with Jest/Vitest and Playwright.
 
@@ -99,7 +99,7 @@ Once Devin opens a PR, focus your review on:
 
 ## <a id="ts-angular-realworld-example-app"></a>ts-angular-realworld-example-app
 
-**Repository:** [ts-angular-realworld-example-app](https://github.com/Cognition-Partner-Workshops/ts-angular-realworld-example-app)
+**Repository:** [ts-angular-realworld-example-app](https://github.com/Cognition-Partner-Workshops-mirror/ts-angular-realworld-example-app)
 
 Angular app that already uses Vitest + Playwright — use as a **reference target** for the migration, or as a second repo for parallel comparison.
 

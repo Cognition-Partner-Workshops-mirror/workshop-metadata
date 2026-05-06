@@ -45,7 +45,7 @@ Intermediate to Advanced
 
 ## <a id="uc-data-migration-airflow"></a>uc-data-migration-airflow
 
-**Repository:** [uc-data-migration-airflow](https://github.com/Cognition-Partner-Workshops/uc-data-migration-airflow)
+**Repository:** [uc-data-migration-airflow](https://github.com/Cognition-Partner-Workshops-mirror/uc-data-migration-airflow)
 
 Docker Compose-based Apache Airflow 2.0 environment with PostgreSQL backend, configured for local DAG development with LocalExecutor. The `dags/` directory is volume-mounted for live DAG authoring.
 
@@ -73,7 +73,7 @@ Open the repo's DeepWiki page for both uc-data-migration-airflow and ts-sas-lega
 
 ## <a id="ts-sas-legacy-codebase"></a>ts-sas-legacy-codebase
 
-**Repository:** [ts-sas-legacy-codebase](https://github.com/Cognition-Partner-Workshops/ts-sas-legacy-codebase)
+**Repository:** [ts-sas-legacy-codebase](https://github.com/Cognition-Partner-Workshops-mirror/ts-sas-legacy-codebase)
 
 Legacy SAS codebase containing 90+ macros in the Macro/ directory, Enterprise Guide projects, and batch processing programs. Represents a typical legacy analytics environment with macro-driven ETL workflows.
 

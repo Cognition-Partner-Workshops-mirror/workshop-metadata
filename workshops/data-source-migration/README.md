@@ -18,7 +18,7 @@ Data source migration is not just schema work — the application must be rewire
 ### Lab 1 — Data Source Rewrite + App Reconnection + Testing
 
 - **Module:** [Data Source Migration](../../modules/data-engineering/data-source-migration.md)
-- **Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops/uc-data-source-migration-legacy-to-modern)
+- **Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops-mirror/uc-data-source-migration-legacy-to-modern)
 - **Objective:** Transform a legacy data warehouse (all-VARCHAR, denormalized) to a modern normalized schema, rewire the app, and validate with comprehensive tests
 - **Duration:** 60 min
 

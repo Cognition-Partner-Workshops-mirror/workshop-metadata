@@ -43,13 +43,13 @@ Beginner to Intermediate
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Node.js application with npm dependencies — use `npm audit` to identify and fix vulnerable packages.
 
 ### Step 1: Paste into Devin
 
-> Resolve this GitHub Issue: https://github.com/Cognition-Partner-Workshops/app_timesheet/issues/2 — audit the npm dependencies for known vulnerabilities, upgrade all vulnerable packages to their latest secure versions, ensure the build and tests still pass, and open a PR.
+> Resolve this GitHub Issue: https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet/issues/2 — audit the npm dependencies for known vulnerabilities, upgrade all vulnerable packages to their latest secure versions, ensure the build and tests still pass, and open a PR.
 
 ### Step 2: Research with Ask Devin
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand which dependencies are critical to t
 
 ## <a id="uc-cve-remediation-regulatory-compliance"></a>uc-cve-remediation-regulatory-compliance
 
-**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 
 Spring Boot 2.6.3 application with known vulnerable dependencies and OWASP Dependency-Check pre-configured.
 
