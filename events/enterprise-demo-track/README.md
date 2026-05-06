@@ -47,7 +47,7 @@ Three labs that build on each other in a progressive arc:
 ### Lab 1 — Event-Driven SAST Remediation (90 min)
 
 - **Module:** [Event-Driven SAST Remediation](../../modules/security/event-driven-sast-remediation.md)
-- **Repositories:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet) and [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+- **Repositories:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet) and [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 - **Objective:** Build a GitHub Actions workflow where SAST tools scan PRs from non-Devin authors and automatically trigger a Devin session to remediate findings
 
 #### What to Try
@@ -75,7 +75,7 @@ Three labs that build on each other in a progressive arc:
 ### Lab 2 — Mass Security Backlog Remediation with Agent Orchestration (90 min)
 
 - **Module:** [Mass Security Backlog Remediation](../../modules/security/mass-security-backlog-remediation.md)
-- **Repositories:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet) and [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+- **Repositories:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet) and [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 - **Objective:** Demonstrate enterprise-scale remediation: one parent Devin session triages a consolidated SAST report and launches parallel child sessions to remediate 2 repos simultaneously
 
 #### What to Try
@@ -106,7 +106,7 @@ Three labs that build on each other in a progressive arc:
 ### Lab 3 — One-Shot Tech Debt Remediation via Long-Term Reasoning (75 min)
 
 - **Module:** [One-Shot Tech Debt Remediation](../../modules/migration-modernization/one-shot-tech-debt-remediation.md)
-- **Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices) or [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+- **Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices) or [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 - **Objective:** Demonstrate that a single, well-engineered prompt can achieve 80-90% completion of a major tech debt remediation — with provable results and honest acknowledgement of testing gaps
 
 #### What to Try

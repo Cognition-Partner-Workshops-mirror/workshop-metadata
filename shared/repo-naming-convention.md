@@ -1,6 +1,6 @@
 # Repository Naming Convention
 
-All repositories in the [Cognition-Partner-Workshops](https://github.com/Cognition-Partner-Workshops) org follow a prefix-based naming convention.
+All repositories in the [Cognition-Partner-Workshops-mirror](https://github.com/Cognition-Partner-Workshops-mirror) org follow a prefix-based naming convention.
 
 ## Prefixes
 

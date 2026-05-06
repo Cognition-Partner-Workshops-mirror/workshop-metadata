@@ -44,7 +44,7 @@ Intermediate to Advanced
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot monolith with interleaved REST and GraphQL layers sharing service and data access components — a realistic target for dependency analysis in a Java codebase.
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand the package structure and how the RE
 
 ## <a id="calcom"></a>cal.com
 
-**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops/cal.com)
+**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops-mirror/cal.com)
 
 Large TypeScript monorepo with dozens of packages under `packages/` and `apps/` — an advanced target for cross-package dependency analysis at scale.
 

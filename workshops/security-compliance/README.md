@@ -18,7 +18,7 @@ Security remediation is often a backlog item that never gets prioritized. This w
 ### Lab 1 — CVE Remediation & Dependency Upgrades
 
 - **Modules:** [Upgrade Dependencies](../../modules/security/upgrade-dependencies.md) + [Remediate Vulnerabilities](../../modules/security/remediate-vulnerabilities.md)
-- **Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+- **Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 - **Objective:** Scan a Spring Boot app for dependency CVEs, remediate the critical findings, and verify the fixes
 - **Duration:** 60 min
 
@@ -47,7 +47,7 @@ Open the repo's DeepWiki page. Try adding SBOM generation, GitHub Actions securi
 ### Lab 2 — Shift-Left Security & SAST
 
 - **Modules:** [Shift Left Security](../../modules/security/shift-left-security.md) + [Event-Driven SAST Remediation](../../modules/security/event-driven-sast-remediation.md)
-- **Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+- **Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 - **Objective:** Add automated security scanning to the CI pipeline and remediate SAST findings
 - **Duration:** 45 min
 

@@ -44,7 +44,7 @@ Intermediate
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot monolith exposing both REST controllers and a GraphQL API via the DGS framework — an ideal target for cross-style API design review.
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand both the REST controller structure a
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Express REST API with route handlers for timesheet management — a focused target for evaluating REST API design quality in a Node.js context.
 

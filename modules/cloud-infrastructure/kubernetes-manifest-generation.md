@@ -44,7 +44,7 @@ Intermediate to Advanced
 
 ## <a id="app_petclinic-microservices"></a>app_petclinic-microservices
 
-**Repository:** [app_petclinic-microservices](https://github.com/Cognition-Partner-Workshops/app_petclinic-microservices)
+**Repository:** [app_petclinic-microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_petclinic-microservices)
 
 Spring Cloud microservices (API Gateway, Customers, Visits, Vets, Config Server, Discovery Server) — each service needs its own K8s manifest set.
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand the service architecture — particu
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot monolith with a Next.js frontend — generate K8s manifests for deploying as separate backend and frontend services.
 

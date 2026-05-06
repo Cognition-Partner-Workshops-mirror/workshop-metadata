@@ -44,7 +44,7 @@ Beginner
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Simple domain (timesheets, clients, work entries) — easy to ideate features like invoice generation, project hierarchy, team views, or reporting dashboards.
 
@@ -72,7 +72,7 @@ Open the repo's DeepWiki page to understand the existing data model and API surf
 
 ## <a id="calcom"></a>cal.com
 
-**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops/cal.com)
+**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops-mirror/cal.com)
 
 Rich scheduling domain with many extension points — custom booking field types, webhook integrations, analytics dashboards, notification preferences.
 

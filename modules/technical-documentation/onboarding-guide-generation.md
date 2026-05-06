@@ -51,7 +51,7 @@ Intermediate
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot monolith with a Next.js frontend — a complex full-stack application ideal for testing onboarding guide quality.
 
@@ -78,7 +78,7 @@ Open the repo's DeepWiki page to cross-reference Devin's generated architecture 
 
 ## <a id="calcom"></a>cal.com
 
-**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops/cal.com)
+**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops-mirror/cal.com)
 
 Large-scale open-source scheduling platform with a complex monorepo structure — a challenging codebase for onboarding guide generation.
 

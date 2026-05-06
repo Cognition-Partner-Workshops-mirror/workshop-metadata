@@ -44,7 +44,7 @@ Advanced
 
 ## <a id="platform-engineering-shared-services"></a>platform-engineering-shared-services
 
-**Repository:** [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops/platform-engineering-shared-services)
+**Repository:** [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops-mirror/platform-engineering-shared-services)
 
 Platform engineering repository with shared infrastructure services — the natural home for GitOps deployment configurations.
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand the existing infrastructure and serv
 
 ## <a id="app_dotnet-angular-microservices"></a>app_dotnet-angular-microservices
 
-**Repository:** [app_dotnet-angular-microservices](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-microservices)
+**Repository:** [app_dotnet-angular-microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-microservices)
 
 .NET and Angular microservices application — a multi-service deployment target for GitOps configuration.
 

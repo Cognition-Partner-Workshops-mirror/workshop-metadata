@@ -52,7 +52,7 @@ Application must be running to see the bug visually. Backend: `cd backend && npm
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 **Bug:** The Client dropdown's label text has a strikethrough when you create an hour entry on the running app's `/work-entries` page.
 

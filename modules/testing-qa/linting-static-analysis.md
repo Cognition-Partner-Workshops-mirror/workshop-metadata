@@ -41,13 +41,13 @@ Beginner
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 React 19 + Node.js/Express timesheet application with ESLint and Prettier configured.
 
 ### Step 1: Paste into Devin
 
-> Resolve this GitHub Issue: https://github.com/Cognition-Partner-Workshops/app_timesheet/issues/3 — fix all ESLint linting errors in the codebase, run the linter to verify all issues are resolved, and open a PR with the fixes.
+> Resolve this GitHub Issue: https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet/issues/3 — fix all ESLint linting errors in the codebase, run the linter to verify all issues are resolved, and open a PR with the fixes.
 
 ### Step 2: Research with Ask Devin
 
@@ -69,7 +69,7 @@ Open the repo's DeepWiki page to understand the codebase structure and identify 
 
 ## <a id="hosting-client-timesheet-app"></a>hosting-client-timesheet-app
 
-**Repository:** [hosting-client-timesheet-app](https://github.com/Cognition-Partner-Workshops/hosting-client-timesheet-app)
+**Repository:** [hosting-client-timesheet-app](https://github.com/Cognition-Partner-Workshops-mirror/hosting-client-timesheet-app)
 
 Terraform infrastructure code for hosting the timesheet application.
 

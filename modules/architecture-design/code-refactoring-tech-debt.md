@@ -46,7 +46,7 @@ Intermediate
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 React + Express application with opportunities for backend route handler refactoring and frontend component decomposition.
 
@@ -72,7 +72,7 @@ Open the repo's DeepWiki page to understand the architecture. Identify modules w
 
 ## <a id="calcom"></a>cal.com
 
-**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops/cal.com)
+**Repository:** [cal.com](https://github.com/Cognition-Partner-Workshops-mirror/cal.com)
 
 Large TypeScript monorepo with many opportunities for component decomposition and utility extraction.
 
@@ -98,7 +98,7 @@ Open the repo's DeepWiki page to understand the package dependency graph. Target
 
 ## <a id="ts-java-spring-boot-realworld-example-app"></a>ts-java-spring-boot-realworld-example-app
 
-**Repository:** [ts-java-spring-boot-realworld-example-app](https://github.com/Cognition-Partner-Workshops/ts-java-spring-boot-realworld-example-app)
+**Repository:** [ts-java-spring-boot-realworld-example-app](https://github.com/Cognition-Partner-Workshops-mirror/ts-java-spring-boot-realworld-example-app)
 
 Spring Boot application with potential for service layer refactoring, DTO pattern improvements, and exception handling cleanup.
 
@@ -124,7 +124,7 @@ Open the repo's DeepWiki page to understand the layered architecture. Identify w
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot 2.6.3 monolith with both REST and GraphQL APIs — opportunities for reducing duplication between the two API surfaces.
 

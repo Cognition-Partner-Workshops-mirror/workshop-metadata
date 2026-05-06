@@ -44,7 +44,7 @@ Intermediate
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Node.js/Express application with email-only auth (no password) and potential SQL injection paths.
 
@@ -70,7 +70,7 @@ Open the repo's DeepWiki page to understand the authentication flow and data acc
 
 ## <a id="online-banking-system-using-java"></a>Online-Banking-System-using-Java
 
-**Repository:** [Online-Banking-System-using-Java](https://github.com/Cognition-Partner-Workshops/Online-Banking-System-using-Java)
+**Repository:** [Online-Banking-System-using-Java](https://github.com/Cognition-Partner-Workshops-mirror/Online-Banking-System-using-Java)
 
 Java banking application — likely has multiple security antipatterns given the domain sensitivity.
 
@@ -96,7 +96,7 @@ Open the repo's DeepWiki page to understand the transaction flow and account man
 
 ## <a id="uc-cve-remediation-regulatory-compliance"></a>uc-cve-remediation-regulatory-compliance
 
-**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 
 Spring Boot application — review for OWASP Top 10 issues in addition to dependency-level CVEs.
 

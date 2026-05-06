@@ -61,7 +61,7 @@ Intermediate
 
 ## <a id="uc-data-source-migration-legacy-to-modern"></a>uc-data-source-migration-legacy-to-modern
 
-**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops/uc-data-source-migration-legacy-to-modern)
+**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops-mirror/uc-data-source-migration-legacy-to-modern)
 
 Spring Boot 3.2 / Java 17 loan management application reading from legacy CDW-style tables. Includes modern target schema DDL, column mappings, and 5 workshop migration tasks.
 

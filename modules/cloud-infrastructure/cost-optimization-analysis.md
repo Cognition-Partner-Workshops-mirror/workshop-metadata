@@ -44,7 +44,7 @@ Intermediate
 
 ## <a id="hosting-client-timesheet-app"></a>hosting-client-timesheet-app
 
-**Repository:** [hosting-client-timesheet-app](https://github.com/Cognition-Partner-Workshops/hosting-client-timesheet-app)
+**Repository:** [hosting-client-timesheet-app](https://github.com/Cognition-Partner-Workshops-mirror/hosting-client-timesheet-app)
 
 AWS infrastructure (EC2, ECR, VPC) for a Node.js application — review resource sizing and identify optimization opportunities.
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand the infrastructure architecture. Pay
 
 ## <a id="calcom-infra"></a>cal.com-infra
 
-**Repository:** [cal.com-infra](https://github.com/Cognition-Partner-Workshops/cal.com-infra)
+**Repository:** [cal.com-infra](https://github.com/Cognition-Partner-Workshops-mirror/cal.com-infra)
 
 Infrastructure configuration for deploying cal.com — a more complex cloud setup with database, caching, and application tiers to analyze for cost efficiency.
 

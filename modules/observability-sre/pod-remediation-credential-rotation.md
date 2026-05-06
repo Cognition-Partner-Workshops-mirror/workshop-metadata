@@ -45,7 +45,7 @@ Advanced
 
 ## <a id="uc-pod-remediation-credential-rotation"></a>uc-pod-remediation-credential-rotation
 
-**Repository:** [uc-pod-remediation-credential-rotation](https://github.com/Cognition-Partner-Workshops/uc-pod-remediation-credential-rotation)
+**Repository:** [uc-pod-remediation-credential-rotation](https://github.com/Cognition-Partner-Workshops-mirror/uc-pod-remediation-credential-rotation)
 
 Python multi-agent system for Kubernetes credential rotation monitoring and automated pod remediation.
 

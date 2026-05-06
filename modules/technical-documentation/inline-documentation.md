@@ -43,7 +43,7 @@ Beginner
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Moderate codebase with a mix of frontend (React) and backend (Express) — benefits from JSDoc comments and API documentation.
 
@@ -69,7 +69,7 @@ Open the repo's DeepWiki page — compare the auto-generated documentation with 
 
 ## <a id="ts-java-spring-boot-realworld-example-app"></a>ts-java-spring-boot-realworld-example-app
 
-**Repository:** [ts-java-spring-boot-realworld-example-app](https://github.com/Cognition-Partner-Workshops/ts-java-spring-boot-realworld-example-app)
+**Repository:** [ts-java-spring-boot-realworld-example-app](https://github.com/Cognition-Partner-Workshops-mirror/ts-java-spring-boot-realworld-example-app)
 
 Java Spring Boot codebase — benefits from Javadoc comments on services, controllers, and domain models.
 
@@ -95,7 +95,7 @@ Open the repo's DeepWiki page to understand the domain model. Use this to write 
 
 ## <a id="uc-dw-migration-teradata-to-snowflake"></a>uc-dw-migration-teradata-to-snowflake
 
-**Repository:** [uc-dw-migration-teradata-to-snowflake](https://github.com/Cognition-Partner-Workshops/uc-dw-migration-teradata-to-snowflake)
+**Repository:** [uc-dw-migration-teradata-to-snowflake](https://github.com/Cognition-Partner-Workshops-mirror/uc-dw-migration-teradata-to-snowflake)
 
 SQL-heavy data warehouse repo — benefits from header comments on DDL/DML files, data dictionary documentation, and schema documentation.
 

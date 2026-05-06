@@ -51,7 +51,7 @@ Advanced
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 React + Node.js/Express timesheet application with historical work entry data suitable for building a task duration prediction model.
 
@@ -78,7 +78,7 @@ Open the repo's DeepWiki page to understand the data model and API structure. Id
 
 ## <a id="uc-data-source-migration-legacy-to-modern"></a>uc-data-source-migration-legacy-to-modern
 
-**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops/uc-data-source-migration-legacy-to-modern)
+**Repository:** [uc-data-source-migration-legacy-to-modern](https://github.com/Cognition-Partner-Workshops-mirror/uc-data-source-migration-legacy-to-modern)
 
 Spring Boot loan service with legacy and modern schemas — ideal for building a data quality scoring model that validates migrated records.
 

@@ -44,7 +44,7 @@ Intermediate to Advanced
 
 ## <a id="hosting-client-timesheet-app"></a>hosting-client-timesheet-app
 
-**Repository:** [hosting-client-timesheet-app](https://github.com/Cognition-Partner-Workshops/hosting-client-timesheet-app)
+**Repository:** [hosting-client-timesheet-app](https://github.com/Cognition-Partner-Workshops-mirror/hosting-client-timesheet-app)
 
 AWS infrastructure for hosting a Node.js application — Terraform configurations covering EC2, ECR, networking, and IAM.
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand the infrastructure architecture and 
 
 ## <a id="app_dotnet-angular-monolith-iac"></a>app_dotnet-angular-monolith-iac
 
-**Repository:** [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith-iac)
+**Repository:** [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-monolith-iac)
 
 Infrastructure-as-Code for a .NET/Angular monolith deployment — Terraform configurations for cloud infrastructure provisioning.
 

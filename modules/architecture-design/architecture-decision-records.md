@@ -44,7 +44,7 @@ Intermediate
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot monolith with both REST and GraphQL APIs, DGS framework integration, and multiple data access patterns — rich ground for architectural decision documentation.
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand the full architecture — the dual A
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Node.js/Express backend with a React frontend — a different tech stack that exercises Devin's ability to recognize architecture decisions across languages and frameworks.
 

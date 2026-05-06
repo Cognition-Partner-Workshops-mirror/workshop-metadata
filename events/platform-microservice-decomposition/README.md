@@ -44,12 +44,12 @@ A single lab with four phases:
 
 All four repos must be added via **Settings > Machine configuration > Add repository** before the lab:
 
-- [x] [app_dotnet-angular-monolith](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith) — .NET 8 + Angular 17 monolith (source)
-- [x] [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-monolith-iac) — Helm chart, Dockerfile, ArgoCD patterns (context)
-- [x] [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops/platform-engineering-shared-services) — EKS cluster, namespaces, monitoring (context)
-- [x] [app_dotnet-angular-microservices](https://github.com/Cognition-Partner-Workshops/app_dotnet-angular-microservices) — landing repo for decomposed services + service-level IaC
+- [x] [app_dotnet-angular-monolith](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-monolith) — .NET 8 + Angular 17 monolith (source)
+- [x] [app_dotnet-angular-monolith-iac](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-monolith-iac) — Helm chart, Dockerfile, ArgoCD patterns (context)
+- [x] [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops-mirror/platform-engineering-shared-services) — EKS cluster, namespaces, monitoring (context)
+- [x] [app_dotnet-angular-microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet-angular-microservices) — landing repo for decomposed services + service-level IaC
 
-All repos are in the [Cognition-Partner-Workshops](https://github.com/Cognition-Partner-Workshops) GitHub org.
+All repos are in the [Cognition-Partner-Workshops-mirror](https://github.com/Cognition-Partner-Workshops-mirror) GitHub org.
 
 ### Branch Convention
 
@@ -58,7 +58,7 @@ Each participant works on a dedicated branch: **`workshop-<participant>`** (e.g.
 ### Participant Requirements
 
 - [ ] Devin account on partner-workshops.devinenterprise.com
-- [ ] GitHub access to `Cognition-Partner-Workshops` org (for PR review)
+- [ ] GitHub access to `Cognition-Partner-Workshops-mirror` org (for PR review)
 - [ ] Browser (Chrome recommended)
 
 ---

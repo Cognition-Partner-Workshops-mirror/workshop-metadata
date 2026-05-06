@@ -44,7 +44,7 @@ Intermediate to Advanced
 
 ## <a id="app_petclinic-microservices"></a>app_petclinic-microservices
 
-**Repository:** [app_petclinic-microservices](https://github.com/Cognition-Partner-Workshops/app_petclinic-microservices)
+**Repository:** [app_petclinic-microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_petclinic-microservices)
 
 Spring Cloud microservices with multiple service boundaries (API Gateway, Customers, Visits, Vets) communicating via REST.
 
@@ -71,7 +71,7 @@ Open the repo's DeepWiki page to understand the API Gateway's aggregation patter
 
 ## <a id="app_dotnet_angular_containerized_decomposition_microservices"></a>app_dotnet_angular_containerized_decomposition_microservices
 
-**Repository:** [app_dotnet_angular_containerized_decomposition_microservices](https://github.com/Cognition-Partner-Workshops/app_dotnet_angular_containerized_decomposition_microservices)
+**Repository:** [app_dotnet_angular_containerized_decomposition_microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet_angular_containerized_decomposition_microservices)
 
 .NET microservices with Angular frontend — a containerized decomposition architecture with multiple service boundaries.
 

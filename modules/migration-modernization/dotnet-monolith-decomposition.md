@@ -59,7 +59,7 @@ The following repos must be added to the Devin machine via Settings > Repositori
 - `app_dotnet_angular_containerized_decomposition_iac` — Helm chart patterns (context)
 - `platform-engineering-shared-services` — EKS cluster, namespaces, monitoring (context)
 
-All repos are in the [Cognition-Partner-Workshops](https://github.com/Cognition-Partner-Workshops) GitHub org.
+All repos are in the [Cognition-Partner-Workshops-mirror](https://github.com/Cognition-Partner-Workshops-mirror) GitHub org.
 
 ## Branch Convention
 
@@ -84,13 +84,13 @@ Replace `<attendee_id>` with a unique identifier (e.g., `workshop-alice`, `works
 
 ## <a id="app_dotnet_angular_containerized_decomposition_monolith"></a>app_dotnet_angular_containerized_decomposition_monolith
 
-**Repository:** [app_dotnet_angular_containerized_decomposition_monolith](https://github.com/Cognition-Partner-Workshops/app_dotnet_angular_containerized_decomposition_monolith)
+**Repository:** [app_dotnet_angular_containerized_decomposition_monolith](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet_angular_containerized_decomposition_monolith)
 
 .NET + Angular monolith (QuickApp) with 5 tightly coupled bounded contexts: Identity (authentication, authorization, user/role management), Customer (CRUD, lookup), Order (creation, status, fulfillment), Product (catalog, pricing, categories), and Notification (email, in-app). All contexts share a single database via Entity Framework Core.
 
 **Context Repositories:**
-- [app_dotnet_angular_containerized_decomposition_iac](https://github.com/Cognition-Partner-Workshops/app_dotnet_angular_containerized_decomposition_iac) — Helm charts per service for K8s deployment
-- [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops/platform-engineering-shared-services) — EKS, namespaces, network policies, monitoring
+- [app_dotnet_angular_containerized_decomposition_iac](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet_angular_containerized_decomposition_iac) — Helm charts per service for K8s deployment
+- [platform-engineering-shared-services](https://github.com/Cognition-Partner-Workshops-mirror/platform-engineering-shared-services) — EKS, namespaces, network policies, monitoring
 
 ### Step 1: Paste into Devin
 
@@ -140,7 +140,7 @@ Open each repo's DeepWiki page to understand the architecture:
 
 ## <a id="app_dotnet_angular_containerized_decomposition_microservices"></a>app_dotnet_angular_containerized_decomposition_microservices
 
-**Repository:** [app_dotnet_angular_containerized_decomposition_microservices](https://github.com/Cognition-Partner-Workshops/app_dotnet_angular_containerized_decomposition_microservices)
+**Repository:** [app_dotnet_angular_containerized_decomposition_microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_dotnet_angular_containerized_decomposition_microservices)
 
 Target-state scaffold with 5 microservices (Identity, Customer, Order, Product, Notification) + YARP API Gateway. Each service follows Clean Architecture (API/Domain/Infrastructure layers). Includes docker-compose for local development with PostgreSQL and RabbitMQ.
 

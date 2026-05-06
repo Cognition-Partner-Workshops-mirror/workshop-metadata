@@ -56,7 +56,7 @@ Intermediate to Advanced
 
 ## <a id="app_petclinic-microservices"></a>app_petclinic-microservices
 
-**Repository:** [app_petclinic-microservices](https://github.com/Cognition-Partner-Workshops/app_petclinic-microservices)
+**Repository:** [app_petclinic-microservices](https://github.com/Cognition-Partner-Workshops-mirror/app_petclinic-microservices)
 
 Reference architecture showing what a fully decomposed microservices application looks like. Use this as a comparison target or as a starting point for further containerization improvements.
 
@@ -82,7 +82,7 @@ Open the repo's DeepWiki page to understand the service decomposition, API contr
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot 2.6.3 monolith with three clear bounded contexts: Articles (CRUD, feed, favorites, tags), Users/Profiles (registration, authentication, following), and Comments (CRUD linked to articles). The Comments domain is the simplest extraction; Users/Profiles is the hardest because authentication is cross-cutting.
 

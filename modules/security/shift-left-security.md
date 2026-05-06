@@ -42,7 +42,7 @@ Intermediate to Advanced
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 Has existing `security-scan.yml` and `sonar-devin-fix.yml` workflows — good for studying and enhancing existing security CI.
 
@@ -70,7 +70,7 @@ Open the repo's DeepWiki page to understand the existing CI/CD setup and identif
 
 ## <a id="uc-cve-remediation-regulatory-compliance"></a>uc-cve-remediation-regulatory-compliance
 
-**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops/uc-cve-remediation-regulatory-compliance)
+**Repository:** [uc-cve-remediation-regulatory-compliance](https://github.com/Cognition-Partner-Workshops-mirror/uc-cve-remediation-regulatory-compliance)
 
 No CI currently (workflows were removed) — but has OWASP Dependency-Check and SonarQube Gradle plugins pre-configured for local scanning. Ideal for building security CI from scratch.
 

@@ -75,7 +75,7 @@ Advanced
 
 ## <a id="ts-informatica-powercenter"></a>ts-informatica-powercenter
 
-**Repository:** [ts-informatica-powercenter](https://github.com/Cognition-Partner-Workshops/ts-informatica-powercenter)
+**Repository:** [ts-informatica-powercenter](https://github.com/Cognition-Partner-Workshops-mirror/ts-informatica-powercenter)
 
 Informatica PowerCenter 9.6.1 XML exports for a government HR data integration system (EHRP-to-BIIS). Contains 11 mapping exports totaling 117K lines of XML with Oracle source/target definitions, Expression/Filter/Lookup/Aggregator transformations, sessions, and workflows. Also includes Oracle SQL pre/post-load scripts and shell-based `pmcmd` orchestration.
 
@@ -103,7 +103,7 @@ Open the DeepWiki page for both ts-informatica-powercenter and uc-dw-migration-t
 
 ## <a id="uc-dw-migration-teradata-to-snowflake"></a>uc-dw-migration-teradata-to-snowflake
 
-**Repository:** [uc-dw-migration-teradata-to-snowflake](https://github.com/Cognition-Partner-Workshops/uc-dw-migration-teradata-to-snowflake)
+**Repository:** [uc-dw-migration-teradata-to-snowflake](https://github.com/Cognition-Partner-Workshops-mirror/uc-dw-migration-teradata-to-snowflake)
 
 Teradata-based retail banking analytics data warehouse with Snowflake migration artifacts. Used here as a **reference** for Snowflake DDL conventions, validation query patterns, and migration runbook structure — not as the primary challenge target.
 

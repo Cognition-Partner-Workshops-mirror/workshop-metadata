@@ -45,7 +45,7 @@ Intermediate to Advanced
 
 ## <a id="uc-volume-anomaly-detection"></a>uc-volume-anomaly-detection
 
-**Repository:** [uc-volume-anomaly-detection](https://github.com/Cognition-Partner-Workshops/uc-volume-anomaly-detection)
+**Repository:** [uc-volume-anomaly-detection](https://github.com/Cognition-Partner-Workshops-mirror/uc-volume-anomaly-detection)
 
 Python anomaly detection framework with z-score and seasonal detection, service health correlation, and incident reporting.
 

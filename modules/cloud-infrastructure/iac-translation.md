@@ -42,7 +42,7 @@ Intermediate
 
 ## <a id="hosting-client-timesheet-app"></a>hosting-client-timesheet-app
 
-**Repository:** [hosting-client-timesheet-app](https://github.com/Cognition-Partner-Workshops/hosting-client-timesheet-app)
+**Repository:** [hosting-client-timesheet-app](https://github.com/Cognition-Partner-Workshops-mirror/hosting-client-timesheet-app)
 
 Terraform infrastructure code for hosting the timesheet application. Translate to AWS CDK, CloudFormation, or Pulumi.
 

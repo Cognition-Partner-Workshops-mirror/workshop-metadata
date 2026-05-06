@@ -67,7 +67,7 @@ Intermediate
 
 ## <a id="aws-mainframe-modernization-carddemo"></a>aws-mainframe-modernization-carddemo
 
-**Repository:** [aws-mainframe-modernization-carddemo](https://github.com/Cognition-Partner-Workshops/aws-mainframe-modernization-carddemo)
+**Repository:** [aws-mainframe-modernization-carddemo](https://github.com/Cognition-Partner-Workshops-mirror/aws-mainframe-modernization-carddemo)
 
 AWS CardDemo — a simulated mainframe credit card management system (Apache 2.0). Contains 62 COBOL copybooks defining record layouts, 9 ASCII fixed-width feed files, 30+ COBOL batch programs, and JCL job definitions. The copybook → feed file pairs provide clean raw material for PySpark schema and ingestion code generation.
 

@@ -45,7 +45,7 @@ Beginner to Intermediate
 
 ## <a id="app_petclinic-backend"></a>app_petclinic-backend
 
-**Repository:** [app_petclinic-backend](https://github.com/Cognition-Partner-Workshops/app_petclinic-backend)
+**Repository:** [app_petclinic-backend](https://github.com/Cognition-Partner-Workshops-mirror/app_petclinic-backend)
 
 Canonical Spring Boot application with an existing JUnit test suite.
 
@@ -72,7 +72,7 @@ Open the repo's DeepWiki page to understand the domain model and identify which 
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 React + Node.js/Express application with Jest tests in `backend/src/__tests__/`.
 
@@ -98,7 +98,7 @@ Open the repo's DeepWiki page to understand the API routes and data model. Ident
 
 ## <a id="ts-java-spring-boot-realworld-example-app"></a>ts-java-spring-boot-realworld-example-app
 
-**Repository:** [ts-java-spring-boot-realworld-example-app](https://github.com/Cognition-Partner-Workshops/ts-java-spring-boot-realworld-example-app)
+**Repository:** [ts-java-spring-boot-realworld-example-app](https://github.com/Cognition-Partner-Workshops-mirror/ts-java-spring-boot-realworld-example-app)
 
 Spring Boot RealWorld example app with existing JUnit tests.
 
@@ -124,7 +124,7 @@ Open the repo's DeepWiki page to understand the article/user/comment domain mode
 
 ## <a id="uc-framework-upgrade-monolith-to-microservices"></a>uc-framework-upgrade-monolith-to-microservices
 
-**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops/uc-framework-upgrade-monolith-to-microservices)
+**Repository:** [uc-framework-upgrade-monolith-to-microservices](https://github.com/Cognition-Partner-Workshops-mirror/uc-framework-upgrade-monolith-to-microservices)
 
 Spring Boot 2.6.3 monolith with JUnit test infrastructure.
 

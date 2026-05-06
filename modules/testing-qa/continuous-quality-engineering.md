@@ -56,7 +56,7 @@ Advanced
 
 ## <a id="app_timesheet"></a>app_timesheet
 
-**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops/app_timesheet)
+**Repository:** [app_timesheet](https://github.com/Cognition-Partner-Workshops-mirror/app_timesheet)
 
 React + Node.js full-stack application — good target for continuous QA monitoring with both frontend and backend test surfaces.
 
@@ -119,7 +119,7 @@ This demonstrates how teams use Devin for continuous code hygiene — the QA equ
 
 ## <a id="uc-bdd-test-generation-rest-api"></a>uc-bdd-test-generation-rest-api
 
-**Repository:** [uc-bdd-test-generation-rest-api](https://github.com/Cognition-Partner-Workshops/uc-bdd-test-generation-rest-api)
+**Repository:** [uc-bdd-test-generation-rest-api](https://github.com/Cognition-Partner-Workshops-mirror/uc-bdd-test-generation-rest-api)
 
 Spring Boot + Cucumber BDD framework — use for continuous BDD coverage monitoring and scenario gap detection.
 
@@ -154,7 +154,7 @@ After reviewing results, create a Playbook for recurring BDD coverage auditing:
 
 ## <a id="app_petclinic-angular"></a>app_petclinic-angular
 
-**Repository:** [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops/app_petclinic-angular)
+**Repository:** [app_petclinic-angular](https://github.com/Cognition-Partner-Workshops-mirror/app_petclinic-angular)
 
 Angular frontend — use for continuous frontend test quality monitoring across component tests and E2E tests.
 
