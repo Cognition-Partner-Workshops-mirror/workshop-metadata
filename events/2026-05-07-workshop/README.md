@@ -1,4 +1,4 @@
-# Workshop: Java/Spring Boot — Hands-On with Devin
+# Workshop: Hands-On with Devin
 
 ## Event Details
 
