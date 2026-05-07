@@ -5,15 +5,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>google-adk-trip-planner</artifactId>
+    <artifactId>google-adk-fraud-detection</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Google ADK Trip Planner Agent</name>
+    <name>Google ADK Fraud Detection Agent</name>
     <description>
-        A Google ADK-based AI agent that plans trips for major US cities.
-        Provides flight information, hotel recommendations, and local suggestions
-        for places to visit.
+        A Google ADK-based AI agent that detects fraudulent transactions.
+        Identifies users by name or alias, analyzes transaction patterns,
+        and provides risk scoring with actionable recommendations.
     </description>
 
     <properties>
@@ -70,7 +70,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
-                    <mainClass>com.example.tripplanner.TripPlannerApp</mainClass>
+                    <mainClass>com.example.frauddetection.FraudDetectionApp</mainClass>
                     <classpathScope>runtime</classpathScope>
                 </configuration>
             </plugin>
@@ -81,7 +81,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.example.tripplanner.TripPlannerApp</mainClass>
+                            <mainClass>com.example.frauddetection.FraudDetectionApp</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

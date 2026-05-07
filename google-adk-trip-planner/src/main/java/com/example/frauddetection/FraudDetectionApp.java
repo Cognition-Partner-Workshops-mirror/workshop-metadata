@@ -1,6 +1,6 @@
-package com.example.tripplanner;
+package com.example.frauddetection;
 
-import com.example.tripplanner.agents.TripPlannerAgent;
+import com.example.frauddetection.agents.FraudDetectionAgent;
 import com.google.adk.agents.LlmAgent;
 import com.google.adk.agents.RunConfig;
 import com.google.adk.artifacts.InMemoryArtifactService;
@@ -21,11 +21,11 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Main application entry point for the Trip Planner Agent.
+ * Main application entry point for the Fraud Detection Agent.
  *
- * <p>This application demonstrates a Google ADK-based trip planning agent that helps
- * users plan trips to major US cities. It provides an interactive console interface
- * where users can ask about flights, hotels, and local suggestions.
+ * <p>This application demonstrates a Google ADK-based fraud detection agent that
+ * identifies users (including by alias), analyzes their transactions, and detects
+ * fraudulent activity through location analysis and risk scoring.
  *
  * <p>Usage:
  * <pre>
@@ -38,24 +38,24 @@ import java.util.concurrent.TimeUnit;
  *
  * <p>Example interaction:
  * <pre>
- *   You> Plan a trip from Tampa to Las Vegas for next weekend
- *   Agent> [Provides flights, hotels, and activity recommendations]
+ *   You> Investigate user USR-10042 for fraud
+ *   Agent> [Identifies user, checks aliases, analyzes transactions, scores risk]
  * </pre>
  */
-public class TripPlannerApp {
+public class FraudDetectionApp {
 
-    private static final Logger LOG = LoggerFactory.getLogger(TripPlannerApp.class);
-    private static final String APP_NAME = "TripPlannerApp";
+    private static final Logger LOG = LoggerFactory.getLogger(FraudDetectionApp.class);
+    private static final String APP_NAME = "FraudDetectionApp";
 
     private final Runner runner;
     private final String userId;
     private final String sessionId;
 
-    public TripPlannerApp() {
-        this.userId = "user_" + UUID.randomUUID().toString().substring(0, 8);
+    public FraudDetectionApp() {
+        this.userId = "analyst_" + UUID.randomUUID().toString().substring(0, 8);
         this.sessionId = UUID.randomUUID().toString();
 
-        LlmAgent rootAgent = TripPlannerAgent.createRootAgent();
+        LlmAgent rootAgent = FraudDetectionAgent.createRootAgent();
 
         InMemoryArtifactService artifactService = new InMemoryArtifactService();
         InMemorySessionService sessionService = new InMemorySessionService();
@@ -75,7 +75,7 @@ public class TripPlannerApp {
                 sessionId
         ).blockingGet();
 
-        LOG.info("Trip Planner Agent initialized. Session: {}", sessionId);
+        LOG.info("Fraud Detection Agent initialized. Session: {}", sessionId);
     }
 
     /**
@@ -99,9 +99,6 @@ public class TripPlannerApp {
         return eventStream.toList().timeout(120, TimeUnit.SECONDS).blockingGet();
     }
 
-    /**
-     * Extracts and formats the agent's text response from events.
-     */
     private static String extractResponse(List<Event> events) {
         StringBuilder response = new StringBuilder();
         for (Event event : events) {
@@ -127,23 +124,26 @@ public class TripPlannerApp {
      */
     public void runInteractive() {
         System.out.println("=".repeat(70));
-        System.out.println("  TRIP PLANNER AGENT - Powered by Google ADK");
-        System.out.println("  Plan trips to major US cities with AI assistance");
+        System.out.println("  FRAUD DETECTION AGENT - Powered by Google ADK");
+        System.out.println("  Identify users, detect fraud, and investigate transactions");
         System.out.println("=".repeat(70));
         System.out.println();
         System.out.println("  I can help you with:");
-        System.out.println("  - Flight searches between US cities");
-        System.out.println("  - Hotel recommendations with pricing");
-        System.out.println("  - Local attractions, restaurants, and tips");
+        System.out.println("  - Identifying users by ID, name, or alias");
+        System.out.println("  - Analyzing transaction patterns for fraud");
+        System.out.println("  - Detecting impossible travel and location anomalies");
+        System.out.println("  - Scoring transactions for fraud risk");
+        System.out.println("  - Cross-referencing names/aliases on transactions");
         System.out.println();
         System.out.println("  Type 'quit' or 'exit' to end the session.");
-        System.out.println("  Type 'example' to see a sample query.");
+        System.out.println("  Type 'example' to see sample queries.");
+        System.out.println("  Type 'users' to see available test users.");
         System.out.println("=".repeat(70));
         System.out.println();
 
         try (Scanner scanner = new Scanner(System.in)) {
             while (true) {
-                System.out.print("You> ");
+                System.out.print("Analyst> ");
                 if (!scanner.hasNextLine()) {
                     break;
                 }
@@ -154,34 +154,46 @@ public class TripPlannerApp {
                 }
 
                 if (input.equalsIgnoreCase("quit") || input.equalsIgnoreCase("exit")) {
-                    System.out.println("\nThank you for using Trip Planner! Have a great trip!");
+                    System.out.println("\nFraud Detection session ended.");
                     break;
                 }
 
+                if (input.equalsIgnoreCase("users")) {
+                    System.out.println("\nAvailable test users:");
+                    System.out.println("  USR-10042 - John Martinez (Tampa, FL) - Low risk baseline");
+                    System.out.println("  USR-20087 - Sarah Chen (San Francisco, CA) - Clean history");
+                    System.out.println("  USR-30156 - Michael Thompson (New York, NY) - Suspicious activity");
+                    System.out.println("  USR-40201 - Emily Rodriguez (Miami, FL) - High risk");
+                    System.out.println();
+                    continue;
+                }
+
                 if (input.equalsIgnoreCase("example")) {
-                    System.out.println("\nExample queries you can try:");
-                    System.out.println("  - \"Plan a trip from Tampa to Las Vegas for 3 days\"");
-                    System.out.println("  - \"Find flights from Tampa to Las Vegas on 2025-03-15\"");
-                    System.out.println("  - \"Recommend hotels in Las Vegas for a luxury stay\"");
-                    System.out.println("  - \"What are the best things to do in Las Vegas?\"");
-                    System.out.println("  - \"I want to visit New York next month, help me plan\"");
+                    System.out.println("\nExample queries:");
+                    System.out.println("  - \"Investigate user USR-10042 for fraud\"");
+                    System.out.println("  - \"Search for user named Johnny Martinez\"");
+                    System.out.println("  - \"Check if 'Juan Martinez' is a known alias\"");
+                    System.out.println("  - \"Show all flagged transactions for USR-40201\"");
+                    System.out.println("  - \"Score a $5000 crypto transaction from Lagos for USR-10042\"");
+                    System.out.println("  - \"Is Mike Thompson the same as Michael Thompson?\"");
+                    System.out.println("  - \"Show location history for USR-30156\"");
                     System.out.println();
                     continue;
                 }
 
                 try {
-                    System.out.println("\nAgent> Thinking...\n");
+                    System.out.println("\nAgent> Investigating...\n");
                     List<Event> events = chat(input);
                     String response = extractResponse(events);
                     if (!response.isEmpty()) {
                         System.out.println("Agent> " + response);
                     } else {
-                        System.out.println("Agent> I'm processing your request. Could you provide more details?");
+                        System.out.println("Agent> Processing your request. Could you provide more details?");
                     }
                     System.out.println();
                 } catch (Exception e) {
                     LOG.error("Error processing request", e);
-                    System.out.println("Agent> Sorry, I encountered an error: " + e.getMessage());
+                    System.out.println("Agent> Error: " + e.getMessage());
                     System.out.println("       Please make sure GOOGLE_API_KEY is set correctly.");
                     System.out.println();
                 }
@@ -190,33 +202,32 @@ public class TripPlannerApp {
     }
 
     /**
-     * Runs a demo scenario: Planning a trip from Tampa to Las Vegas.
+     * Runs a demo scenario investigating fraud for user USR-10042 (John Martinez).
      */
     public void runDemo() {
         System.out.println("=".repeat(70));
-        System.out.println("  DEMO: Planning a trip from Tampa, FL to Las Vegas, NV");
+        System.out.println("  DEMO: Investigating Fraud for USR-10042 (John Martinez)");
+        System.out.println("  Aliases: J. Martinez, Johnny Martinez, Juan Martinez, John M.");
         System.out.println("=".repeat(70));
         System.out.println();
 
         List<String> demoQueries = List.of(
-                "I want to plan a 4-day trip from Tampa, Florida to Las Vegas. "
-                        + "I'll be traveling with my partner, departing on March 15, 2025 "
-                        + "and returning on March 19, 2025. We have a mid-range budget "
-                        + "and enjoy entertainment, good food, and nature.",
+                "Look up user USR-10042 and show me their profile including all known aliases.",
 
-                "Can you find us flights from Tampa to Las Vegas for those dates?",
+                "Check the location history for USR-10042. Are there any unusual locations?",
 
-                "What hotels do you recommend on the Las Vegas Strip for 4 nights?",
+                "Show all transactions for USR-10042 and analyze them for fraud patterns. "
+                        + "Pay special attention to which name/alias was used on each transaction.",
 
-                "What are the must-see attractions and best restaurants in Las Vegas? "
-                        + "We'll be there for 4 days."
+                "Generate a full risk score and investigation summary for USR-10042. "
+                        + "Should we block this account?"
         );
 
         for (int i = 0; i < demoQueries.size(); i++) {
             String query = demoQueries.get(i);
             System.out.println("-".repeat(70));
-            System.out.printf("[Query %d/%d]%n", i + 1, demoQueries.size());
-            System.out.println("You> " + query);
+            System.out.printf("[Step %d/%d]%n", i + 1, demoQueries.size());
+            System.out.println("Analyst> " + query);
             System.out.println();
 
             try {
@@ -231,7 +242,7 @@ public class TripPlannerApp {
         }
 
         System.out.println("=".repeat(70));
-        System.out.println("  Demo complete! Run in interactive mode to plan your own trip.");
+        System.out.println("  Demo complete! Run in interactive mode to investigate other users.");
         System.out.println("=".repeat(70));
     }
 
@@ -247,7 +258,7 @@ public class TripPlannerApp {
             System.exit(1);
         }
 
-        TripPlannerApp app = new TripPlannerApp();
+        FraudDetectionApp app = new FraudDetectionApp();
 
         if (args.length > 0 && args[0].equals("--demo")) {
             app.runDemo();

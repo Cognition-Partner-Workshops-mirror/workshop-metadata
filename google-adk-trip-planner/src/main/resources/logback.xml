@@ -6,7 +6,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.example.tripplanner" level="INFO"/>
+    <logger name="com.example.frauddetection" level="INFO"/>
     <logger name="com.google.adk" level="WARN"/>
 
     <root level="WARN">

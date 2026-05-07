@@ -1,23 +1,30 @@
-# Google ADK Trip Planner Agent
+# Google ADK Fraud Detection Agent
 
-A comprehensive trip planning AI agent built with [Google Agent Development Kit (ADK)](https://github.com/google/adk-java) for Java 21. This agent helps users plan trips to major US cities by providing flight information, hotel recommendations, and local suggestions for places to visit.
+A comprehensive fraud detection AI agent built with [Google Agent Development Kit (ADK)](https://github.com/google/adk-java) for Java 21. This agent identifies users (including by alias/name variants), analyzes transaction patterns, and detects fraudulent activity with actionable recommendations.
 
 ## Overview
 
-The Trip Planner Agent reduces the effort of searching for each component needed to plan a trip. Instead of visiting multiple websites for flights, hotels, and activities, this agent provides everything in one conversational interface.
+The Fraud Detection Agent helps analysts investigate suspicious transactions by combining user identification, location analysis, and risk scoring in one conversational interface. It handles alias/name variant matching to catch fraud even when perpetrators use different name variations.
 
 ### Features
 
-- **Flight Search**: Find flights between 20+ major US cities with pricing, duration, and stop information
-- **Hotel Recommendations**: Get curated hotel suggestions with ratings, pricing, and neighborhood details
-- **Local Suggestions**: Discover attractions, restaurants, and practical travel tips for each city
-- **Multi-Agent Architecture**: Specialized sub-agents handle each domain for focused, accurate responses
-- **Interactive Console**: Chat with the agent in your terminal
+- **User Identification**: Locate users by ID, name, or alias with fuzzy matching
+- **Alias Resolution**: Cross-reference known name variants (nicknames, initials, translations) on transactions
+- **Location Analysis**: Track login locations, detect impossible travel patterns
+- **Transaction Analysis**: Identify suspicious spending patterns, unusual amounts, and high-risk categories
+- **Fraud Risk Scoring**: Generate comprehensive risk scores with decision recommendations (BLOCK/FLAG/AUTH/APPROVE)
+- **Multi-Agent Architecture**: Specialized sub-agents for identity, transactions, and risk scoring
+- **Interactive Console**: Investigate fraud cases in your terminal
 - **Dev UI**: Browser-based testing interface powered by Google ADK
 
-### Supported Cities
+### Demo Users
 
-Las Vegas, New York, Los Angeles, Chicago, Miami, San Francisco, Seattle, Denver, Nashville, New Orleans, Tampa, Atlanta, Dallas, Boston, Washington DC, Orlando, Austin, San Diego, Phoenix, Honolulu
+| User ID | Name | Location | Risk Level |
+|---------|------|----------|------------|
+| USR-10042 | John Martinez | Tampa, FL | Compromised account |
+| USR-20087 | Sarah Chen | San Francisco, CA | Clean history |
+| USR-30156 | Michael Thompson | New York, NY | Card cloning suspected |
+| USR-40201 | Emily Rodriguez | Miami, FL | Fraud ring activity |
 
 ## Prerequisites
 
@@ -51,21 +58,24 @@ mvn clean compile
 
 ### Interactive Console Mode
 
-Chat with the agent in your terminal:
+Chat with the agent to investigate fraud cases:
 
 ```bash
 mvn exec:java
 ```
 
 Example queries:
-- "Plan a trip from Tampa to Las Vegas for 3 days"
-- "Find flights from Tampa to Las Vegas on 2025-03-15"
-- "Recommend hotels in Las Vegas for a luxury stay"
-- "What are the best things to do in Las Vegas?"
+- "Investigate user USR-10042 for fraud"
+- "Search for a user named Johnny Martinez"
+- "Check if 'Juan Martinez' is a known alias"
+- "Show all flagged transactions for USR-40201"
+- "Score a $5000 crypto transaction from Lagos for USR-10042"
+- "Is Mike Thompson the same as Michael Thompson?"
+- "Show location history for USR-30156"
 
 ### Demo Mode
 
-Run a pre-configured demo showing a complete trip plan from Tampa to Las Vegas:
+Run a pre-configured investigation of user USR-10042 (John Martinez) showing alias-based fraud detection:
 
 ```bash
 mvn exec:java -Dexec.args="--demo"
@@ -76,7 +86,7 @@ mvn exec:java -Dexec.args="--demo"
 Launch the browser-based ADK Dev UI for testing and debugging:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.example.tripplanner.TripPlannerDevServer"
+mvn exec:java -Dexec.mainClass="com.example.frauddetection.FraudDetectionDevServer"
 ```
 
 Then open [http://localhost:8080](http://localhost:8080) in your browser.
@@ -84,100 +94,118 @@ Then open [http://localhost:8080](http://localhost:8080) in your browser.
 ## Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    ROOT AGENT (trip_planner)                 │
-│                                                             │
-│  Orchestrates trip planning by delegating to sub-agents     │
-│  Model: gemini-2.0-flash                                    │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌─────────────────┐  ┌──────────────┐  ┌───────────────┐  │
-│  │  flight_agent   │  │ hotel_agent  │  │ local_guide   │  │
-│  │                 │  │              │  │    _agent      │  │
-│  │ • searchFlights │  │ • searchHotels│ │ • getLocal    │  │
-│  │ • getAirportCode│  │ • getHotel   │  │   Suggestions │  │
-│  │                 │  │   Details    │  │ • getCategory │  │
-│  │                 │  │              │  │   Suggestions │  │
-│  └─────────────────┘  └──────────────┘  └───────────────┘  │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────┐
+│              ROOT AGENT (fraud_detection_agent)                   │
+│                                                                   │
+│  Orchestrates fraud investigation workflow                        │
+│  Model: gemini-2.0-flash                                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                   │
+│  ┌──────────────────┐  ┌──────────────────┐  ┌───────────────┐  │
+│  │ user_identity    │  │ transaction      │  │ risk_scoring  │  │
+│  │    _agent        │  │    _agent        │  │    _agent     │  │
+│  │                  │  │                  │  │               │  │
+│  │ • lookupUser     │  │ • getTransactions│  │ • generate    │  │
+│  │ • searchByName   │  │ • analyzeFraud   │  │   RiskReport  │  │
+│  │   OrAlias        │  │   Patterns       │  │ • score       │  │
+│  │ • getUserLocation│  │ • verifyTxn      │  │   Transaction │  │
+│  │   History        │  │   Name           │  │ • getInvest   │  │
+│  │ • verifyUser     │  │                  │  │   Summary     │  │
+│  │   Location       │  │                  │  │               │  │
+│  └──────────────────┘  └──────────────────┘  └───────────────┘  │
+│                                                                   │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
 ### Project Structure
 
 ```
 google-adk-trip-planner/
-├── pom.xml                                    # Maven configuration (Java 21, ADK 1.2.0)
-├── README.md                                  # This file
-└── src/main/java/com/example/tripplanner/
-    ├── TripPlannerApp.java                    # Main app with interactive & demo modes
-    ├── TripPlannerDevServer.java              # ADK Dev UI web server
+├── pom.xml                                        # Maven config (Java 21, ADK 1.2.0)
+├── README.md                                      # This file
+└── src/main/java/com/example/frauddetection/
+    ├── FraudDetectionApp.java                     # Main app with interactive & demo modes
+    ├── FraudDetectionDevServer.java               # ADK Dev UI web server
     ├── agents/
-    │   └── TripPlannerAgent.java             # Agent definitions & orchestration
+    │   └── FraudDetectionAgent.java              # Agent definitions & orchestration
     └── tools/
-        ├── FlightSearchTool.java             # Flight search capabilities
-        ├── HotelRecommendationTool.java      # Hotel recommendations
-        └── LocalSuggestionsTool.java         # Attractions, restaurants, tips
+        ├── UserIdentificationTool.java           # User lookup, alias matching, location
+        ├── TransactionAnalysisTool.java          # Transaction history & fraud patterns
+        └── FraudRiskScoringTool.java             # Risk scoring & investigation summaries
 ```
 
-## Example: Tampa to Las Vegas Trip
+## Alias Handling
+
+A key feature of this agent is its ability to handle name aliases/variants when investigating fraud:
+
+| Primary Name | Known Aliases |
+|-------------|---------------|
+| John Martinez | J. Martinez, Johnny Martinez, Juan Martinez, John M. |
+| Sarah Chen | S. Chen, Sara Chen, Sarah C., Xiao Chen |
+| Michael Thompson | Mike Thompson, M. Thompson, Michael T., Mike T. |
+| Emily Rodriguez | E. Rodriguez, Em Rodriguez, Emily R., Emilia Rodriguez |
+
+The agent cross-references every transaction's "name on card" against all known aliases to determine:
+- **Known alias + normal location** = Likely legitimate
+- **Known alias + suspicious location** = Elevated risk
+- **Unknown name variant** = High risk of unauthorized use
+
+## Example: Investigating USR-10042
 
 ```
-You> Plan a trip from Tampa, Florida to Las Vegas for 4 days next month.
-     We're a couple with a mid-range budget who love entertainment and food.
+Analyst> Investigate user USR-10042 for fraud
 
-Agent> Here's your complete trip plan:
+Agent> INVESTIGATION REPORT: USR-10042 (John Martinez)
 
-✈️ FLIGHTS (Tampa TPA → Las Vegas LAS)
-  • Delta DL2847 - Nonstop, 4h 30m - $289/person
-  • United UA1523 - 1 stop, 6h 15m - $219/person
-  ...
+USER PROFILE
+  Name: John Martinez
+  Aliases: J. Martinez, Johnny Martinez, Juan Martinez, John M.
+  Location: Tampa, FL | Risk Score: 12 (was low)
 
-🏨 HOTELS (4 nights)
-  • The Venetian Resort ⭐4.6 - $200-$450/night (The Strip)
-  • Caesars Palace ⭐4.5 - $180-$400/night (The Strip)
-  ...
+LOCATION ANOMALIES
+  WARNING 2025-03-11 22:45 - Lagos, Nigeria (UNUSUAL - Unknown Android)
+  WARNING 2025-03-12 01:30 - Moscow, Russia (UNUSUAL - Windows PC)
+  OK Normal activity from Tampa, FL on 03/10 and 03/11 morning
 
-🎯 THINGS TO DO
-  Day 1: Walk the Strip, Bellagio Fountains, evening Cirque du Soleil
-  Day 2: Pool morning, Fremont Street Experience evening
-  Day 3: Red Rock Canyon day trip, fine dining
-  Day 4: Shopping at Forum Shops, High Roller at sunset
-  ...
+SUSPICIOUS TRANSACTIONS
+  TXN-004: $2,499.99 - Electronics Hub Online (Lagos, Nigeria)
+    Name: "Johnny Martinez" (known alias)
+    Flags: HIGH_RISK_LOCATION, HIGH_VALUE, IMPOSSIBLE_TRAVEL
 
-🍽️ RESTAURANTS
-  • Hell's Kitchen (Gordon Ramsay) - $$$
-  • Mon Ami Gabi (fountain views) - $$$
-  • Bacchanal Buffet (500+ items) - $$
-  ...
+  TXN-005: $1,899.00 - LuxuryWatches.net (Lagos, Nigeria)
+    Name: "J. Martinez" (known alias)
+    Flags: HIGH_RISK_LOCATION, HIGH_VALUE
 
-💡 TIPS
-  • Use the Monorail for Strip transportation
-  • Book show tickets at Tix4Tonight for discounts
-  • Best weather: March-May (your trip timing is perfect!)
+  TXN-006: $5,000.00 - CryptoExchange Pro (Moscow, Russia)
+    Name: "Juan Martinez" (known alias)
+    Flags: HIGH_RISK_LOCATION, HIGH_VALUE, HIGH_RISK_CATEGORY
+
+RISK ASSESSMENT: CRITICAL (Score: 95+)
+  Recommendation: IMMEDIATE ACTION
+  - Freeze account immediately
+  - Block all pending transactions
+  - Contact customer to verify
+  - Issue new card
+  - File SAR (Suspicious Activity Report)
 ```
 
 ## Extending the Agent
 
-### Adding a New City
+### Adding New Users
 
-Add city data to the relevant tool classes:
+Add user data to the tool classes:
 
-1. **FlightSearchTool.java**: Add airport code to `AIRPORT_CODES` map
-2. **HotelRecommendationTool.java**: Add hotels to `CITY_HOTELS` map
-3. **LocalSuggestionsTool.java**: Add suggestions to `CITY_SUGGESTIONS` map
+1. **UserIdentificationTool.java**: Add to `USER_PROFILES`, `USER_USUAL_LOCATIONS`, `USER_LOCATION_HISTORY`
+2. **TransactionAnalysisTool.java**: Add to `USER_TRANSACTIONS`
+3. **FraudRiskScoringTool.java**: Add to `ACCOUNT_BEHAVIOR_BASELINES`
 
 ### Integrating Real APIs
 
-The tool classes are designed to be swapped with real API integrations:
+The tool classes are designed to be swapped with real integrations:
 
-- **Flights**: [Amadeus API](https://developers.amadeus.com/), [Google Flights](https://developers.google.com/travel)
-- **Hotels**: [Booking.com API](https://developers.booking.com/), [Hotels.com](https://developer.expediagroup.com/)
-- **Local**: [Google Places API](https://developers.google.com/maps/documentation/places), [Yelp Fusion](https://docs.developer.yelp.com/)
-
-### Adding New Tools
-
-Create a new tool class in `com.example.tripplanner.tools`, then register it with the appropriate agent in `TripPlannerAgent.java`.
+- **User Identity**: [Jumio](https://www.jumio.com/), [Onfido](https://onfido.com/), [Plaid Identity](https://plaid.com/products/identity/)
+- **Transactions**: [Stripe Radar](https://stripe.com/radar), [Plaid Transactions](https://plaid.com/products/transactions/)
+- **Risk Scoring**: [Featurespace](https://www.featurespace.com/), [Feedzai](https://feedzai.com/), [FICO Falcon](https://www.fico.com/en/products/fico-falcon-platform)
 
 ## Technology Stack
 
