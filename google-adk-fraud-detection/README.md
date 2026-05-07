@@ -50,7 +50,7 @@ export GOOGLE_API_KEY=your-api-key-here
 ### 3. Build the Project
 
 ```bash
-cd google-adk-trip-planner
+cd google-adk-fraud-detection
 mvn clean compile
 ```
 
@@ -120,7 +120,7 @@ Then open [http://localhost:8080](http://localhost:8080) in your browser.
 ### Project Structure
 
 ```
-google-adk-trip-planner/
+google-adk-fraud-detection/
 ├── pom.xml                                        # Maven config (Java 21, ADK 1.2.0)
 ├── README.md                                      # This file
 └── src/main/java/com/example/frauddetection/
