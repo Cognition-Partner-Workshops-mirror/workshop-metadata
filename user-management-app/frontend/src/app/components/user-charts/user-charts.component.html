@@ -1,0 +1,54 @@
+<!-- User Distribution Charts - Bar, Pie, and Doughnut charts -->
+<div class="charts-container">
+  <h2>User Distribution Charts</h2>
+
+  <!-- Loading indicator -->
+  @if (isLoading) {
+    <div class="loading">Loading chart data...</div>
+  }
+
+  <!-- Empty state when no user data exists -->
+  @if (!isLoading && !hasData) {
+    <div class="empty-state">
+      <p>No data available for charts. Add some users first.</p>
+    </div>
+  }
+
+  <!-- Charts grid layout -->
+  @if (!isLoading && hasData) {
+    <div class="charts-grid">
+      <!-- Bar Chart: Users by Country -->
+      <div class="chart-card">
+        <canvas
+          baseChart
+          [type]="countryChartType"
+          [data]="countryChartData"
+          [options]="countryChartOptions"
+        >
+        </canvas>
+      </div>
+
+      <!-- Pie Chart: Users by State -->
+      <div class="chart-card">
+        <canvas
+          baseChart
+          [type]="stateChartType"
+          [data]="stateChartData"
+          [options]="stateChartOptions"
+        >
+        </canvas>
+      </div>
+
+      <!-- Doughnut Chart: Users by City -->
+      <div class="chart-card">
+        <canvas
+          baseChart
+          [type]="cityChartType"
+          [data]="cityChartData"
+          [options]="cityChartOptions"
+        >
+        </canvas>
+      </div>
+    </div>
+  }
+</div>

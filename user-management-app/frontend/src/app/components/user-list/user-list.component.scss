@@ -1,0 +1,136 @@
+/* User List / Report Table Styles */
+
+.list-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #1a1a2e;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* Loading spinner placeholder */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Empty state styling */
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: #999;
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+/* Error alert styling */
+.alert-error {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Table wrapper for horizontal scrolling on small screens */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* Data table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+
+  th,
+  td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+  }
+
+  tbody tr {
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: #f8f9ff;
+    }
+
+    &:nth-child(even) {
+      background: #fafafa;
+
+      &:hover {
+        background: #f0f2ff;
+      }
+    }
+  }
+}
+
+/* Action buttons within the table */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &-edit {
+    background: #ffc107;
+    color: #333;
+
+    &:hover {
+      background: #e0a800;
+      transform: translateY(-1px);
+    }
+  }
+
+  &-delete {
+    background: #dc3545;
+    color: white;
+
+    &:hover {
+      background: #c82333;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+/* Record count footer */
+.record-count {
+  margin-top: 1rem;
+  text-align: right;
+  color: #666;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
