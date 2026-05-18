@@ -1,0 +1,345 @@
+/**
+ * Global styles for the NICE Actimize Fraud Investigation application.
+ * Uses NICE Actimize brand colors: dark navy (#0a1628), teal (#00b4d8),
+ * and accent blues/greens for a professional financial crime investigation UI.
+ */
+
+:root {
+  /* NICE Actimize brand color palette */
+  --primary-dark: #0a1628;
+  --primary: #1a2744;
+  --primary-light: #2a3a5c;
+  --accent: #00b4d8;
+  --accent-light: #48cae4;
+  --accent-dark: #0096c7;
+  --success: #06d6a0;
+  --warning: #ffd166;
+  --danger: #ef476f;
+  --danger-light: #ff6b8a;
+  --info: #118ab2;
+
+  /* Neutral palette */
+  --bg-dark: #0d1b2a;
+  --bg-main: #1b2838;
+  --bg-card: #1e2d42;
+  --bg-card-hover: #243650;
+  --bg-input: #162232;
+  --border-color: #2a3f5f;
+  --border-light: #1e3250;
+  --text-primary: #e0e6ed;
+  --text-secondary: #8899aa;
+  --text-muted: #5a6d82;
+  --text-white: #ffffff;
+
+  /* Typography */
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Consolas', 'Monaco', 'Courier New', monospace;
+
+  /* Shadows and effects */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(0, 180, 216, 0.15);
+
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: var(--bg-dark);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-dark);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbar styling for the dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Utility classes for status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.badge-critical {
+  background: rgba(239, 71, 111, 0.2);
+  color: var(--danger-light);
+  border: 1px solid rgba(239, 71, 111, 0.3);
+}
+
+.badge-high {
+  background: rgba(255, 209, 102, 0.15);
+  color: var(--warning);
+  border: 1px solid rgba(255, 209, 102, 0.3);
+}
+
+.badge-medium {
+  background: rgba(0, 180, 216, 0.15);
+  color: var(--accent-light);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+}
+
+.badge-low {
+  background: rgba(6, 214, 160, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(6, 214, 160, 0.3);
+}
+
+.badge-open {
+  background: rgba(0, 180, 216, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+}
+
+.badge-investigating {
+  background: rgba(255, 209, 102, 0.15);
+  color: var(--warning);
+  border: 1px solid rgba(255, 209, 102, 0.3);
+}
+
+.badge-escalated {
+  background: rgba(239, 71, 111, 0.2);
+  color: var(--danger-light);
+  border: 1px solid rgba(239, 71, 111, 0.3);
+}
+
+.badge-confirmed {
+  background: rgba(239, 71, 111, 0.25);
+  color: #ff4466;
+  border: 1px solid rgba(239, 71, 111, 0.4);
+}
+
+.badge-false-positive {
+  background: rgba(6, 214, 160, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(6, 214, 160, 0.3);
+}
+
+/* Transaction status badges */
+.badge-completed {
+  background: rgba(6, 214, 160, 0.15);
+  color: var(--success);
+  border: 1px solid rgba(6, 214, 160, 0.3);
+}
+
+.badge-pending {
+  background: rgba(255, 209, 102, 0.15);
+  color: var(--warning);
+  border: 1px solid rgba(255, 209, 102, 0.3);
+}
+
+.badge-failed {
+  background: rgba(239, 71, 111, 0.2);
+  color: var(--danger-light);
+  border: 1px solid rgba(239, 71, 111, 0.3);
+}
+
+.badge-reversed {
+  background: rgba(17, 138, 178, 0.2);
+  color: #4dc9f6;
+  border: 1px solid rgba(17, 138, 178, 0.3);
+}
+
+.badge-blocked {
+  background: rgba(239, 71, 111, 0.3);
+  color: #ff6b8a;
+  border: 1px solid rgba(239, 71, 111, 0.4);
+}
+
+/* Form input styles */
+input, select {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: var(--font-sans);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.15);
+}
+
+input::placeholder {
+  color: var(--text-muted);
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  /* Custom dropdown arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238899aa' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 30px;
+}
+
+/* Button styles */
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--primary-dark);
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn-secondary {
+  background: var(--primary-light);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background: var(--bg-card-hover);
+}
+
+.btn-danger {
+  background: rgba(239, 71, 111, 0.2);
+  color: var(--danger-light);
+  border: 1px solid rgba(239, 71, 111, 0.3);
+}
+
+.btn-danger:hover {
+  background: rgba(239, 71, 111, 0.3);
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-secondary);
+  background: var(--bg-dark);
+  border-bottom: 2px solid var(--border-color);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+th:hover {
+  color: var(--accent);
+}
+
+th .sort-indicator {
+  margin-left: 4px;
+  opacity: 0.5;
+}
+
+th .sort-indicator.active {
+  opacity: 1;
+  color: var(--accent);
+}
+
+td {
+  padding: 10px 12px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+tr:hover td {
+  background: var(--bg-card-hover);
+}
+
+tr.clickable {
+  cursor: pointer;
+}
+
+/* Pagination styles */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+.pagination button {
+  min-width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.pagination button:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.pagination button.active {
+  background: var(--accent);
+  color: var(--primary-dark);
+  border-color: var(--accent);
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
