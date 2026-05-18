@@ -14,8 +14,8 @@ import { Country, State, City } from '../models/location.model';
   providedIn: 'root',
 })
 export class LocationService {
-  // Base URL for the location API endpoints
-  private readonly apiUrl = 'http://localhost:8080/api/locations';
+  // Base URL for the location API endpoints (relative path, proxied to backend in dev)
+  private readonly apiUrl = '/api/locations';
 
   constructor(private http: HttpClient) {}
 

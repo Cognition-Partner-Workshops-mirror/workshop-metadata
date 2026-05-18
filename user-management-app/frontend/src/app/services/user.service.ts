@@ -11,8 +11,8 @@ import { User } from '../models/user.model';
   providedIn: 'root',
 })
 export class UserService {
-  // Base URL for the user API endpoints
-  private readonly apiUrl = 'http://localhost:8080/api/users';
+  // Base URL for the user API endpoints (relative path, proxied to backend in dev)
+  private readonly apiUrl = '/api/users';
 
   constructor(private http: HttpClient) {}
 
