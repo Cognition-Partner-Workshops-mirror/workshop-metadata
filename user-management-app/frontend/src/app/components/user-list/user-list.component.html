@@ -1,0 +1,65 @@
+<!-- User Report Table - displays all registered users -->
+<div class="list-container">
+  <h2>User Report</h2>
+
+  <!-- Loading indicator -->
+  @if (isLoading) {
+    <div class="loading">Loading users...</div>
+  }
+
+  <!-- Error message -->
+  @if (errorMessage) {
+    <div class="alert alert-error">{{ errorMessage }}</div>
+  }
+
+  <!-- Empty state message -->
+  @if (!isLoading && users.length === 0) {
+    <div class="empty-state">
+      <p>No users registered yet. Use the form above to add users.</p>
+    </div>
+  }
+
+  <!-- User data table -->
+  @if (!isLoading && users.length > 0) {
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Country</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (user of users; track user.id; let i = $index) {
+            <tr>
+              <td>{{ i + 1 }}</td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.dateOfBirth }}</td>
+              <td>{{ user.country }}</td>
+              <td>{{ user.state }}</td>
+              <td>{{ user.city }}</td>
+              <td>{{ user.address }}</td>
+              <td class="actions">
+                <button class="btn btn-edit" (click)="onEdit(user)">
+                  Edit
+                </button>
+                <button class="btn btn-delete" (click)="onDelete(user)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="record-count">Total Records: {{ users.length }}</div>
+  }
+</div>

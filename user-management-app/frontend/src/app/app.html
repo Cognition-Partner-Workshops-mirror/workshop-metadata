@@ -1,0 +1,59 @@
+<!-- Main Application Layout -->
+<div class="app-container">
+  <!-- Application Header -->
+  <header class="app-header">
+    <h1>User Management System</h1>
+    <p class="subtitle">Register, manage, and analyze user data</p>
+  </header>
+
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs">
+    <button
+      class="nav-tab"
+      [class.active]="activeTab === 'form'"
+      (click)="setActiveTab('form')"
+    >
+      Register User
+    </button>
+    <button
+      class="nav-tab"
+      [class.active]="activeTab === 'report'"
+      (click)="setActiveTab('report')"
+    >
+      User Report
+    </button>
+    <button
+      class="nav-tab"
+      [class.active]="activeTab === 'charts'"
+      (click)="setActiveTab('charts')"
+    >
+      Charts & Analytics
+    </button>
+  </nav>
+
+  <!-- Tab Content -->
+  <main class="main-content">
+    <!-- User Registration/Edit Form Tab -->
+    @if (activeTab === 'form') {
+      <app-user-form
+        [editUser]="editUser"
+        (userSaved)="onUserSaved()"
+      ></app-user-form>
+    }
+
+    <!-- User Report/List Tab -->
+    @if (activeTab === 'report') {
+      <app-user-list (editRequested)="onEditUser($event)"></app-user-list>
+    }
+
+    <!-- Charts & Analytics Tab -->
+    @if (activeTab === 'charts') {
+      <app-user-charts></app-user-charts>
+    }
+  </main>
+
+  <!-- Application Footer -->
+  <footer class="app-footer">
+    <p>User Management System &copy; 2026 | Built with Angular 21 & Spring Boot</p>
+  </footer>
+</div>

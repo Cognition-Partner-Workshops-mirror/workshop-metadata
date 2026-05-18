@@ -1,0 +1,168 @@
+<!-- User Registration/Edit Form with cascading location dropdowns -->
+<div class="form-container">
+  <h2>{{ editUser ? 'Edit User' : 'Register New User' }}</h2>
+
+  <!-- Success message displayed after successful save -->
+  @if (successMessage) {
+    <div class="alert alert-success">{{ successMessage }}</div>
+  }
+
+  <!-- Error message displayed on save failure -->
+  @if (errorMessage) {
+    <div class="alert alert-error">{{ errorMessage }}</div>
+  }
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <!-- Name field -->
+    <div class="form-group">
+      <label for="name">Full Name <span class="required">*</span></label>
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Enter full name"
+      />
+      @if (userForm.get('name')?.touched && userForm.get('name')?.invalid) {
+        <div class="error-text">
+          @if (userForm.get('name')?.errors?.['required']) {
+            Name is required.
+          }
+          @if (userForm.get('name')?.errors?.['minlength']) {
+            Name must be at least 2 characters.
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Email field -->
+    <div class="form-group">
+      <label for="email">Email <span class="required">*</span></label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Enter email address"
+      />
+      @if (userForm.get('email')?.touched && userForm.get('email')?.invalid) {
+        <div class="error-text">
+          @if (userForm.get('email')?.errors?.['required']) {
+            Email is required.
+          }
+          @if (userForm.get('email')?.errors?.['email']) {
+            Please enter a valid email address.
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Date of Birth field -->
+    <div class="form-group">
+      <label for="dateOfBirth"
+        >Date of Birth <span class="required">*</span></label
+      >
+      <input type="date" id="dateOfBirth" formControlName="dateOfBirth" />
+      @if (
+        userForm.get('dateOfBirth')?.touched &&
+        userForm.get('dateOfBirth')?.invalid
+      ) {
+        <div class="error-text">Date of birth is required.</div>
+      }
+    </div>
+
+    <!-- Country dropdown - triggers state loading on change -->
+    <div class="form-group">
+      <label for="country">Country <span class="required">*</span></label>
+      <select
+        id="country"
+        formControlName="countryId"
+        (change)="onCountryChange($event)"
+      >
+        <option value="">Select Country</option>
+        @for (country of countries; track country.id) {
+          <option [value]="country.id">{{ country.name }}</option>
+        }
+      </select>
+      @if (
+        userForm.get('countryId')?.touched &&
+        userForm.get('countryId')?.invalid
+      ) {
+        <div class="error-text">Country is required.</div>
+      }
+    </div>
+
+    <!-- State dropdown - populated based on selected country -->
+    <div class="form-group">
+      <label for="state">State <span class="required">*</span></label>
+      <select
+        id="state"
+        formControlName="stateId"
+        (change)="onStateChange($event)"
+        [attr.disabled]="states.length === 0 ? true : null"
+      >
+        <option value="">Select State</option>
+        @for (state of states; track state.id) {
+          <option [value]="state.id">{{ state.name }}</option>
+        }
+      </select>
+      @if (
+        userForm.get('stateId')?.touched && userForm.get('stateId')?.invalid
+      ) {
+        <div class="error-text">State is required.</div>
+      }
+    </div>
+
+    <!-- City dropdown - populated based on selected state -->
+    <div class="form-group">
+      <label for="city">City <span class="required">*</span></label>
+      <select
+        id="city"
+        formControlName="cityId"
+        (change)="onCityChange($event)"
+        [attr.disabled]="cities.length === 0 ? true : null"
+      >
+        <option value="">Select City</option>
+        @for (city of cities; track city.id) {
+          <option [value]="city.id">{{ city.name }}</option>
+        }
+      </select>
+      @if (
+        userForm.get('cityId')?.touched && userForm.get('cityId')?.invalid
+      ) {
+        <div class="error-text">City is required.</div>
+      }
+    </div>
+
+    <!-- Address field -->
+    <div class="form-group">
+      <label for="address">Address <span class="required">*</span></label>
+      <textarea
+        id="address"
+        formControlName="address"
+        rows="3"
+        placeholder="Enter full address"
+      ></textarea>
+      @if (
+        userForm.get('address')?.touched && userForm.get('address')?.invalid
+      ) {
+        <div class="error-text">
+          @if (userForm.get('address')?.errors?.['required']) {
+            Address is required.
+          }
+          @if (userForm.get('address')?.errors?.['minlength']) {
+            Address must be at least 5 characters.
+          }
+        </div>
+      }
+    </div>
+
+    <!-- Form action buttons -->
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Saving...' : editUser ? 'Update User' : 'Register User' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="resetForm()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
