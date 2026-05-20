@@ -1,0 +1,23 @@
+{
+  "name": "apigee-proxy-reporter",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "apigee",
+    "api-proxy",
+    "reporting",
+    "google-cloud"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "Connects to the Apigee Management API and generates reports on API proxies and their labels.",
+  "dependencies": {
+    "axios": "^1.16.1",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^17.4.2",
+    "google-auth-library": "^10.6.2"
+  }
+}
