@@ -224,11 +224,13 @@ export default function CaseDetail({ cases }: CaseDetailProps) {
     if (fraudCase) {
       setLoading(true);
       /* Use requestAnimationFrame to avoid blocking the UI thread during generation */
-      requestAnimationFrame(() => {
+      const rafId = requestAnimationFrame(() => {
         const txns = generateTransactionsForCase(fraudCase);
         setTransactions(txns);
         setLoading(false);
       });
+      /* Cancel pending rAF if the case changes or component unmounts */
+      return () => cancelAnimationFrame(rafId);
     }
   }, [fraudCase]);
 
@@ -582,7 +584,7 @@ export default function CaseDetail({ cases }: CaseDetailProps) {
                   pagedTxns.map(t => (
                     <tr key={t.transactionId}>
                       <td style={{ color: '#00b4d8', fontFamily: 'var(--font-mono)', fontSize: 11 }}>
-                        {t.referenceNumber}
+                        {t.transactionId}
                       </td>
                       <td>{t.type}</td>
                       <td style={{ fontWeight: 600 }}>{formatCurrency(t.amount)}</td>
