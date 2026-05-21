@@ -20,6 +20,8 @@ import {
   getStatusBadgeClass, getPriorityBadgeClass,
   getTransactionStatusBadgeClass, getRiskScoreColor,
 } from '../utils/helpers';
+import { useAuth } from '../context/AuthContext';
+import { useEscalation } from '../context/EscalationContext';
 
 interface CaseDetailProps {
   cases: FraudCase[];
@@ -204,17 +206,152 @@ const styles: Record<string, React.CSSProperties> = {
     padding: '8px 12px',
     borderBottom: '1px solid #1e3250',
   },
+  /* Escalation button styled in amber to signal severity */
+  escalateBtn: {
+    padding: '10px 20px',
+    background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+    color: '#ffffff',
+    border: 'none',
+    borderRadius: 8,
+    fontSize: 14,
+    fontWeight: 700,
+    cursor: 'pointer',
+    letterSpacing: 0.5,
+  },
+  /* Overlay backdrop for the escalation dialog */
+  modalOverlay: {
+    position: 'fixed' as const,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'rgba(0, 0, 0, 0.65)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 200,
+  },
+  modalCard: {
+    background: '#111d2e',
+    borderRadius: 16,
+    padding: '32px',
+    width: 480,
+    border: '1px solid #2a3f5f',
+    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.5)',
+  },
+  modalTitle: {
+    fontSize: 18,
+    fontWeight: 700,
+    color: '#f59e0b',
+    marginBottom: 16,
+  },
+  modalLabel: {
+    display: 'block',
+    fontSize: 12,
+    fontWeight: 600,
+    color: '#8899aa',
+    marginBottom: 6,
+    textTransform: 'uppercase' as const,
+    letterSpacing: 0.8,
+  },
+  modalSelect: {
+    width: '100%',
+    padding: '10px 14px',
+    background: '#0a1628',
+    border: '1px solid #1e3250',
+    borderRadius: 8,
+    color: '#e0e8f0',
+    fontSize: 14,
+    marginBottom: 16,
+    boxSizing: 'border-box' as const,
+  },
+  modalTextarea: {
+    width: '100%',
+    padding: '10px 14px',
+    background: '#0a1628',
+    border: '1px solid #1e3250',
+    borderRadius: 8,
+    color: '#e0e8f0',
+    fontSize: 14,
+    minHeight: 100,
+    resize: 'vertical' as const,
+    marginBottom: 20,
+    boxSizing: 'border-box' as const,
+    fontFamily: 'inherit',
+  },
+  modalActions: {
+    display: 'flex',
+    justifyContent: 'flex-end',
+    gap: 10,
+  },
+  modalCancel: {
+    padding: '10px 20px',
+    background: 'transparent',
+    color: '#8899aa',
+    border: '1px solid #2a3f5f',
+    borderRadius: 8,
+    fontSize: 14,
+    fontWeight: 600,
+    cursor: 'pointer',
+  },
+  modalSubmit: {
+    padding: '10px 20px',
+    background: 'linear-gradient(135deg, #f59e0b, #d97706)',
+    color: '#ffffff',
+    border: 'none',
+    borderRadius: 8,
+    fontSize: 14,
+    fontWeight: 700,
+    cursor: 'pointer',
+  },
+  /* Info banner shown to senior analysts with escalation metadata */
+  escalationBanner: {
+    background: 'rgba(245, 158, 11, 0.1)',
+    border: '1px solid rgba(245, 158, 11, 0.3)',
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 20,
+  },
+  escalationBannerTitle: {
+    fontSize: 14,
+    fontWeight: 700,
+    color: '#f59e0b',
+    marginBottom: 8,
+  },
+  escalationBannerText: {
+    fontSize: 13,
+    color: '#8899aa',
+    lineHeight: 1.6,
+  },
 };
+
+/* Predefined reasons for escalation dropdown */
+const ESCALATION_REASONS = [
+  'Suspicious Transaction Pattern',
+  'High-Value Fraud Detected',
+  'Multiple Account Compromise',
+  'Regulatory Compliance Concern',
+  'Cross-Border Suspicious Activity',
+  'Insider Threat Indicators',
+  'Other',
+];
 
 export default function CaseDetail({ cases }: CaseDetailProps) {
   const { caseId } = useParams<{ caseId: string }>();
   const navigate = useNavigate();
+  const { user } = useAuth();
+  const { escalateCase, getEscalation } = useEscalation();
 
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [txnFilters, setTxnFilters] = useState<TransactionFilters>(DEFAULT_TXN_FILTERS);
   const [txnSort, setTxnSort] = useState<SortConfig>({ key: 'date', direction: 'desc' });
   const [txnPage, setTxnPage] = useState(1);
   const [loading, setLoading] = useState(true);
+
+  /* Escalation dialog state — only used by analysts */
+  const [showEscalateModal, setShowEscalateModal] = useState(false);
+  const [escalateReason, setEscalateReason] = useState(ESCALATION_REASONS[0]);
+  const [escalateNotes, setEscalateNotes] = useState('');
 
   /* Find the case matching the URL parameter */
   const fraudCase = cases.find(c => c.caseId === caseId);
@@ -338,17 +475,91 @@ export default function CaseDetail({ cases }: CaseDetailProps) {
       {/* Navigation back to cases list */}
       <button style={styles.backBtn} onClick={() => navigate('/cases')}>← Back to Cases</button>
 
-      {/* Case header with title and status badges */}
+      {/* Case header with title, status badges, and escalation button */}
       <div style={styles.caseHeader}>
         <div>
           <div style={styles.caseId}>{fraudCase.caseId}</div>
           <div style={styles.caseTitle}>{fraudCase.caseName}</div>
         </div>
-        <div style={{ display: 'flex', gap: 8 }}>
+        <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
           <span className={getPriorityBadgeClass(fraudCase.priority)}>{fraudCase.priority}</span>
           <span className={getStatusBadgeClass(fraudCase.status)}>{fraudCase.status}</span>
+          {/* Only analysts see the escalate button (senior analysts already have the case) */}
+          {user?.role === 'analyst' && (
+            <button
+              style={styles.escalateBtn}
+              onClick={() => setShowEscalateModal(true)}
+            >
+              Escalate Case
+            </button>
+          )}
         </div>
       </div>
+
+      {/* Escalation info banner shown to senior analysts */}
+      {user?.role === 'senior_analyst' && getEscalation(fraudCase.caseId) && (() => {
+        const esc = getEscalation(fraudCase.caseId)!;
+        return (
+          <div style={styles.escalationBanner}>
+            <div style={styles.escalationBannerTitle}>Escalated Case</div>
+            <div style={styles.escalationBannerText}>
+              <strong>Escalated by:</strong> {esc.escalatedByName}<br />
+              <strong>Reason:</strong> {esc.reason}<br />
+              <strong>Notes:</strong> {esc.notes || 'No additional notes'}<br />
+              <strong>Escalated at:</strong> {formatDate(esc.escalatedAt)}
+            </div>
+          </div>
+        );
+      })()}
+
+      {/* Escalation confirmation dialog */}
+      {showEscalateModal && (
+        <div style={styles.modalOverlay} onClick={() => setShowEscalateModal(false)}>
+          <div style={styles.modalCard} onClick={e => e.stopPropagation()}>
+            <div style={styles.modalTitle}>Escalate Case: {fraudCase.caseId}</div>
+
+            <label style={styles.modalLabel}>Reason for Escalation</label>
+            <select
+              style={styles.modalSelect}
+              value={escalateReason}
+              onChange={e => setEscalateReason(e.target.value)}
+            >
+              {ESCALATION_REASONS.map(r => <option key={r} value={r}>{r}</option>)}
+            </select>
+
+            <label style={styles.modalLabel}>Additional Notes</label>
+            <textarea
+              style={styles.modalTextarea}
+              value={escalateNotes}
+              onChange={e => setEscalateNotes(e.target.value)}
+              placeholder="Provide details about why this case needs escalation..."
+            />
+
+            <div style={styles.modalActions}>
+              <button style={styles.modalCancel} onClick={() => setShowEscalateModal(false)}>
+                Cancel
+              </button>
+              <button
+                style={styles.modalSubmit}
+                onClick={() => {
+                  /* Submit escalation and redirect analyst back to cases list */
+                  escalateCase({
+                    caseId: fraudCase.caseId,
+                    escalatedBy: user!.username,
+                    escalatedByName: user!.displayName,
+                    reason: escalateReason,
+                    notes: escalateNotes,
+                  });
+                  setShowEscalateModal(false);
+                  navigate('/cases');
+                }}
+              >
+                Confirm Escalation
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Case information summary cards */}
       <div style={styles.infoGrid}>

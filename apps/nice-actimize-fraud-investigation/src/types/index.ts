@@ -118,3 +118,14 @@ export interface SortConfig {
   key: string;
   direction: 'asc' | 'desc';
 }
+
+/* User roles for role-based access control */
+export type UserRole = 'analyst' | 'senior_analyst';
+
+/* Represents an authenticated user in the system */
+export interface User {
+  username: string;
+  displayName: string;
+  role: UserRole;
+  initials: string;
+}
