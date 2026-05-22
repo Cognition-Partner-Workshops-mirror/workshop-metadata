@@ -194,6 +194,17 @@ export default function LoginPage() {
             <span style={styles.demoLabel}>Senior Analyst</span>
             <span>senior1 / senior789</span>
           </div>
+          <div style={{ borderTop: '1px solid rgba(0,180,216,0.15)', marginTop: 8, paddingTop: 8 }}>
+            <div style={{ ...styles.demoTitle, marginBottom: 6 }}>SAR Team</div>
+          </div>
+          <div style={styles.demoRow}>
+            <span style={styles.demoLabel}>SAR Analyst</span>
+            <span>sar1 / sar123</span>
+          </div>
+          <div style={styles.demoRow}>
+            <span style={styles.demoLabel}>SAR Supervisor</span>
+            <span>sarsup1 / sarsup456</span>
+          </div>
         </div>
       </div>
     </div>

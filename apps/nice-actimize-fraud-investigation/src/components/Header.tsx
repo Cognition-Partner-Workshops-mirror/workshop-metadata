@@ -1,7 +1,7 @@
 /**
  * Application header with NICE Actimize branding, navigation, and user info.
  * Displays the current logged-in user's name, role badge, and a logout button.
- * Role badge color distinguishes analysts (teal) from senior analysts (gold).
+ * Role badge colors: teal (analyst), gold (senior), green (SAR analyst), purple (SAR supervisor).
  */
 
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -133,20 +133,32 @@ export default function Header() {
     return false;
   };
 
-  /* Role badge styling: gold for senior analyst, teal for analyst */
+  /* Role badge styling varies by role for visual distinction */
+  const roleBadgeColors: Record<string, { bg: string; color: string; border: string }> = {
+    analyst: { bg: 'rgba(0, 180, 216, 0.15)', color: '#00b4d8', border: 'rgba(0, 180, 216, 0.3)' },
+    senior_analyst: { bg: 'rgba(245, 158, 11, 0.15)', color: '#f59e0b', border: 'rgba(245, 158, 11, 0.3)' },
+    sar_analyst: { bg: 'rgba(6, 214, 160, 0.15)', color: '#06d6a0', border: 'rgba(6, 214, 160, 0.3)' },
+    sar_supervisor: { bg: 'rgba(139, 92, 246, 0.15)', color: '#8b5cf6', border: 'rgba(139, 92, 246, 0.3)' },
+  };
+  const badgeColor = roleBadgeColors[user?.role ?? 'analyst'];
   const roleBadgeStyle: React.CSSProperties = {
     ...styles.roleBadge,
-    background: user?.role === 'senior_analyst'
-      ? 'rgba(245, 158, 11, 0.15)'
-      : 'rgba(0, 180, 216, 0.15)',
-    color: user?.role === 'senior_analyst' ? '#f59e0b' : '#00b4d8',
-    border: `1px solid ${user?.role === 'senior_analyst'
-      ? 'rgba(245, 158, 11, 0.3)'
-      : 'rgba(0, 180, 216, 0.3)'}`,
+    background: badgeColor.bg,
+    color: badgeColor.color,
+    border: `1px solid ${badgeColor.border}`,
   };
 
   /* Format role label for display */
-  const roleLabel = user?.role === 'senior_analyst' ? 'Senior Analyst' : 'Analyst';
+  const roleLabels: Record<string, string> = {
+    analyst: 'Analyst',
+    senior_analyst: 'Senior Analyst',
+    sar_analyst: 'SAR Analyst',
+    sar_supervisor: 'SAR Supervisor',
+  };
+  const roleLabel = roleLabels[user?.role ?? 'analyst'];
+
+  /* SAR nav is visible to sar_analyst, sar_supervisor, and senior_analyst */
+  const showSarNav = user?.role === 'sar_analyst' || user?.role === 'sar_supervisor' || user?.role === 'senior_analyst';
 
   return (
     <header style={styles.header}>
@@ -173,6 +185,15 @@ export default function Header() {
         >
           Cases
         </button>
+        {/* SAR nav link visible to SAR team and senior analysts */}
+        {showSarNav && (
+          <button
+            style={isActive('/sar') ? styles.navBtnActive : styles.navBtn}
+            onClick={() => navigate('/sar')}
+          >
+            SAR Filing
+          </button>
+        )}
       </nav>
 
       {/* Logged-in user info with role badge and logout */}

@@ -22,6 +22,7 @@ import {
 } from '../utils/helpers';
 import { useAuth } from '../context/AuthContext';
 import { useEscalation } from '../context/EscalationContext';
+import { useSar } from '../context/SarContext';
 
 interface CaseDetailProps {
   cases: FraudCase[];
@@ -206,6 +207,29 @@ const styles: Record<string, React.CSSProperties> = {
     padding: '8px 12px',
     borderBottom: '1px solid #1e3250',
   },
+  /* "Refer for SAR" button for senior analysts to send cases to SAR team */
+  referSarBtn: {
+    padding: '10px 20px',
+    background: 'linear-gradient(135deg, #8b5cf6, #7c3aed)',
+    color: '#ffffff',
+    border: 'none',
+    borderRadius: 8,
+    fontSize: 14,
+    fontWeight: 700,
+    cursor: 'pointer',
+    letterSpacing: 0.5,
+  },
+  referSarBtnDisabled: {
+    padding: '10px 20px',
+    background: '#2a3f5f',
+    color: '#5a6d82',
+    border: 'none',
+    borderRadius: 8,
+    fontSize: 14,
+    fontWeight: 700,
+    cursor: 'not-allowed',
+    letterSpacing: 0.5,
+  },
   /* Escalation button styled in amber to signal severity */
   escalateBtn: {
     padding: '10px 20px',
@@ -341,6 +365,7 @@ export default function CaseDetail({ cases }: CaseDetailProps) {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { escalateCase, getEscalation } = useEscalation();
+  const { referForSar, isReferredForSar } = useSar();
 
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [txnFilters, setTxnFilters] = useState<TransactionFilters>(DEFAULT_TXN_FILTERS);
@@ -492,6 +517,27 @@ export default function CaseDetail({ cases }: CaseDetailProps) {
             >
               Escalate Case
             </button>
+          )}
+          {/* Senior analysts can refer escalated cases to the SAR team */}
+          {user?.role === 'senior_analyst' && (
+            isReferredForSar(fraudCase.caseId) ? (
+              <button style={styles.referSarBtnDisabled} disabled>
+                Referred for SAR
+              </button>
+            ) : (
+              <button
+                style={styles.referSarBtn}
+                onClick={() => {
+                  referForSar({
+                    caseId: fraudCase.caseId,
+                    referredBy: user.username,
+                    referredByName: user.displayName,
+                  });
+                }}
+              >
+                Refer for SAR
+              </button>
+            )
           )}
         </div>
       </div>

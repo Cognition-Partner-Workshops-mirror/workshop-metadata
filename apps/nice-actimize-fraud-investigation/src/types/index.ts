@@ -120,7 +120,7 @@ export interface SortConfig {
 }
 
 /* User roles for role-based access control */
-export type UserRole = 'analyst' | 'senior_analyst';
+export type UserRole = 'analyst' | 'senior_analyst' | 'sar_analyst' | 'sar_supervisor';
 
 /* Represents an authenticated user in the system */
 export interface User {
@@ -128,4 +128,52 @@ export interface User {
   displayName: string;
   role: UserRole;
   initials: string;
+}
+
+/* SAR filing status lifecycle */
+export type SarStatus = 'Draft' | 'Pending Review' | 'Revision Requested' | 'Approved' | 'Filed';
+
+/* Suspicious activity type categories per FinCEN guidelines */
+export type SuspiciousActivityType =
+  | 'Structuring'
+  | 'Terrorist Financing'
+  | 'Fraud — Wire'
+  | 'Fraud — Check'
+  | 'Fraud — ACH'
+  | 'Fraud — Card'
+  | 'Money Laundering'
+  | 'Identity Theft'
+  | 'Insider Abuse'
+  | 'Bribery / Corruption'
+  | 'Other';
+
+/* Represents a Suspicious Activity Report (SAR) linked to an escalated case */
+export interface SarReport {
+  sarId: string;
+  caseId: string;
+  status: SarStatus;
+  /* Subject (suspect) information */
+  subjectName: string;
+  subjectIdType: string;
+  subjectIdNumber: string;
+  subjectAddress: string;
+  subjectDob: string;
+  /* Suspicious activity details */
+  activityType: SuspiciousActivityType;
+  activityStartDate: string;
+  activityEndDate: string;
+  totalAmountInvolved: number;
+  /* Narrative and filing metadata */
+  narrative: string;
+  filingDate: string;
+  createdBy: string;
+  createdByName: string;
+  createdAt: string;
+  lastUpdatedAt: string;
+  /* Review workflow fields */
+  reviewedBy: string;
+  reviewedByName: string;
+  reviewNotes: string;
+  referredBy: string;
+  referredByName: string;
 }

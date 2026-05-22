@@ -1,7 +1,7 @@
 /**
  * Application entry point. Wraps the app in React StrictMode,
- * BrowserRouter for client-side routing, AuthProvider for
- * authentication, and EscalationProvider for case escalation state.
+ * BrowserRouter for client-side routing, AuthProvider for authentication,
+ * EscalationProvider for case escalation, and SarProvider for SAR workflow.
  */
 
 import { StrictMode } from 'react';
@@ -11,14 +11,17 @@ import './index.css';
 import App from './App.tsx';
 import { AuthProvider } from './context/AuthContext';
 import { EscalationProvider } from './context/EscalationContext';
+import { SarProvider } from './context/SarContext';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      {/* AuthProvider must wrap EscalationProvider so auth state is available */}
+      {/* AuthProvider → EscalationProvider → SarProvider hierarchy */}
       <AuthProvider>
         <EscalationProvider>
-          <App />
+          <SarProvider>
+            <App />
+          </SarProvider>
         </EscalationProvider>
       </AuthProvider>
     </BrowserRouter>

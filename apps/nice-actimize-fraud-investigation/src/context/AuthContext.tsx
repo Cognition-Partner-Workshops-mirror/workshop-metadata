@@ -1,8 +1,7 @@
 /**
  * Authentication context for role-based access control.
  * Manages login/logout state and provides the current user to all components.
- * Supports two roles: analyst (views non-escalated cases) and senior_analyst
- * (views only escalated cases).
+ * Supports four roles: analyst, senior_analyst, sar_analyst, sar_supervisor.
  */
 
 import { createContext, useContext, useState, useCallback } from 'react';
@@ -36,6 +35,26 @@ const DEMO_USERS: Record<string, { password: string; user: User }> = {
       displayName: 'Emily Chen',
       role: 'senior_analyst',
       initials: 'EC',
+    },
+  },
+  /* SAR Analyst — creates and edits Suspicious Activity Reports */
+  sar1: {
+    password: 'sar123',
+    user: {
+      username: 'sar1',
+      displayName: 'Michael Torres',
+      role: 'sar_analyst',
+      initials: 'MT',
+    },
+  },
+  /* SAR Supervisor — reviews, approves, and files SARs with FinCEN */
+  sarsup1: {
+    password: 'sarsup456',
+    user: {
+      username: 'sarsup1',
+      displayName: 'Laura Kim',
+      role: 'sar_supervisor',
+      initials: 'LK',
     },
   },
 };
