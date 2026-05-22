@@ -252,7 +252,7 @@ function getSarStatusStyle(status: SarStatus): React.CSSProperties {
 export default function SarDashboard({ cases }: SarDashboardProps) {
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { getAllSars, getSarForCase, approveSar, requestRevision, fileSar, referrals } = useSar();
+  const { getAllSars, getSarForCase, approveSar, requestRevision, fileSar, submitForReview, referrals } = useSar();
   const { escalations } = useEscalation();
 
   const [statusFilter, setStatusFilter] = useState<SarStatus | 'All'>('All');
@@ -432,12 +432,21 @@ export default function SarDashboard({ cases }: SarDashboardProps) {
                     <td>
                       {/* SAR Analyst can edit drafts and revision-requested SARs */}
                       {user?.role === 'sar_analyst' && (sar.status === 'Draft' || sar.status === 'Revision Requested') && (
-                        <button
-                          style={{ ...styles.createSarBtn, padding: '4px 10px', fontSize: 11 }}
-                          onClick={() => navigate(`/sar/create/${sar.caseId}`)}
-                        >
-                          Edit
-                        </button>
+                        <div style={{ display: 'flex', gap: 6 }}>
+                          <button
+                            style={{ ...styles.createSarBtn, padding: '4px 10px', fontSize: 11 }}
+                            onClick={() => navigate(`/sar/create/${sar.caseId}`)}
+                          >
+                            Edit
+                          </button>
+                          {/* Quick submit button so analyst can submit directly from dashboard */}
+                          <button
+                            style={{ ...styles.approveBtn, padding: '4px 10px', fontSize: 11 }}
+                            onClick={() => submitForReview(sar.sarId)}
+                          >
+                            Submit
+                          </button>
+                        </div>
                       )}
                       {/* SAR Supervisor can review pending SARs */}
                       {user?.role === 'sar_supervisor' && sar.status === 'Pending Review' && (

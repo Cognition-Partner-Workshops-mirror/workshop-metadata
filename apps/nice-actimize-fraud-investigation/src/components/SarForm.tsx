@@ -145,11 +145,17 @@ const styles: Record<string, React.CSSProperties> = {
     lineHeight: 1.6,
     boxSizing: 'border-box' as const,
   },
+  /* Sticky action bar pinned to the bottom of the viewport for visibility */
   actions: {
     display: 'flex',
     justifyContent: 'flex-end',
     gap: 10,
+    position: 'sticky' as const,
+    bottom: 0,
+    background: 'linear-gradient(transparent, #0d1b2a 30%)',
+    padding: '24px 0 16px',
     marginTop: 8,
+    zIndex: 10,
   },
   draftBtn: {
     padding: '10px 24px',
@@ -415,7 +421,7 @@ export default function SarForm({ cases }: SarFormProps) {
           </div>
         </div>
 
-        {/* Form action buttons */}
+        {/* Form action buttons — sticky at bottom so they are always visible */}
         <div style={styles.actions}>
           <button type="button" style={styles.draftBtn} onClick={handleSaveDraft}>
             Save as Draft
