@@ -1,0 +1,20 @@
+# Streamlit configuration for the Natural Language Database Query tool.
+
+[server]
+# Run in headless mode (no browser auto-open)
+headless = true
+# Listen on all interfaces for Docker compatibility
+address = "0.0.0.0"
+port = 8501
+
+[browser]
+# Disable usage statistics collection
+gatherUsageStats = false
+
+[theme]
+# Default theme – can be overridden by the user
+primaryColor = "#4F8BF9"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+textColor = "#262730"
+font = "sans serif"
