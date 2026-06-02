@@ -1,0 +1,26 @@
+# Core deep learning framework
+torch>=2.0
+
+# Numerical and data processing
+numpy
+pandas
+
+# Technical analysis indicators
+pandas-ta
+
+# Market data sources
+ccxt
+yfinance
+
+# Reinforcement learning environment interface
+gymnasium
+
+# Visualisation and logging
+matplotlib
+tensorboard
+
+# Configuration management
+pyyaml
+
+# HTTP requests for broker APIs
+requests
