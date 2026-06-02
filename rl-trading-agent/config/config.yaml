@@ -1,0 +1,73 @@
+# RL Trading Agent — Master Configuration
+# All hyperparameters, data sources, and trading parameters in one place.
+
+data:
+  source: "yfinance"              # 'yfinance' for equities, 'ccxt' for crypto
+  exchange_id: "binance"          # ccxt exchange (only used when source='ccxt')
+  symbol: "BTC/USDT"             # Trading pair or ticker
+  timeframe: "1h"                # Candlestick interval: 1m, 5m, 15m, 1h, 1d
+  period: "2y"                   # Lookback period for historical data (yfinance)
+  lookback_window: 60            # Number of bars per observation window
+  indicators:                    # Technical indicators to compute
+    - RSI_14
+    - MACD_12_26_9
+    - BB_20_2
+    - ATR_14
+    - EMA_9
+    - EMA_21
+    - OBV
+    - STOCH_14_3_3
+  transaction_cost: 0.001        # Cost per trade as fraction (0.1%)
+  walk_forward_splits: 5         # Number of walk-forward validation folds
+
+model:
+  d_model: 128                   # Transformer embedding dimension
+  n_heads: 8                     # Multi-head attention heads
+  n_encoder_layers: 4            # Depth of each Transformer encoder
+  n_fusion_layers: 2             # Cross-attention fusion layers
+  d_fused: 256                   # Fused state dimension (2 × d_model)
+  dropout: 0.1                   # Dropout rate throughout the network
+
+mcts:
+  n_simulations_train: 100       # MCTS simulations per step during training
+  n_simulations_live: 50         # Reduced simulations for live inference latency
+  c_puct: 1.5                    # Exploration constant in UCB formula
+  temperature: 1.0               # Action selection temperature (annealed to 0.1)
+  temperature_final: 0.1         # Final temperature after annealing
+  temperature_anneal_steps: 30   # Training iterations over which to anneal
+
+training:
+  n_self_play_episodes: 1000     # Episodes per self-play phase
+  replay_buffer_size: 500000     # Maximum samples in circular replay buffer
+  batch_size: 256                # Mini-batch size for gradient updates
+  learning_rate: 0.0001          # Adam learning rate
+  weight_decay: 0.0001           # L2 regularisation coefficient
+  n_iterations: 50               # Total AlphaZero-style training iterations
+  n_epochs_per_iteration: 10     # Gradient epochs per training phase
+  eval_interval: 5               # Evaluate new vs old model every N iterations
+  discount: 0.99                 # Reward discount factor (gamma)
+  gradient_clip: 1.0             # Maximum gradient norm for clipping
+  checkpoint_dir: "checkpoints"  # Directory for model checkpoints
+
+environment:
+  initial_cash: 100000.0         # Starting portfolio cash ($)
+  max_steps: 500                 # Maximum bars per training episode
+  max_drawdown: 0.20             # Drawdown threshold for episode termination
+  reward_type: "differential_sharpe"  # 'differential_sharpe', 'log_return', 'risk_adjusted'
+
+risk:
+  max_position_pct: 0.25         # Max single position as % of portfolio
+  max_daily_drawdown: 0.05       # Halt trading if daily loss exceeds 5%
+  max_portfolio_drawdown: 0.20   # Halt trading if total drawdown exceeds 20%
+  volatility_lookback: 20        # Bars for rolling volatility computation
+  max_trades_per_day: 50         # Daily trade count limit
+
+live:
+  broker_type: "alpaca"          # 'alpaca' for equities, 'ccxt' for crypto
+  paper_trading: true            # Use paper/sandbox mode (always start here)
+  interval_seconds: 3600         # Seconds between inference cycles (match timeframe)
+
+logging:
+  level: "INFO"                  # Log level: DEBUG, INFO, WARNING, ERROR
+  log_file: "trading_agent.log"  # File for persistent logging
+  tensorboard_dir: "runs"        # TensorBoard log directory
