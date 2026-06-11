@@ -1,0 +1,396 @@
+openapi: "3.0.3"
+info:
+  title: Sample Pet Store API
+  description: |
+    A sample RESTful API for managing pets in a pet store.
+    This API demonstrates OpenAPI Specification (OAS) best practices
+    including proper request/response schemas, error handling, and pagination.
+  version: "1.0.0"
+  contact:
+    name: API Support
+    email: support@example.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:3000/api/v1
+    description: Local development server
+
+tags:
+  - name: Pets
+    description: Operations related to pets
+  - name: Health
+    description: Health check endpoints
+
+paths:
+  /health:
+    get:
+      tags:
+        - Health
+      summary: Health check
+      description: Returns the health status of the API
+      operationId: getHealth
+      responses:
+        "200":
+          description: API is healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthResponse"
+
+  /pets:
+    get:
+      tags:
+        - Pets
+      summary: List all pets
+      description: Returns a paginated list of all pets in the store
+      operationId: listPets
+      parameters:
+        - name: limit
+          in: query
+          description: Maximum number of pets to return
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 1
+            maximum: 100
+        - name: offset
+          in: query
+          description: Number of pets to skip for pagination
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+      responses:
+        "200":
+          description: A paginated list of pets
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PetListResponse"
+        "400":
+          description: Invalid query parameters
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+    post:
+      tags:
+        - Pets
+      summary: Create a new pet
+      description: Adds a new pet to the store
+      operationId: createPet
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreatePetRequest"
+      responses:
+        "201":
+          description: Pet created successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pet"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /pets/{petId}:
+    get:
+      tags:
+        - Pets
+      summary: Get a pet by ID
+      description: Returns a single pet by its unique identifier
+      operationId: getPetById
+      parameters:
+        - name: petId
+          in: path
+          description: Unique identifier of the pet
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Pet found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pet"
+        "404":
+          description: Pet not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+    put:
+      tags:
+        - Pets
+      summary: Update a pet
+      description: Updates an existing pet by its unique identifier
+      operationId: updatePet
+      parameters:
+        - name: petId
+          in: path
+          description: Unique identifier of the pet
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdatePetRequest"
+      responses:
+        "200":
+          description: Pet updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pet"
+        "400":
+          description: Invalid request body
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "404":
+          description: Pet not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+    delete:
+      tags:
+        - Pets
+      summary: Delete a pet
+      description: Removes a pet from the store by its unique identifier
+      operationId: deletePet
+      parameters:
+        - name: petId
+          in: path
+          description: Unique identifier of the pet
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Pet deleted successfully
+        "404":
+          description: Pet not found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+components:
+  schemas:
+    Pet:
+      type: object
+      required:
+        - id
+        - name
+        - species
+        - status
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the pet
+          example: "pet-001"
+        name:
+          type: string
+          description: Name of the pet
+          example: "Buddy"
+        species:
+          type: string
+          description: Species of the pet
+          enum:
+            - dog
+            - cat
+            - bird
+            - fish
+            - rabbit
+          example: "dog"
+        breed:
+          type: string
+          description: Breed of the pet
+          example: "Golden Retriever"
+        age:
+          type: integer
+          description: Age of the pet in years
+          minimum: 0
+          example: 3
+        status:
+          type: string
+          description: Availability status of the pet
+          enum:
+            - available
+            - adopted
+            - pending
+          example: "available"
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp when the pet was added
+        updatedAt:
+          type: string
+          format: date-time
+          description: Timestamp when the pet was last updated
+
+    CreatePetRequest:
+      type: object
+      required:
+        - name
+        - species
+      properties:
+        name:
+          type: string
+          description: Name of the pet
+          minLength: 1
+          maxLength: 100
+          example: "Buddy"
+        species:
+          type: string
+          description: Species of the pet
+          enum:
+            - dog
+            - cat
+            - bird
+            - fish
+            - rabbit
+          example: "dog"
+        breed:
+          type: string
+          description: Breed of the pet
+          maxLength: 100
+          example: "Golden Retriever"
+        age:
+          type: integer
+          description: Age of the pet in years
+          minimum: 0
+          example: 3
+        status:
+          type: string
+          description: Availability status of the pet
+          enum:
+            - available
+            - adopted
+            - pending
+          default: "available"
+          example: "available"
+
+    UpdatePetRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the pet
+          minLength: 1
+          maxLength: 100
+          example: "Buddy"
+        species:
+          type: string
+          description: Species of the pet
+          enum:
+            - dog
+            - cat
+            - bird
+            - fish
+            - rabbit
+          example: "dog"
+        breed:
+          type: string
+          description: Breed of the pet
+          maxLength: 100
+          example: "Golden Retriever"
+        age:
+          type: integer
+          description: Age of the pet in years
+          minimum: 0
+          example: 3
+        status:
+          type: string
+          description: Availability status of the pet
+          enum:
+            - available
+            - adopted
+            - pending
+          example: "available"
+
+    PetListResponse:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Pet"
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+
+    Pagination:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of items
+          example: 50
+        limit:
+          type: integer
+          description: Number of items per page
+          example: 10
+        offset:
+          type: integer
+          description: Number of items skipped
+          example: 0
+        hasMore:
+          type: boolean
+          description: Whether there are more items available
+          example: true
+
+    HealthResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "ok"
+        timestamp:
+          type: string
+          format: date-time
+        version:
+          type: string
+          example: "1.0.0"
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Machine-readable error code
+              example: "NOT_FOUND"
+            message:
+              type: string
+              description: Human-readable error message
+              example: "Pet not found"
+            details:
+              type: array
+              items:
+                type: object
+                properties:
+                  field:
+                    type: string
+                  message:
+                    type: string
